@@ -1,11 +1,13 @@
 package com.toyProject.config;
 
 import org.apache.tomcat.jdbc.pool.DataSource;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class DbConfig {
 
+	@Bean
 	public DataSource dataSource() {
 		DataSource dataSource = new DataSource();
 		dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
