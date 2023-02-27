@@ -1,5 +1,5 @@
 package com.toyProject.dao;
 
-public class QnaDaoImpl {
+public class QnaDaoImpl implements QnaDao {
 
 }

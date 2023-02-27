@@ -1,5 +1,5 @@
 package com.toyProject.dao;
 
-public class BoardDaoImpl {
+public class BoardDaoImpl implements BoardDao {
 
 }

@@ -1,5 +1,5 @@
 package com.toyProject.dao;
 
-public class ToDoListDaoImpl {
+public class ToDoListDaoImpl implements ToDoListDao {
 
 }

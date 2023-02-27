@@ -1,5 +1,5 @@
 package com.toyProject.dao;
 
-public class DiaryDaoImpl {
+public class DiaryDaoImpl implements DiaryDao {
 
 }

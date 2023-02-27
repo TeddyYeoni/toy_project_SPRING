@@ -1,5 +1,5 @@
 package com.toyProject.dao;
 
-public class AlbumDaoImpl {
+public class AlbumDaoImpl implements AlbumDao {
 
 }
