@@ -3,16 +3,23 @@ package com.toyProject.dao;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.toyProject.domain.BoardVO;
 
+import lombok.AllArgsConstructor;
+
+
+@Repository
+@AllArgsConstructor
 public class BoardDaoImpl implements BoardDao {
 	
 	SqlSessionTemplate sessionTemplate;
 
 	@Override
 	public List<BoardVO> boardList() {
-		return null;
+		return sessionTemplate.selectList("com.toyProject.dao.BoardDao.boardList");
 	}
 
 	@Override
