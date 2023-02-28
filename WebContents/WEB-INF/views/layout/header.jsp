@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,13 +18,8 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 	const contextPath = "${contextPath}";
-	let auth = {
-		id : "${auth.id}",
-		grade : "${auth.grade}"
-	};
 </script>
 
-<script src="${contextPath}/resources/js/common.js"></script>
 <link rel="stylesheet" href="${contextPath}/resources/css/style.css">
 </head>
 <style>
@@ -39,9 +36,8 @@
 }
 
 body {
-	font-family:'DungGeunMo';
+	font-family: 'DungGeunMo';
 }
-
 </style>
 <body>
 	<nav class="navbar navbar-expand-sm">
@@ -71,21 +67,17 @@ body {
 
 
 		<ul class="navbar-nav my-3">
-			<c:if test="${empty auth}">
-				<li class="nav-item "><a
-					class="nav-link font-weight-bold text-light mx-1"
-					href="${contextPath}/member/joinForm"><h5>Join</h5></a></li>
-				<li class="nav-item "><a
-					class="nav-link font-weight-bold text-light mx-1"
-					href="${contextPath}/member/"><h5>Login</h5></a></li>
-			</c:if>
-			<c:if test="${not empty auth}">
-				<li class="nav-item "><a
-					class="nav-link font-weight-bold text-light mx-1" href="#"><h5>
-							My Space🐾</h5></a></li>
-				<li class="nav-item "><a
-					class="nav-link font-weight-bold text-light mx-1"
-					href="${contextPath}/member/logout"><h5>Logout</h5></a></li>
-			</c:if>
+			<li class="nav-item "><a
+				class="nav-link font-weight-bold text-light mx-1"
+				href="${contextPath}/member/joinForm"><h5>Join</h5></a></li>
+			<li class="nav-item "><a
+				class="nav-link font-weight-bold text-light mx-1"
+				href="${contextPath}/member/"><h5>Login</h5></a></li>
+			<li class="nav-item "><a
+				class="nav-link font-weight-bold text-light mx-1" href="#"><h5>
+						My Space🐾</h5></a></li>
+			<li class="nav-item "><a
+				class="nav-link font-weight-bold text-light mx-1"
+				href="${contextPath}/member/logout"><h5>Logout</h5></a></li>
 		</ul>
 	</nav>

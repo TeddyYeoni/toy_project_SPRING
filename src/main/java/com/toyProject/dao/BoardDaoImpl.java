@@ -10,7 +10,6 @@ import com.toyProject.domain.BoardVO;
 
 import lombok.AllArgsConstructor;
 
-
 @Repository
 @AllArgsConstructor
 public class BoardDaoImpl implements BoardDao {

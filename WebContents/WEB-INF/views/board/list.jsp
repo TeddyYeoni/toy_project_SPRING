@@ -2,11 +2,10 @@
 	pageEncoding="UTF-8"%>
 
 <%@ include file="../layout/header.jsp"%>
-<script src="${contextPath}/resources/js/board/list.js"></script>
 
 <style>
 .holder {
-  min-height: 100vh;
+	min-height: 100vh;
 }
 </style>
 
@@ -16,8 +15,7 @@
 		<p>소통할 수 있는 공간🎈</p>
 	</div>
 	<div class="text-right my-2">
-		<a href="#"
-			class="btn btn-outline-primary">New</a>
+		<a href="#" class="btn btn-outline-primary">New</a>
 	</div>
 	<form id="listForm">
 		<table class="table">
@@ -41,7 +39,6 @@
 			</tbody>
 		</table>
 	</form>
-
 </div>
 
 <%@ include file="../layout/footer.jsp"%>
