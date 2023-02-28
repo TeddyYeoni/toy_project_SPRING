@@ -17,8 +17,8 @@ public class BoardController {
 	
 	@GetMapping("/list")
 	public String list(Model model) {
-		model.addAttribute("list", boardService.lookUpList());
-		return "/board/list";
+		model.addAttribute("board_list", boardService.lookUpList());
+		return "board/list";
 	}
 
 }
