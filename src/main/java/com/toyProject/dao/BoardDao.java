@@ -1,5 +1,27 @@
 package com.toyProject.dao;
 
+import java.util.List;
+
+import com.toyProject.domain.BoardVO;
+
 public interface BoardDao {
 
+	// 게시글 목록
+	List<BoardVO> boardList();
+	
+	// 게시글 상세
+	BoardVO findByBno(Long bno);
+	
+	// 새로운 bno 생성
+	int getNewBno();
+	
+	// 게시글 추가
+	int addContent();
+	
+	// 게시글 수정
+	void modifyContent(BoardVO boardVO);
+	
+	// 게시글 삭제
+	void deleteContent(Long bno);
+	
 }
