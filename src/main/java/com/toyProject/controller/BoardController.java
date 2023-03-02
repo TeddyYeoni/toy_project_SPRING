@@ -11,11 +11,11 @@ import com.toyProject.service.BoardService;
 @Controller
 @RequestMapping("/board")
 public class BoardController {
-	
+
 	@Autowired
 	BoardService boardService;
-	
-	@GetMapping("/list")
+
+	@GetMapping(value = { "/", "/list" })
 	public String list(Model model) {
 		model.addAttribute("board_list", boardService.lookUpList());
 		return "board/list";
