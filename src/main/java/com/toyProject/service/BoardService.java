@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.toyProject.dao.BoardDao;
 import com.toyProject.domain.BoardVO;
+import com.toyProject.domain.Criteria;
 
 @Repository
 public class BoardService {
@@ -16,6 +17,10 @@ public class BoardService {
 	
 	public List<BoardVO> lookUpList(){
 		return boardDao.boardList();
+	}
+	
+	public int totalCount(Criteria criteria) {
+		return boardDao.getTotalCount(criteria);
 	}
 
 }

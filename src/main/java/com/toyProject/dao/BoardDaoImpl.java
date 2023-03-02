@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.toyProject.domain.BoardVO;
+import com.toyProject.domain.Criteria;
 
 import lombok.AllArgsConstructor;
 
@@ -42,6 +43,11 @@ public class BoardDaoImpl implements BoardDao {
 
 	@Override
 	public void deleteContent(Long bno) {
+	}
+
+	@Override
+	public int getTotalCount(Criteria criteria) {
+		return sessionTemplate.selectOne("com.toyProject.dao.BoardDao.getTotalCount");
 	}
 
 }

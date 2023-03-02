@@ -3,6 +3,7 @@ package com.toyProject.dao;
 import java.util.List;
 
 import com.toyProject.domain.BoardVO;
+import com.toyProject.domain.Criteria;
 
 public interface BoardDao {
 
@@ -23,5 +24,8 @@ public interface BoardDao {
 	
 	// 게시글 삭제
 	void deleteContent(Long bno);
+	
+	// 총 게시물 수
+	int getTotalCount(Criteria criteria);
 	
 }
