@@ -11,6 +11,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.toyProject.domain.AlbumVO;
 import com.toyProject.domain.BoardVO;
@@ -19,7 +21,7 @@ import com.toyProject.domain.QnaVO;
 import com.toyProject.domain.ToDoListVO;
 
 @Configuration
-@Import({DbConfig.class })
+@Import({ DbConfig.class })
 @MapperScan("com.toyProject.dao")
 public class RootConfig {
 
@@ -40,6 +42,21 @@ public class RootConfig {
 	public SqlSessionTemplate sessionTemplate() throws Exception {
 		SqlSessionTemplate sessionTemplate = new SqlSessionTemplate(sqlSessionFactory().getObject());
 		return sessionTemplate;
+	}
+
+	// 파일업로드 설정
+	@Bean
+	public CommonsMultipartResolver multipartResolver() {
+		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
+		multipartResolver.setDefaultEncoding("utf-8");
+		multipartResolver.setMaxUploadSize(-1);
+		return multipartResolver;
+	}
+
+	// 트랜잭션 관리자
+	@Bean
+	public DataSourceTransactionManager transactionManager() {
+		return new DataSourceTransactionManager(dataSource);
 	}
 
 }
