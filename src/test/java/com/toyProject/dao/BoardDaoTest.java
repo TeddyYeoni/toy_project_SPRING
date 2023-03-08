@@ -1,7 +1,5 @@
 package com.toyProject.dao;
 
-import static org.junit.Assert.*;
-
 import java.util.List;
 
 import org.junit.Test;
@@ -13,6 +11,7 @@ import com.toyProject.domain.Criteria;
 
 import lombok.extern.log4j.Log4j;
 
+@Log4j
 public class BoardDaoTest extends AppTest{
 
 	@Autowired

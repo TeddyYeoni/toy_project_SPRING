@@ -23,12 +23,12 @@ public class Criteria {
 	
 	// #{maxRow}
 	public int getMaxRow() {
-		return this.nowPageNum * this.nowPageNum;
+		return this.nowPageNum * this.pagingAmount;
 	}
 
 	// #{minRow}
 	public int getMinRow() {
-		return (this.pagingAmount - 1) * this.pagingAmount;
+		return (this.nowPageNum - 1) * this.pagingAmount;
 	}
 
 }

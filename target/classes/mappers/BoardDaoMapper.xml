@@ -6,12 +6,14 @@
 
 <mapper namespace="com.toyProject.dao.BoardDao">
 
-	<select id="boardList" resultType="com.toyProject.domain.BoardVO">
+	<select id="boardList" resultType="boardVO">
 		<![CDATA[
-		select rownum, bno, title, writer, writedate
+		select
+			rownum, bno, title, writer, writedate
 		from 
-			(select /*+index_desc(mou_board pk_board)*/
-			rownum as rn, bno, title, writer, writedate
+			(select
+				/*+index_desc(mou_board pk_board)*/
+				rownum as rn, bno, title, writer, writedate
 			from mou_board where rownum <= #{maxRow})
 		where rn > #{minRow}
 		]]>
