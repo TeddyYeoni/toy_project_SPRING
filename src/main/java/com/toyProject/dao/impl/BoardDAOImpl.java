@@ -1,4 +1,4 @@
-package com.toyProject.dao;
+package com.toyProject.dao.impl;
 
 import java.util.List;
 
@@ -6,20 +6,19 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.toyProject.dao.BoardDao;
 import com.toyProject.domain.BoardVO;
 import com.toyProject.domain.Criteria;
 
-import lombok.AllArgsConstructor;
-
 @Repository
-@AllArgsConstructor
-public class BoardDaoImpl implements BoardDao {
-	
-	SqlSessionTemplate sessionTemplate;
+public class BoardDAOImpl implements BoardDao {
 
+	@Autowired
+	SqlSessionTemplate sessionTemplate;
+	
 	@Override
-	public List<BoardVO> boardList() {
-		return sessionTemplate.selectList("com.toyProject.dao.BoardDao.boardList");
+	public List<BoardVO> boardList(Criteria criteria) {
+		return sessionTemplate.selectList("com.toyProeject.dao.BoardDao", criteria);
 	}
 
 	@Override
@@ -46,8 +45,8 @@ public class BoardDaoImpl implements BoardDao {
 	}
 
 	@Override
-	public int getTotalCount(Criteria criteria) {
-		return sessionTemplate.selectOne("com.toyProject.dao.BoardDao.getTotalCount");
+	public int totalCount(Criteria criteria) {
+		return 0;
 	}
 
 }

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.toyProject.AppTest;
 import com.toyProject.domain.BoardVO;
+import com.toyProject.domain.Criteria;
 
 import lombok.extern.log4j.Log4j;
 
@@ -19,7 +20,8 @@ public class BoardDaoTest extends AppTest{
 	
 	@Test
 	public void boardListTest() {
-		List<BoardVO> boardList = boardDao.boardList();
+		Criteria criteria = new Criteria();
+		List<BoardVO> boardList = boardDao.boardList(criteria);
 		System.out.println(boardList);
 	}
 

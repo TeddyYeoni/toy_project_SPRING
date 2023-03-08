@@ -7,20 +7,24 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.toyProject.dao.BoardDao;
 import com.toyProject.domain.Criteria;
 import com.toyProject.domain.Pagination;
 import com.toyProject.service.BoardService;
+
+import lombok.extern.log4j.Log4j;
 
 @Controller
 @RequestMapping("/board")
 public class BoardController {
 
 	@Autowired
-	BoardService boardService;
+	private BoardService boardService;
 
 	@GetMapping(value = { "/", "/list" })
-	public String list(Model model) {
-		model.addAttribute("board_list", boardService.lookUpList());
+	public String list(Model model, @ModelAttribute("cri") Criteria criteria) {
+		model.addAttribute("board_list", boardService.boardList(criteria));
+		model.addAttribute("page", new Pagination(criteria, boardService.totalCount(criteria)));
 		return "board/list";
 	}
 

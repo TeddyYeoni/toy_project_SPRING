@@ -4,23 +4,24 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.toyProject.dao.BoardDao;
 import com.toyProject.domain.BoardVO;
 import com.toyProject.domain.Criteria;
 
-@Repository
+@Service
 public class BoardService {
-	
+
 	@Autowired
-	BoardDao boardDao;
+	private BoardDao boardDao;
 	
-	public List<BoardVO> lookUpList(){
-		return boardDao.boardList();
+	public List<BoardVO> boardList(Criteria criteria){
+		return boardDao.boardList(criteria);
 	}
 	
 	public int totalCount(Criteria criteria) {
-		return boardDao.getTotalCount(criteria);
+		return boardDao.totalCount(criteria);
 	}
-
+	
 }

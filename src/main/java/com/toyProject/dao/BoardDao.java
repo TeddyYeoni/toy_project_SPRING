@@ -2,13 +2,15 @@ package com.toyProject.dao;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.toyProject.domain.BoardVO;
 import com.toyProject.domain.Criteria;
 
 public interface BoardDao {
 
 	// 게시글 목록
-	List<BoardVO> boardList();
+	List<BoardVO> boardList(Criteria criteria);
 	
 	// 게시글 상세
 	BoardVO findByBno(Long bno);
@@ -26,6 +28,6 @@ public interface BoardDao {
 	void deleteContent(Long bno);
 	
 	// 총 게시물 수
-	int getTotalCount(Criteria criteria);
+	int totalCount(Criteria criteria);
 	
 }

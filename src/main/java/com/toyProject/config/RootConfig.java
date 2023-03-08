@@ -8,8 +8,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import com.toyProject.domain.AlbumVO;
@@ -19,8 +19,8 @@ import com.toyProject.domain.QnaVO;
 import com.toyProject.domain.ToDoListVO;
 
 @Configuration
-@MapperScan("com.toyProject.mapper")
-@ComponentScan
+@Import({DbConfig.class })
+@MapperScan("com.toyProject.dao")
 public class RootConfig {
 
 	@Autowired
@@ -31,11 +31,8 @@ public class RootConfig {
 		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
 		sqlSessionFactoryBean.setDataSource(dataSource);
 		sqlSessionFactoryBean.setMapperLocations(
-				new PathMatchingResourcePatternResolver().getResources(
-						"classpath:mappers/**/*Mapper.xml"
-						));
-		sqlSessionFactoryBean.setTypeAliases(BoardVO.class, AlbumVO.class, DiaryVO.class, ToDoListVO.class,
-				QnaVO.class);
+				new PathMatchingResourcePatternResolver().getResources("classpath:mappers/**/*Mapper.xml"));
+		sqlSessionFactoryBean.setTypeAliases(BoardVO.class);
 		return sqlSessionFactoryBean;
 	}
 
