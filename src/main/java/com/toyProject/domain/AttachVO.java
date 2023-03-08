@@ -16,7 +16,7 @@ import lombok.ToString;
 public class AttachVO {
 
 	private Long attachNo;
-	private Long bno;
+	private Long postNo;
 	private String filePath; // 파일 경로
 	private String fileName; // 파일 이름
 	private FileType fileType; // 파일 타입

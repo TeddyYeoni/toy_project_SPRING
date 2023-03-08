@@ -15,19 +15,19 @@ import com.toyProject.domain.FileType;
 @Component
 public class FileUploadUtils {
 
-	private final static String BOARD_UPLOAD_FOLDER = "c:/file_repo/mou_board";
+	private final static String BOARD_UPLOAD_FOLDER = "c:/file_repo/mou";
 
-	public List<AttachVO> getAttachVOAndUpload(Long bno, MultipartFile[] multipartFiles) {
+	public List<AttachVO> getAttachVOAndUpload(Long postNo, MultipartFile[] multipartFiles) {
 		List<AttachVO> attachList = new ArrayList<AttachVO>();
 		for (MultipartFile mf : multipartFiles) {
 			if (!mf.isEmpty()) { // MultipartFile 객체이 파일정보가 있을 때
-				AttachVO attachVO = AttachVO.builder().bno(bno).fileName(mf.getOriginalFilename())
-						.filePath(getFilePath(bno, mf.getOriginalFilename())).fileType(getFileType(mf.getContentType()))
+				AttachVO attachVO = AttachVO.builder().postNo(postNo).fileName(mf.getOriginalFilename())
+						.filePath(getFilePath(postNo, mf.getOriginalFilename())).fileType(getFileType(mf.getContentType()))
 						.build();
 				attachList.add(attachVO);
 
 				// 파일 업로드
-				File folder = new File(BOARD_UPLOAD_FOLDER + "/" + bno);
+				File folder = new File(BOARD_UPLOAD_FOLDER + "/" + postNo);
 				File file = new File(attachVO.getFilePath());
 				if (!folder.exists()) {
 					folder.mkdirs();
@@ -43,10 +43,10 @@ public class FileUploadUtils {
 	}
 
 	// 업로드 한 파일 경로
-	private String getFilePath(Long bno, String originalFilename) {
+	private String getFilePath(Long postNo, String originalFilename) {
 		String uuid = UUID.randomUUID().toString();
 
-		return BOARD_UPLOAD_FOLDER + "/" + bno + "/" + uuid + "_" + originalFilename;
+		return BOARD_UPLOAD_FOLDER + "/" + postNo + "/" + uuid + "_" + originalFilename;
 	}
 
 	// 파일 타입 결정
