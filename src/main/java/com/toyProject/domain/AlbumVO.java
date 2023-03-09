@@ -16,11 +16,11 @@ import lombok.ToString;
 @ToString
 @Builder
 public class AlbumVO {
-	
+
 	private int ano;
 	private String title;
 	private String content;
 	private String imageFileName;
 	private Date uploadDate;
-	
+
 }
