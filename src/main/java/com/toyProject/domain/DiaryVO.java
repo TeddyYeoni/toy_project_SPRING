@@ -17,7 +17,7 @@ import lombok.ToString;
 @Builder
 public class DiaryVO {
 
-	private int dno;
+	private Long dno;
 	private String writer;
 	private String content;
 	private String weather;

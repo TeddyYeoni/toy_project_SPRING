@@ -17,7 +17,7 @@ import lombok.ToString;
 @Builder
 public class QnaVO {
 
-	private int qno;
+	private Long qno;
 	private String title;
 	private String content;
 	private String writer;

@@ -17,7 +17,7 @@ import lombok.ToString;
 @Builder
 public class ToDoListVO {
 	
-	private int tno;
+	private Long tno;
 	private String checkList;
 	private Date todayDate;
 	

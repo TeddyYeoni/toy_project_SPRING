@@ -28,7 +28,7 @@ public interface BoardDao {
 	// 총 게시물 수
 	int totalCount(Criteria criteria);
 
-	// 최근 게시물 목
+	// 최근 게시물 목록
 	List<BoardVO> recentBoardList();
 
 	
