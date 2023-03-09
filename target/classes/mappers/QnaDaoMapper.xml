@@ -24,5 +24,17 @@
 		from mou_qna
 	</select>
 
+	<select id="recentQnaList" resultType="qnaVO">
+		<![CDATA[
+		select
+			rownum, qno, title, writer, writedate
+		from 
+			(select
+				/*+index_desc(mou_qna pk_qna)*/
+				rownum as rn, qno, title, writer, writedate
+			from mou_qna where rownum <= 5)
+		where rn > 0
+		]]>
+	</select>
 
 </mapper>

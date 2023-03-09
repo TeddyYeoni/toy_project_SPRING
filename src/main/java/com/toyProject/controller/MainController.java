@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.toyProject.service.BoardService;
+import com.toyProject.service.QnaService;
 
 @Controller
 @RequestMapping(value = { "/main", "" })
@@ -15,10 +16,13 @@ public class MainController {
 	@Autowired
 	BoardService boardService;
 
+	@Autowired
+	QnaService qnaService;
+
 	@GetMapping
 	public String mainPage(Model model) {
 		model.addAttribute("recentBoard", boardService.recentBoardList());
+		model.addAttribute("recentQna", qnaService.recentQnaList());
 		return "main";
 	}
-
 }

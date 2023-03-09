@@ -22,5 +22,9 @@ public class QnaService {
 	public int totalCount(Criteria criteria) {
 		return qnaDao.totalCount(criteria);
 	}
+	
+	public List<QnaVO> recentQnaList(){
+		return qnaDao.recentQnaList();
+	}
 
 }

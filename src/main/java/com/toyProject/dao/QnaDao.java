@@ -29,6 +29,6 @@ public interface QnaDao {
 	int totalCount(Criteria criteria);
 	
 	// 최근 질문 목록
-	List<QnaVO> recentQnAList();
+	List<QnaVO> recentQnaList();
 	
 }
