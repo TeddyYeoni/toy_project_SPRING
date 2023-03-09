@@ -24,5 +24,11 @@ public class QnaContoller {
 		model.addAttribute("page", new Pagination(criteria, qnaService.totalCount(criteria)));
 		return "qna/qnaList";
 	}
+	
+	@GetMapping("/detail")
+	public String select(Model model, Long qno) {
+		model.addAttribute("qna", qnaService.findByQno(qno));
+		return "qna/detail";
+	}
 
 }

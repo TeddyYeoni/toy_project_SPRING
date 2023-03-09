@@ -26,5 +26,9 @@ public class QnaService {
 	public List<QnaVO> recentQnaList(){
 		return qnaDao.recentQnaList();
 	}
+	
+	public QnaVO findByQno(Long qno) {
+		return qnaDao.findByQno(qno);
+	}
 
 }
