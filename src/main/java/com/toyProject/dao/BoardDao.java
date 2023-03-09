@@ -2,8 +2,6 @@ package com.toyProject.dao;
 
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
-
 import com.toyProject.domain.BoardVO;
 import com.toyProject.domain.Criteria;
 
@@ -12,7 +10,7 @@ public interface BoardDao {
 	// 게시글 목록
 	List<BoardVO> boardList(Criteria criteria);
 	
-	// 게시글 상세
+	// 게시글 조회
 	BoardVO findByBno(Long bno);
 	
 	// 새로운 bno 생성

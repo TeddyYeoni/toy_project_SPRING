@@ -28,4 +28,9 @@ public class BoardService {
 		return boardDao.recentBoardList();
 	}
 	
+	public BoardVO findByBno(Long bno) {
+		return boardDao.findByBno(bno);
+	}
+	
+	
 }

@@ -36,5 +36,9 @@
 		where rn > 0
 		]]>
 	</select>
-
+	
+	<select id="findByBno" resultType="boardVO">
+		select * from mou_board where bno = #{bno}
+	</select>
+	
 </mapper>

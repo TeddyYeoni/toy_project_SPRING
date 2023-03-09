@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.toyProject.service.BoardService;
 
 @Controller
-@RequestMapping("/main")
+@RequestMapping(value = { "/main", "" })
 public class MainController {
-	
+
 	@Autowired
 	BoardService boardService;
 

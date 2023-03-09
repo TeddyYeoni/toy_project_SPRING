@@ -21,13 +21,22 @@ public class BoardController {
 	@Autowired
 	private BoardService boardService;
 
+	// 게시물 목록
 	@GetMapping(value = { "", "/", "/list" })
 	public String list(Model model, @ModelAttribute("cri") Criteria criteria) {
 
 		model.addAttribute("board_list", boardService.boardList(criteria));
 		model.addAttribute("page", new Pagination(criteria, boardService.totalCount(criteria)));
 
-		return "board/list";
+		return "board/boardList";
 	}
+	
+	// 게시물 조회
+	@GetMapping("/detail")
+	public String select(Model model, Long bno) {
+		model.addAttribute("board", boardService.findByBno(bno));
+		return "board/boardDeatil";
+	}
+	
 
 }
