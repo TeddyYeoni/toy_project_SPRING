@@ -21,7 +21,7 @@ public class BoardController {
 	@Autowired
 	private BoardService boardService;
 
-	@GetMapping(value = { "/", "/list" })
+	@GetMapping(value = { "", "/", "/list" })
 	public String list(Model model, @ModelAttribute("cri") Criteria criteria) {
 
 		model.addAttribute("board_list", boardService.boardList(criteria));

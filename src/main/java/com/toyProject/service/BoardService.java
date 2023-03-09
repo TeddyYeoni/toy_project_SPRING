@@ -23,5 +23,9 @@ public class BoardService {
 	public int totalCount(Criteria criteria) {
 		return boardDao.totalCount(criteria);
 	}
+
+	public List<BoardVO> recentBoardList() {
+		return boardDao.recentBoardList();
+	}
 	
 }

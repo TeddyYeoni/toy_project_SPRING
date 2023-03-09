@@ -20,7 +20,21 @@
 	</select>
 
 	<select id="totalCount" resultType="int">
-		select count(bno) as count from mou_board
+		select count(bno) as count
+		from mou_board
+	</select>
+
+	<select id="recentBoardList" resultType="boardVO">
+		<![CDATA[
+		select
+			rownum, bno, title, writer, writedate
+		from 
+			(select
+				/*+index_desc(mou_board pk_board)*/
+				rownum as rn, bno, title, writer, writedate
+			from mou_board where rownum <= 5)
+		where rn > 0
+		]]>
 	</select>
 
 </mapper>
