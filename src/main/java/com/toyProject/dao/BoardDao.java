@@ -13,8 +13,8 @@ public interface BoardDao {
 	// 게시글 조회
 	BoardVO findByBno(Long bno);
 	
-	// 새로운 bno 생성
-	int getNewBno();
+	// 마지막 게시물 번호 조회
+	int getLastBno();
 	
 	// 게시글 추가
 	int addContent();
