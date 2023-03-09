@@ -15,8 +15,13 @@
 				/*+index_desc(mou_qna pk_qna)*/
 				rownum as rn, qno, title, writer, writeDate
 			from mou_qna where rownum <= #{maxRow})
-		where rn > #{minRow})
+		where rn > #{minRow}
 		]]>
+	</select>
+	
+	<select id="totalCount" resultType="int">
+		select count(qno) as count
+		from mou_qna
 	</select>
 
 

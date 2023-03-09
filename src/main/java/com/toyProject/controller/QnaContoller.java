@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.toyProject.domain.paging.Criteria;
+import com.toyProject.domain.paging.Pagination;
 import com.toyProject.service.QnaService;
 
 @Controller
@@ -20,6 +21,7 @@ public class QnaContoller {
 	@GetMapping(value = { "", "/", "/qna" })
 	public String list(Model model, @ModelAttribute("cri") Criteria criteria) {
 		model.addAttribute("qna_list", qnaService.qnaList(criteria));
+		model.addAttribute("page", new Pagination(criteria, qnaService.totalCount(criteria)));
 		return "qna/qnaList";
 	}
 

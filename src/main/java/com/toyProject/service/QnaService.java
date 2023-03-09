@@ -19,4 +19,8 @@ public class QnaService {
 		return qnaDao.qnaList(criteria);
 	}
 
+	public int totalCount(Criteria criteria) {
+		return qnaDao.totalCount(criteria);
+	}
+
 }
