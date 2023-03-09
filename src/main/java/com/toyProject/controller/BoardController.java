@@ -30,7 +30,7 @@ public class BoardController {
 
 		return "board/boardList";
 	}
-	
+
 	// 게시물 조회
 	@GetMapping("/detail")
 	public String select(Model model, Long bno) {
@@ -38,5 +38,10 @@ public class BoardController {
 		return "board/boardDeatil";
 	}
 	
+	// 게시믈 작성 폼
+	@GetMapping("/write")
+	public String insert() {
+		return "board/boardWriteForm";
+	}
 
 }

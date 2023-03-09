@@ -15,7 +15,7 @@
 		<p>소통할 수 있는 공간🎈</p>
 	</div>
 	<div class="text-right my-2">
-		<a href="#" class="btn btn-outline-primary">New</a>
+		<a href="${contextPath}/board/write" class="btn btn-outline-primary">New</a>
 	</div>
 	<form id="listForm">
 		<table class="table">
