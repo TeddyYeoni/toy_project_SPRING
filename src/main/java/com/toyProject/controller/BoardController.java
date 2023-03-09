@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.toyProject.domain.Criteria;
-import com.toyProject.domain.Pagination;
+import com.toyProject.domain.paging.Criteria;
+import com.toyProject.domain.paging.Pagination;
 import com.toyProject.service.BoardService;
 
 import lombok.extern.log4j.Log4j;

@@ -3,7 +3,7 @@ package com.toyProject.dao;
 import java.util.List;
 
 import com.toyProject.domain.BoardVO;
-import com.toyProject.domain.Criteria;
+import com.toyProject.domain.paging.Criteria;
 
 public interface BoardDao {
 
