@@ -8,7 +8,7 @@
 		<h1>New Diary✏</h1>
 	</div>
 
-	<form action="${contextPath}/diary/newDiary" method="post">
+	<form action="${contextPath}/diary/write" method="post">
 		<input type="hidden" name="writer" value="${auth.id}">
 		${auth.id}
 		<div class="form-group">

@@ -5,8 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.toyProject.domain.DiaryVO;
 import com.toyProject.domain.paging.Criteria;
 import com.toyProject.domain.paging.Pagination;
 import com.toyProject.service.BoardService;
@@ -33,7 +36,7 @@ public class DiaryController {
 
 	// 다이어리 작성 폼
 	@GetMapping("/write")
-	public String insert() {
+	public String dairyForm() {
 		return "diary/diaryWriteForm";
 	}
 
@@ -42,6 +45,12 @@ public class DiaryController {
 	public String select(Model model, Long dno) {
 		model.addAttribute("diary", diaryService.findByDno(dno));
 		return "diary/diaryDetail";
+	}
+
+	@PostMapping("/write")
+	public String insert(RedirectAttributes rttr, DiaryVO diaryVO) {
+		diaryService.addDiary(diaryVO);
+		return "redirect:diary/diaryList";
 	}
 
 }
