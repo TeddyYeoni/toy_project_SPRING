@@ -9,5 +9,9 @@
 	<select id="diaryList" resultType="diaryVO">
 		select * from mou_diary order by dno desc
 	</select>
+	
+	<select id="totalCount" resultType="int">
+		select count(dno) as count from mou_diary
+	</select>
 
 </mapper>
