@@ -19,8 +19,9 @@ public class DiaryController {
 	@Autowired
 	private DiaryService diaryService;
 
+	// 다이어리 목록
 	@GetMapping(value = { "", "/", "/list" })
-	public String diaryList(Model model, @ModelAttribute("cri") Criteria criteria) {
+	public String list(Model model, @ModelAttribute("cri") Criteria criteria) {
 		
 		criteria = new Criteria(1,12);
 		
@@ -28,6 +29,12 @@ public class DiaryController {
 		model.addAttribute("page", new Pagination(criteria, diaryService.totalCount(criteria)));
 		
 		return "diary/diaryList";
+	}
+	
+	// 다이어리 작성 폼
+	@GetMapping("/write")
+	public String insert() {
+		return "diary/diaryWriteForm";
 	}
 
 }

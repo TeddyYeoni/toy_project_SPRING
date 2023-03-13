@@ -18,7 +18,7 @@
 		<p>오늘 하루 기록하기🎈</p>
 	</div>
 	<div class="text-right my-2">
-		<a href="${contextPath}/diary/writeForm"
+		<a href="${contextPath}/diary/write"
 			class="btn btn-outline-primary">New</a>
 	</div>
 	<form id="listForm">
