@@ -7,15 +7,24 @@
 <mapper namespace="com.toyProject.dao.DiaryDao">
 
 	<select id="diaryList" resultType="diaryVO">
-		select * from mou_diary order by dno desc
+		select * from mou_diary order
+		by dno desc
 	</select>
-	
+
 	<select id="totalCount" resultType="int">
-		select count(dno) as count from mou_diary
+		select count(dno) as count
+		from mou_diary
 	</select>
-	
+
 	<select id="findByDno" resultType="diaryVO">
-		select * from mou_diary where dno = #{dno}
+		select * from mou_diary where
+		dno = #{dno}
 	</select>
+
+	<insert id="addDiary" parameterType="diaryVO">
+		insert into
+		mou_diary(dno, writer, content, weather, emotion, praise, thanks)
+		values(mou_diary_seq.nextval, #{writer}, #{content}, #{weather}, #{emotion}, #{praise}, #{thanks})
+	</insert>
 
 </mapper>

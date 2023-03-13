@@ -15,13 +15,13 @@ public interface DiaryDao {
 	DiaryVO findByDno(Long dno);
 	
 	// 다이어리 추가
-	int addDiary();
+	void addDiary(DiaryVO diaryVO);
 	
 	// 다이어리 수정
 	void modifyDiary(DiaryVO diaryVO);
 	
 	// 다이어리 삭제
-	void deleteDiary(Long dno);
+	void removeDiary(Long dno);
 	
 	// 총 게시물 수
 	int totalCount(Criteria criteria);
