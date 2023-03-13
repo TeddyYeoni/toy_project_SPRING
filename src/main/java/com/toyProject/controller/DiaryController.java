@@ -52,5 +52,11 @@ public class DiaryController {
 		diaryService.addDiary(diaryVO);
 		return "redirect:diary/diaryList";
 	}
+	
+	@GetMapping
+	public String delete(Long dno, RedirectAttributes rttr) {
+		diaryService.removeDiary(dno);
+		return "redirect:diary/diaryList";
+	}
 
 }

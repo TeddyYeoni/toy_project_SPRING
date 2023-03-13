@@ -23,8 +23,14 @@
 
 	<insert id="addDiary" parameterType="diaryVO">
 		insert into
-		mou_diary(dno, writer, content, weather, emotion, praise, thanks)
-		values(mou_diary_seq.nextval, #{writer}, #{content}, #{weather}, #{emotion}, #{praise}, #{thanks})
+		mou_diary(dno,
+		writer, content, weather, emotion, praise, thanks)
+		values(mou_diary_seq.nextval, #{writer}, #{content}, #{weather},
+		#{emotion}, #{praise}, #{thanks})
 	</insert>
+
+	<delete id="removeDiary">
+		delete from mou_diary where dno= #{dno}
+	</delete>
 
 </mapper>

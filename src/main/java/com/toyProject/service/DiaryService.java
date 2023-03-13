@@ -29,10 +29,15 @@ public class DiaryService {
 	public DiaryVO findByDno(Long dno) {
 		return diaryDao.findByDno(dno);
 	}
-	
+
 	// 다이어리 추가
 	public void addDiary(DiaryVO diaryVO) {
 		diaryDao.addDiary(diaryVO);
+	}
+
+	// 다이어리 삭제
+	public void removeDiary(Long dno) {
+		diaryDao.removeDiary(dno);
 	}
 
 }
