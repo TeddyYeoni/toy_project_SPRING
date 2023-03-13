@@ -34,7 +34,7 @@ public class RootConfig {
 		sqlSessionFactoryBean.setDataSource(dataSource);
 		sqlSessionFactoryBean.setMapperLocations(
 				new PathMatchingResourcePatternResolver().getResources("classpath:mappers/**/*Mapper.xml"));
-		sqlSessionFactoryBean.setTypeAliases(BoardVO.class, QnaVO.class);
+		sqlSessionFactoryBean.setTypeAliases(BoardVO.class, QnaVO.class, DiaryVO.class);
 		return sqlSessionFactoryBean;
 	}
 
