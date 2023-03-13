@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 
 <%@ include file="../layout/header.jsp"%>
-<script src="${contextPath}/resources/js/diary/list.js"></script>
+<script src="${contextPath}/resources/js/diary/diaryList.js"></script>
 <link rel="stylesheet"
 	href="${contextPath}/resources/css/diaryStyle.css">
 
@@ -18,8 +18,7 @@
 		<p>오늘 하루 기록하기🎈</p>
 	</div>
 	<div class="text-right my-2">
-		<a href="${contextPath}/diary/write"
-			class="btn btn-outline-primary">New</a>
+		<a href="${contextPath}/diary/write" class="btn btn-outline-primary">New</a>
 	</div>
 	<form id="listForm">
 		<div class="container bootstrap snippets bootdeys">
@@ -35,11 +34,12 @@
 									</h6>
 									<h6 class="category">
 										<b>Emotion</b>&nbsp;&nbsp;${d.emotion}
-									</h6><br>
+									</h6>
+									<br>
 									<h4 class="title">
 										<a href="${d.dno}" class="d_title">${d.writeDate}</a>
-									</h4><br>
-									<b class="category">Praise</b><br>
+									</h4>
+									<br> <b class="category">Praise</b><br>
 									<p class="description">${d.praise}</p>
 									<b class="category">Thanks</b><br>
 									<p class="description">${d.thanks}</p>

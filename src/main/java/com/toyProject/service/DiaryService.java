@@ -11,12 +11,12 @@ import com.toyProject.domain.paging.Criteria;
 
 @Service
 public class DiaryService {
-	
+
 	@Autowired
 	private DiaryDao diaryDao;
-	
+
 	// 다이어리 목록
-	public List<DiaryVO> diaryList(Criteria criteria){
+	public List<DiaryVO> diaryList(Criteria criteria) {
 		return diaryDao.diaryList(criteria);
 	}
 
@@ -24,6 +24,10 @@ public class DiaryService {
 	public int totalCount(Criteria criteria) {
 		return diaryDao.totalCount(criteria);
 	}
-	
+
+	// 다이어리 조회
+	public DiaryVO findByDno(Long dno) {
+		return diaryDao.findByDno(dno);
+	}
 
 }

@@ -13,5 +13,9 @@
 	<select id="totalCount" resultType="int">
 		select count(dno) as count from mou_diary
 	</select>
+	
+	<select id="findByDno" resultType="diaryVO">
+		select * from mou_diary where dno = #{dno}
+	</select>
 
 </mapper>

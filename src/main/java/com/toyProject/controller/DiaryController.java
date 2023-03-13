@@ -22,19 +22,26 @@ public class DiaryController {
 	// 다이어리 목록
 	@GetMapping(value = { "", "/", "/list" })
 	public String list(Model model, @ModelAttribute("cri") Criteria criteria) {
-		
-		criteria = new Criteria(1,12);
-		
+
+		criteria = new Criteria(1, 12);
+
 		model.addAttribute("diary_list", diaryService.diaryList(criteria));
 		model.addAttribute("page", new Pagination(criteria, diaryService.totalCount(criteria)));
-		
+
 		return "diary/diaryList";
 	}
-	
+
 	// 다이어리 작성 폼
 	@GetMapping("/write")
 	public String insert() {
 		return "diary/diaryWriteForm";
+	}
+
+	// 다이어리 조회
+	@GetMapping("/detail")
+	public String select(Model model, Long dno) {
+		model.addAttribute("diary", diaryService.findByDno(dno));
+		return "diary/diaryDetail";
 	}
 
 }
