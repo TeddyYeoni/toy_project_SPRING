@@ -28,7 +28,7 @@ public class QnaContoller {
 	@GetMapping("/detail")
 	public String select(Model model, Long qno) {
 		model.addAttribute("qna", qnaService.findByQno(qno));
-		return "qna/detail";
+		return "qna/qnaDetail";
 	}
 
 }

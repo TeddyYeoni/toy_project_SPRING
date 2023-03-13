@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 
 <%@ include file="../layout/header.jsp"%>
-<script src="${contextPath}/resources/js/qna/list.js"></script>
+<script src="${contextPath}/resources/js/qna/qnaList.js"></script>
 
 <style>
 .holder {
