@@ -1,5 +1,5 @@
 package com.toyProject.dao;
 
-public interface ToDoListDao {
+public interface MemberDAO {
 
 }

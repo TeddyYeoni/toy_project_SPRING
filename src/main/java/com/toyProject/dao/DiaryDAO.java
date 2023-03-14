@@ -6,7 +6,7 @@ import com.toyProject.domain.BoardVO;
 import com.toyProject.domain.DiaryVO;
 import com.toyProject.domain.paging.Criteria;
 
-public interface DiaryDao {
+public interface DiaryDAO {
 
 	// 다이어리 목록
 	List<DiaryVO> diaryList(Criteria criteria);

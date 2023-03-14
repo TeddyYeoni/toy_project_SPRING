@@ -12,10 +12,10 @@ import com.toyProject.domain.paging.Criteria;
 import lombok.extern.log4j.Log4j;
 
 @Log4j
-public class BoardDaoTest extends AppTest{
+public class BoardDAOTest extends AppTest{
 
 	@Autowired
-	BoardDao boardDao;
+	BoardDAO boardDao;
 	
 	@Test
 	public void boardListTest() {

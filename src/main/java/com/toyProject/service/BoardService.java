@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
-import com.toyProject.dao.BoardDao;
+import com.toyProject.dao.BoardDAO;
 import com.toyProject.domain.BoardVO;
 import com.toyProject.domain.paging.Criteria;
 
@@ -14,7 +14,7 @@ import com.toyProject.domain.paging.Criteria;
 public class BoardService {
 
 	@Autowired
-	private BoardDao boardDao;
+	private BoardDAO boardDao;
 	
 	// 게시물 목록
 	public List<BoardVO> boardList(Criteria criteria){

@@ -5,7 +5,7 @@ import java.util.List;
 import com.toyProject.domain.QnaVO;
 import com.toyProject.domain.paging.Criteria;
 
-public interface QnaDao {
+public interface QnaDAO {
 	
 	// 질문 목록
 	List<QnaVO> qnaList(Criteria criteria);

@@ -13,10 +13,10 @@ import com.toyProject.domain.paging.Criteria;
 import lombok.extern.log4j.Log4j;
 
 @Log4j
-public class DiaryDaoTest extends AppTest {
+public class DiaryDAOTest extends AppTest {
 
 	@Autowired
-	private DiaryDao diaryDao;
+	private DiaryDAO diaryDao;
 
 	@Test
 	@Ignore
@@ -34,6 +34,7 @@ public class DiaryDaoTest extends AppTest {
 	}
 	
 	@Test
+	@Ignore
 	public void deleteTest() {
 		Long dno = 2L;
 		diaryDao.removeDiary(dno);

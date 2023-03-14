@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.toyProject.dao.DiaryDao;
+import com.toyProject.dao.DiaryDAO;
 import com.toyProject.domain.DiaryVO;
 import com.toyProject.domain.paging.Criteria;
 
@@ -13,7 +13,7 @@ import com.toyProject.domain.paging.Criteria;
 public class DiaryService {
 
 	@Autowired
-	private DiaryDao diaryDao;
+	private DiaryDAO diaryDao;
 
 	// 다이어리 목록
 	public List<DiaryVO> diaryList(Criteria criteria) {

@@ -5,7 +5,7 @@ import java.util.List;
 import com.toyProject.domain.BoardVO;
 import com.toyProject.domain.paging.Criteria;
 
-public interface BoardDao {
+public interface BoardDAO {
 
 	// 게시글 목록
 	List<BoardVO> boardList(Criteria criteria);
