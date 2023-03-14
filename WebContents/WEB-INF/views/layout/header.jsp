@@ -69,7 +69,7 @@ body {
 		<ul class="navbar-nav my-3">
 			<li class="nav-item "><a
 				class="nav-link font-weight-bold text-light mx-1"
-				href="${contextPath}/member/joinForm"><h5>Join</h5></a></li>
+				href="${contextPath}/member/join"><h5>Join</h5></a></li>
 			<li class="nav-item "><a
 				class="nav-link font-weight-bold text-light mx-1"
 				href="${contextPath}/member/"><h5>Login</h5></a></li>

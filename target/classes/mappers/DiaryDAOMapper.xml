@@ -4,7 +4,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.toyProject.dao.DiaryDao">
+<mapper namespace="com.toyProject.dao.DiaryDAO">
 
 	<select id="diaryList" resultType="diaryVO">
 		select * from mou_diary order
