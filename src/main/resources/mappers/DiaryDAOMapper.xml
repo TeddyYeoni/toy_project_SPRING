@@ -7,8 +7,16 @@
 <mapper namespace="com.toyProject.dao.DiaryDAO">
 
 	<select id="diaryList" resultType="diaryVO">
-		select * from mou_diary order
-		by dno desc
+		<![CDATA[
+		select
+			rownum, dno, writer, weather, emotion, praise, thanks, writedate
+		from 
+			(select
+				/*+index_desc(mou_diary pk_diary)*/
+				rownum as rn, dno, writer, weather, emotion, praise, thanks, writedate
+			from mou_diary where rownum <= #{maxRow})
+		where rn > #{minRow}
+		]]>
 	</select>
 
 	<select id="totalCount" resultType="int">
