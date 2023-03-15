@@ -11,6 +11,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.toyProject.domain.DiaryVO;
 import com.toyProject.domain.paging.Criteria;
+import com.toyProject.domain.paging.DiaryPagination;
 import com.toyProject.domain.paging.Pagination;
 import com.toyProject.service.BoardService;
 import com.toyProject.service.DiaryService;
@@ -25,12 +26,13 @@ public class DiaryController {
 	// 다이어리 목록
 	@GetMapping(value = { "", "/", "/list" })
 	public String list(Model model, @ModelAttribute("cri") Criteria criteria) {
-		
+
 		criteria.setPagingAmount(9);
-
-		model.addAttribute("diary_list", diaryService.diaryList(criteria));
+		
+		
 		model.addAttribute("page", new Pagination(criteria, diaryService.totalCount(criteria)));
-
+	    model.addAttribute("diary_list", diaryService.diaryList(criteria));
+		
 		return "diary/diaryList";
 	}
 
@@ -52,7 +54,7 @@ public class DiaryController {
 		diaryService.addDiary(diaryVO);
 		return "redirect:diary/diaryList";
 	}
-	
+
 	@GetMapping("/remove")
 	public String delete(Long dno, RedirectAttributes rttr) {
 		diaryService.removeDiary(dno);

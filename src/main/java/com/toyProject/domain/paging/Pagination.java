@@ -1,7 +1,9 @@
 package com.toyProject.domain.paging;
 
 import lombok.Getter;
+import lombok.Setter;
 
+@Setter
 @Getter
 public class Pagination {
 
