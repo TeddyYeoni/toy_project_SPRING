@@ -11,4 +11,7 @@ public interface MemberDAO {
 	// 회원 등급 조회
 	MemberGrade findMemberGradeById(String id);
 
+	// 로그인 확인
+	boolean loginConfirm(String id, String pwd);
+	
 }

@@ -22,5 +22,10 @@ public class MemberService {
 	public MemberGrade findMemberGradeById(String id) {
 		return memberDAO.findMemberGradeById(id);
 	}
+	
+	// 로그인 확인
+	public boolean loginConfirm(String id, String pwd) {
+		return memberDAO.loginConfirm(id, pwd);
+	}
 
 }

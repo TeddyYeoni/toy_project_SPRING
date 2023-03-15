@@ -53,7 +53,7 @@ public class DiaryController {
 		return "redirect:diary/diaryList";
 	}
 	
-	@GetMapping
+	@GetMapping("/remove")
 	public String delete(Long dno, RedirectAttributes rttr) {
 		diaryService.removeDiary(dno);
 		return "redirect:diary/diaryList";

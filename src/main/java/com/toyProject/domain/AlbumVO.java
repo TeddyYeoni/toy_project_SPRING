@@ -18,6 +18,7 @@ import lombok.ToString;
 public class AlbumVO {
 
 	private Long ano;
+	private String id;
 	private String title;
 	private String content;
 	private String imageFileName;

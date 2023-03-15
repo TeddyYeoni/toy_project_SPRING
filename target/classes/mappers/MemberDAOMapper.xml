@@ -8,12 +8,14 @@
 <mapper namespace="com.toyProject.dao.MemberDAO">
 
 	<insert id="joinMember" parameterType="memberVO">
-		insert into universe_mem(mno,id,pwd,name,email)
+		insert into
+		universe_mem(mno,id,pwd,name,email)
 		values(mno_seq.nextval,#{id},#{pwd},#{name},#{email})
 	</insert>
-	
+
 	<select id="findMemberGradeById" resultType="memberGrade">
-		select grade from universe_mem where id=#{id}
+		select grade from
+		universe_mem where id=#{id}
 	</select>
-	
+
 </mapper>

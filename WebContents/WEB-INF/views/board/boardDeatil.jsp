@@ -4,7 +4,7 @@
 <%@ include file="../layout/header.jsp"%>
 
 <script src="${contextPath}/resources/js/reply/board_ReplyService.js"></script>
-<script src="${contextPath}/resources/js/board/detail.js"></script>
+<script src="${contextPath}/resources/js/board/boardDetail.js"></script>
 
 <div class="container">
 	<div class="jumbotron">

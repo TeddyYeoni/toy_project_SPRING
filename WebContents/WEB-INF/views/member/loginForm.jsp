@@ -21,7 +21,7 @@
 		<form class="login_form" action="${contextPath}/member/login"
 			method="post">
 			<div class="form-group">
-				<b>ID</b><input type="text" class="form-control" name="id">
+				<b>ID</b><input type="text" class="form-control" name="id" id="id">
 			</div>
 			<div class="form-group">
 				<b>PASSWORD</b><input type="password" class="form-control"

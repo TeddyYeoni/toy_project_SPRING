@@ -40,44 +40,45 @@ body {
 }
 </style>
 <body>
-	<nav class="navbar navbar-expand-sm">
-		<!-- Brand/logo -->
-		<a class="navbar-brand font-weight-bold text-light mx-5"
-			href="${contextPath}/main">
-			<h1>MY ONLY UNIVERSE🚀</h1>
-		</a>
-		<!-- Links -->
-		<ul class="navbar-nav mx-5 my-2">
-			<li class="nav-item"><a
-				class="nav-link font-weight-bold text-light mx-3"
-				href="${contextPath}/todo/"><h3>To Do List</h3></a></li>
-			<li class="nav-item"><a
-				class="nav-link font-weight-bold text-light mx-3"
-				href="${contextPath}/album/"><h3>Album</h3></a></li>
-			<li class="nav-item"><a
-				class="nav-link font-weight-bold text-light mx-3"
-				href="${contextPath}/diary/"><h3>Diary</h3></a></li>
-			<li class="nav-item"><a
-				class="nav-link font-weight-bold text-light mx-3"
-				href="${contextPath}/board/"><h3>Board</h3></a></li>
-			<li class="nav-item"><a
-				class="nav-link font-weight-bold text-light mx-3"
-				href="${contextPath}/qna/"><h3>Q&A</h3></a></li>
-		</ul>
+	<div class="topBar">
+		<nav class="navbar navbar-expand-sm">
+			<!-- Brand/logo -->
+			<a class="navbar-brand font-weight-bold text-light mx-5"
+				href="${contextPath}/main">
+				<h1>MY ONLY UNIVERSE🚀</h1>
+			</a>
+			<!-- Links -->
+			<ul class="navbar-nav mx-5 my-2">
+				<li class="nav-item"><a
+					class="nav-link font-weight-bold text-light mx-3"
+					href="${contextPath}/todo/"><h3>To Do List</h3></a></li>
+				<li class="nav-item"><a
+					class="nav-link font-weight-bold text-light mx-3"
+					href="${contextPath}/album/"><h3>Album</h3></a></li>
+				<li class="nav-item"><a
+					class="nav-link font-weight-bold text-light mx-3"
+					href="${contextPath}/diary/"><h3>Diary</h3></a></li>
+				<li class="nav-item"><a
+					class="nav-link font-weight-bold text-light mx-3"
+					href="${contextPath}/board/"><h3>Board</h3></a></li>
+				<li class="nav-item"><a
+					class="nav-link font-weight-bold text-light mx-3"
+					href="${contextPath}/qna/"><h3>Q&A</h3></a></li>
+			</ul>
 
-
-		<ul class="navbar-nav my-3">
-			<li class="nav-item "><a
-				class="nav-link font-weight-bold text-light mx-1"
-				href="${contextPath}/member/join"><h5>Join</h5></a></li>
-			<li class="nav-item "><a
-				class="nav-link font-weight-bold text-light mx-1"
-				href="${contextPath}/member/"><h5>Login</h5></a></li>
-			<li class="nav-item "><a
-				class="nav-link font-weight-bold text-light mx-1" href="#"><h5>
-						My Space🐾</h5></a></li>
-			<li class="nav-item "><a
-				class="nav-link font-weight-bold text-light mx-1"
-				href="${contextPath}/member/logout"><h5>Logout</h5></a></li>
-		</ul>
-	</nav>
+			<ul class="navbar-nav my-3">
+				<li class="nav-item "><a
+					class="nav-link font-weight-bold text-light mx-1"
+					href="${contextPath}/member/join"><h5>Join</h5></a></li>
+				<li class="nav-item "><a
+					class="nav-link font-weight-bold text-light mx-1"
+					href="${contextPath}/member/"><h5>Login</h5></a></li>
+				<li class="nav-item "><a
+					class="nav-link font-weight-bold text-light mx-1" href="#"><h5>
+							My Space🐾</h5></a></li>
+				<li class="nav-item "><a
+					class="nav-link font-weight-bold text-light mx-1"
+					href="${contextPath}/member/logout"><h5>Logout</h5></a></li>
+			</ul>
+		</nav>
+	</div>
