@@ -25,5 +25,10 @@ public class AlbumController {
 		model.addAttribute("album_list",albumList);
 		return "album/albumList";
 	}
+	
+	@GetMapping("/upload")
+	public String uploadForm() {
+		return "album/albumUploadForm";
+	}
 
 }
