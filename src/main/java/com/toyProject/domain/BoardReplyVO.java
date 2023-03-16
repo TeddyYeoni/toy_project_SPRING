@@ -17,8 +17,8 @@ import lombok.ToString;
 @Builder
 public class BoardReplyVO {
 
-	private int b_rno;
-	private int bno;
+	private Long b_rno;
+	private Long bno;
 	private String reply;
 	private String writer;
 	private Date replyDate;
