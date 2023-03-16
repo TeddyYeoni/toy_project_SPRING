@@ -32,7 +32,7 @@ body {
 			<p>나만의 소중한 순간 저장하기🎈</p>
 		</div>
 		<div class="text-right">
-			<a href="${contextPath}/album/uploadForm"
+			<a href="${contextPath}/album/upload"
 				class="btn btn-outline-success my-3 addPhotoBtn">Upload</a>
 		</div>
 
