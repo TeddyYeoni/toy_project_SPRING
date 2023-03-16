@@ -1,6 +1,7 @@
 package com.toyProject.domain;
 
-import java.util.Date;
+
+import java.sql.Date;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,6 +20,7 @@ public class ToDoListVO {
 	
 	private Long tno;
 	private String id;
+	private Long checkNumber;
 	private String checkList;
 	private Date todayDate;
 	

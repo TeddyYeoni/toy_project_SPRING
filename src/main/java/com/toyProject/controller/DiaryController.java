@@ -11,9 +11,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.toyProject.domain.DiaryVO;
 import com.toyProject.domain.paging.Criteria;
-import com.toyProject.domain.paging.DiaryPagination;
 import com.toyProject.domain.paging.Pagination;
-import com.toyProject.service.BoardService;
 import com.toyProject.service.DiaryService;
 
 @Controller
