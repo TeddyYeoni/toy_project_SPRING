@@ -21,5 +21,10 @@ public class ToDoListContoller {
 		toDoListService.toDoList(criteria);
 		return "toDoList/toDoList";
 	}
+	
+	@GetMapping("/add")
+	public String addForm() {
+		return "toDoList/toDoAddForm";
+	}
 
 }
