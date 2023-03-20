@@ -33,7 +33,14 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border:0.1px solid rgba(255,255,255,0.1);
+	border: 0.1px solid rgba(255, 255, 255, 0.1);
+}
+
+.imgContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 </style>
 
@@ -101,22 +108,36 @@ body {
 
 	<div class="row d-flex justify-content-center">
 
-		<div class="col-md-3 col-sm-6 mb-4 mainImg">
-			<a href="${contextPath}/todo"> <img class="img-fluid"
-				src="${contextPath}/resources/img/main/ToDoList.png" alt="">
-			</a>
+		<div class="imgContainer col-md-3 col-sm-6 mb-4 ">
+			<div class="mainImg">
+				<a href="${contextPath}/todo"> <img class="img-fluid"
+					src="${contextPath}/resources/img/main/ToDoList.png" alt="">
+				</a>
+			</div>
+			<div class="my-3">
+				<a href="${contextPath}/todo/add" class="btn btn-outline-light">NEW</a>
+			</div>
 		</div>
 
-		<div class="col-md-3 col-sm-6 mb-4 mainImg">
-			<a href="${contextPath}/album"> <img class="img-fluid"
-				src="${contextPath}/resources/img/main/album.png" alt="">
-			</a>
+		<div class="imgContainer col-md-3 col-sm-6 mb-4">
+			<div class="mainImg">
+				<a href="${contextPath}/album"> <img class="img-fluid"
+					src="${contextPath}/resources/img/main/album.png" alt=""></a>
+			</div>
+			<div class="my-3">
+				<a href="${contextPath}/album/upload" class="btn btn-outline-light">NEW</a>
+			</div>
 		</div>
 
-		<div class="col-md-3 col-sm-6 mb-4 mainImg">
-			<a href="${contextPath}/diary"> <img class="img-fluid"
-				src="${contextPath}/resources/img/main/diary.png" alt="">
-			</a>
+		<div class="imgContainer col-md-3 col-sm-6 mb-4">
+			<div class="mainImg">
+				<a href="${contextPath}/diary"> <img class="img-fluid"
+					src="${contextPath}/resources/img/main/diary.png" alt="">
+				</a>
+			</div>
+			<div class="my-3">
+				<a href="${contextPath}/diary/write" class="btn btn-outline-light">NEW</a>
+			</div>
 		</div>
 
 	</div>

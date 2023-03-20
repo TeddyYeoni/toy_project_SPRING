@@ -33,4 +33,10 @@ public class MemberController {
 		return "redirect:/main";
 	}
 
+	@PostMapping("/login")
+	public String login(RedirectAttributes rttr, String id, String pwd) {
+		memberService.loginConfirm(id, pwd);
+		return "redirect:/main";
+	}
+
 }

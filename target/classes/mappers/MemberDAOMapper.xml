@@ -14,8 +14,7 @@
 	</insert>
 
 	<select id="findMemberGradeById" resultType="memberGrade">
-		select grade from
-		universe_mem where id=#{id}
+		select grade from universe_mem where id=#{id}
 	</select>
-
+	
 </mapper>

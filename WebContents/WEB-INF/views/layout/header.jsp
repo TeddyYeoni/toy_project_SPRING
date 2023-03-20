@@ -67,18 +67,22 @@ body {
 			</ul>
 
 			<ul class="navbar-nav my-3">
-				<li class="nav-item "><a
-					class="nav-link font-weight-bold text-light mx-1"
-					href="${contextPath}/member/join"><h5>Join</h5></a></li>
-				<li class="nav-item "><a
-					class="nav-link font-weight-bold text-light mx-1"
-					href="${contextPath}/member/"><h5>Login</h5></a></li>
-				<li class="nav-item "><a
-					class="nav-link font-weight-bold text-light mx-1" href="#"><h5>
-							My Space🐾</h5></a></li>
-				<li class="nav-item "><a
-					class="nav-link font-weight-bold text-light mx-1"
-					href="${contextPath}/member/logout"><h5>Logout</h5></a></li>
+				<c:if test="${empty auth}">
+					<li class="nav-item "><a
+						class="nav-link font-weight-bold text-light mx-1"
+						href="${contextPath}/member/joinForm"><h5>Join</h5></a></li>
+					<li class="nav-item "><a
+						class="nav-link font-weight-bold text-light mx-1"
+						href="${contextPath}/member/"><h5>Login</h5></a></li>
+				</c:if>
+				<c:if test="${not empty auth}">
+					<li class="nav-item "><a
+						class="nav-link font-weight-bold text-light mx-1" href="#"><h5>
+								My Space🐾</h5></a></li>
+					<li class="nav-item "><a
+						class="nav-link font-weight-bold text-light mx-1"
+						href="${contextPath}/member/logout"><h5>Logout</h5></a></li>
+				</c:if>
 			</ul>
 		</nav>
 	</div>

@@ -1,6 +1,5 @@
 package com.toyProject.common;
 
-import java.io.PrintWriter;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,15 +18,14 @@ public class BaordReplyController {
 
 	@Autowired
 	private BoardReplyService boardReplyService;
-	
-	private Gson gson;
-	private PrintWriter out;
 
 	@GetMapping("/list")
-	void boardReplyList(Model model, Long bno) {
+	public String boardReplyList(Model model, Long bno) {
 		List<BoardReplyVO> boardReplyList = boardReplyService.boardReplyList(bno);
-		model.addAttribute("boardReply", boardReplyList);
-		out.print(gson.toJson(boardReplyList));
+		Gson gson = new Gson();
+		String replyList = gson.toJson(boardReplyList);
+		model.addAttribute("replyList", replyList);
+		return "list";
 	}
 
 }
