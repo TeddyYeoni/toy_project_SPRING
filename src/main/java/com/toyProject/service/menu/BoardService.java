@@ -38,13 +38,13 @@ public class BoardService {
 	
 	// 새로운 bno 생성
 	public int getNewBno() {
-		int newBno = 0;
-		int boardNO = boardDao.getLastBno();
-		newBno = boardNO + 1;
-		if(newBno == 0) {
-			newBno = 1;
+		int boardNO = 0;
+		int lastBoardNO = boardDao.getLastBno();
+		boardNO = lastBoardNO + 1;
+		if(boardNO == 0) {
+			boardNO = 1;
 		} 
-		return newBno;
+		return boardNO;
 	}
 
 	// 게시물 작성

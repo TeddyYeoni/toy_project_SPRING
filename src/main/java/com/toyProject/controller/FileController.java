@@ -21,23 +21,23 @@ import org.springframework.web.bind.annotation.RestController;
 public class FileController {
 
 	@GetMapping("/imgDisplay")
-	public ResponseEntity<byte[]> imgDisplay(String fileName) throws IOException {
-		File file = new File("c:/mou_repo", fileName);
+	public ResponseEntity<byte[]> imgDisplay(String imgFileName) throws IOException {
+		File file = new File("c:/mou_fileRepo", imgFileName);
 		if (!file.exists()) {
 			return new ResponseEntity<byte[]>(HttpStatus.NOT_FOUND);
 		}
 
 		HttpHeaders headers = new HttpHeaders();
 		FileNameMap fileNameMap = URLConnection.getFileNameMap();
-		headers.add("Content-Type", fileNameMap.getContentTypeFor(fileName));
+		headers.add("Content-Type", fileNameMap.getContentTypeFor(imgFileName));
 
 		return new ResponseEntity<byte[]>(FileCopyUtils.copyToByteArray(file), headers, HttpStatus.OK);
 	}
 
 	@GetMapping(value = "/download", produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
-	public ResponseEntity<Resource> download(@RequestHeader("User-Agent") String userAgent, String fileName)
+	public ResponseEntity<Resource> download(@RequestHeader("User-Agent") String userAgent, String imgFileName)
 			throws UnsupportedEncodingException {
-		Resource resource = new FileSystemResource("c:/mou_repo/" + fileName);
+		Resource resource = new FileSystemResource("c:/mou_fileRepo/" + imgFileName);
 		if (!resource.exists()) {
 			return new ResponseEntity<Resource>(HttpStatus.NOT_FOUND);
 		}
