@@ -45,8 +45,7 @@
 						<c:if test="${not empty board.imageFileName}">
 							<div class="preview">
 								<img class="originImg"
-									src="${contextPath}/imgDisplay?imagFileName=${board.bno}/${board.imageFileName}>
-								<a href="${contextPath}/download?imageFileName=${board.bno}/${board.imageFileName}">${board.imageFileName}</a>
+									src="${contextPath}/imgDisplay?imageFileName=${board.bno}/${board.imageFileName}">
 							</div>
 						</c:if>
 						<c:if test="${empty board.imageFileName}">

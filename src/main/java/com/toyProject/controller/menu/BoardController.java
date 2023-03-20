@@ -54,8 +54,8 @@ public class BoardController {
 
 	private void fileUpload(BoardVO boardVO, RedirectAttributes rttr,
 			@RequestParam("attachFile") MultipartFile multipartFile) {
-		String fileName = multipartFile.getOriginalFilename();
-		boardVO.setImageFileName(fileName);
+		String imageFileName = multipartFile.getOriginalFilename();
+		boardVO.setImageFileName(imageFileName);
 		boardService.write(boardVO); // 데이터베이스에 저장
 
 		// 업로드
@@ -64,7 +64,7 @@ public class BoardController {
 			uploadPath.mkdirs();
 		}
 		// 업로드 파일 경로 지정
-		File uploadFile = new File(uploadPath, fileName);
+		File uploadFile = new File(uploadPath, imageFileName);
 		try {
 			multipartFile.transferTo(uploadFile); // 파일 업로드
 		} catch (IllegalStateException | IOException e) {
