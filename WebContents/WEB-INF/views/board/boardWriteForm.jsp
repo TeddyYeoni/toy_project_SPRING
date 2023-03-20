@@ -8,13 +8,14 @@
 		<h1>New Board✏</h1>
 	</div>
 
-	<form action="${contextPath}/board/newPost" method="post"
+	<form action="${contextPath}/board/write" method="post"
 		enctype="multipart/form-data">
 		<div class="form-group">
 			<b>Title</b> <input type="text" class="form-control" name="title">
 		</div>
 		<div class="form-group">
-			<b>Writer</b><input type="text" class="form-control" name="writer" value="${auth.id}" readonly="readonly">
+			<b>Writer</b><input type="text" class="form-control" name="writer">
+			<!-- value="${auth.id}" readonly="readonly" -->
 		</div>
 		<div class="form-group">
 			<b>Text</b><br>
@@ -22,7 +23,7 @@
 		</div>
 		<div class="form-group">
 			<b>File Upload</b><br> <input type="file" class="form-control"
-				name="imageFileName">
+				name="attachFile">
 		</div>
 		<div class="text-center">
 			<a href="${contextPath}/board" class="btn btn-outline-dark">Back</a>

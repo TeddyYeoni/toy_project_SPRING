@@ -17,7 +17,7 @@ public interface BoardDAO {
 	int getLastBno();
 	
 	// 게시글 추가
-	int addContent();
+	int addContent(BoardVO boardVO);
 	
 	// 게시글 수정
 	void modifyContent(BoardVO boardVO);

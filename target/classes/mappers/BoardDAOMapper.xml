@@ -19,9 +19,14 @@
 		]]>
 	</select>
 
+	<insert id="addContent" useGeneratedKeys="true" keyColumn="bno">
+		insert into
+		mou_board(bno,title,content,writer,imageFileName)
+		values(#{bno},#{title},#{content},#{writer},#{imageFileName,jdbcType=VARCHAR})
+	</insert>
+
 	<select id="totalCount" resultType="int">
-		select count(bno) as count
-		from mou_board
+		select count(bno) as count from mou_board
 	</select>
 
 	<select id="recentBoardList" resultType="boardVO">
@@ -36,13 +41,13 @@
 		where rn > 0
 		]]>
 	</select>
-	
+
 	<select id="findByBno" resultType="boardVO">
 		select * from mou_board where bno = #{bno}
 	</select>
-	
+
 	<select id="getLastBno" resultType="int">
-		select * max(bno) as boarNO from mou_board
+		select max(bno) as boardNO from mou_board
 	</select>
-	
+
 </mapper>

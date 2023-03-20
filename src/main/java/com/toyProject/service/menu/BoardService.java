@@ -46,6 +46,13 @@ public class BoardService {
 		} 
 		return newBno;
 	}
+
+	// 게시물 작성
+	public int write(BoardVO boardVO) {
+		int boardNO = getNewBno();
+		boardVO.setBno((long) boardNO);
+		return boardDao.addContent(boardVO);
+	}
 	
 	
 }
