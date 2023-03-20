@@ -21,4 +21,8 @@ public class AttachVO {
 	private String fileName; // 파일 이름
 	private FileType fileType; // 파일 타입
 	
+	public enum FileType {
+		IMAGE, OTHER
+	}
+	
 }

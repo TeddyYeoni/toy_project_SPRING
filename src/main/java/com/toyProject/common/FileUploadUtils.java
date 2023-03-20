@@ -10,12 +10,12 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.toyProject.domain.AttachVO;
-import com.toyProject.domain.FileType;
+import com.toyProject.domain.AttachVO.FileType;
 
 @Component
 public class FileUploadUtils {
 
-	private final static String BOARD_UPLOAD_FOLDER = "c:/file_repo/mou";
+	private final static String UPLOAD_FOLDER = "c:/file_repo/mou";
 
 	public List<AttachVO> getAttachVOAndUpload(Long postNo, MultipartFile[] multipartFiles) {
 		List<AttachVO> attachList = new ArrayList<AttachVO>();
@@ -27,7 +27,7 @@ public class FileUploadUtils {
 				attachList.add(attachVO);
 
 				// 파일 업로드
-				File folder = new File(BOARD_UPLOAD_FOLDER + "/" + postNo);
+				File folder = new File(UPLOAD_FOLDER + "/" + postNo);
 				File file = new File(attachVO.getFilePath());
 				if (!folder.exists()) {
 					folder.mkdirs();
@@ -46,7 +46,7 @@ public class FileUploadUtils {
 	private String getFilePath(Long postNo, String originalFilename) {
 		String uuid = UUID.randomUUID().toString();
 
-		return BOARD_UPLOAD_FOLDER + "/" + postNo + "/" + uuid + "_" + originalFilename;
+		return UPLOAD_FOLDER + "/" + postNo + "/" + uuid + "_" + originalFilename;
 	}
 
 	// 파일 타입 결정
@@ -59,8 +59,8 @@ public class FileUploadUtils {
 	}
 
 	// 모든 파일 삭제
-	public void deleteAllFile(Long bno) {
-		File delFolder = new File(BOARD_UPLOAD_FOLDER + "/" + bno);
+	public void deleteAllFile(Long postNum) {
+		File delFolder = new File(UPLOAD_FOLDER + "/" + postNum);
 
 		if (delFolder.exists()) {
 			// 대상 폴더에 존재하는 모든 파일의 경로를 파일 객체로 생성
