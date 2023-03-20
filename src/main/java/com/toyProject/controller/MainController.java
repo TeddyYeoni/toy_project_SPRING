@@ -6,8 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.toyProject.service.BoardService;
-import com.toyProject.service.QnaService;
+import com.toyProject.service.menu.BoardService;
+import com.toyProject.service.menu.QnaService;
 
 @Controller
 @RequestMapping(value = { "/main", "" })
