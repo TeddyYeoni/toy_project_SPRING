@@ -14,25 +14,29 @@ public class AlbumService {
 
 	@Autowired
 	private AlbumDAO albumDAO;
-	
-	public List<AlbumVO> albumList(Criteria criteria){
+
+	public List<AlbumVO> albumList(Criteria criteria) {
 		return albumDAO.albumList(criteria);
 	}
-	
+
 	public int getNewAno() {
 		int photoNO = 0;
-		int lastPhotoNO = albumDAO.getLastAno();
+		int lastPhotoNO;
+		
+		if (albumDAO.getLastAno() == null) {
+			lastPhotoNO = 0;
+			return 1;
+		}
+		
+		lastPhotoNO = Integer.parseInt(albumDAO.getLastAno());
 		photoNO = lastPhotoNO + 1;
-		if(photoNO == 0) {
-			photoNO = 1;
-		} 
 		return photoNO;
 	}
-	
+
 	public int upload(AlbumVO albumVO) {
 		int photoNO = getNewAno();
 		albumVO.setAno((long) photoNO);
 		return albumDAO.addPhoto(albumVO);
 	}
-	
+
 }

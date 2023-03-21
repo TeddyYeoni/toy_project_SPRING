@@ -9,7 +9,7 @@
 		select * from mou_album
 	</select>
 
-	<select id="getLastAno" resultType="int">
+	<select id="getLastAno" resultType="String">
 		select max(ano) as photoNO from mou_album
 	</select>
 

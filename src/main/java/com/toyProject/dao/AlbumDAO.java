@@ -12,7 +12,7 @@ public interface AlbumDAO {
 	List<AlbumVO> albumList(Criteria criteria);
 
 	// 마지막 게시물 번호 조회
-	int getLastAno();
+	String getLastAno();
 
 	// 사진 추가
 	int addPhoto(AlbumVO albumVO);
