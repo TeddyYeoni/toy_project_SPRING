@@ -9,4 +9,14 @@
 		select * from mou_album
 	</select>
 
+	<select id="getLastAno" resultType="int">
+		select max(ano) as photoNO from mou_album
+	</select>
+
+	<insert id="addPhoto" useGeneratedKeys="true" keyColumn="ano">
+		insert
+		into mou_album(ano,id,title,content,imageFileName)
+		values(#{ano},#{id},#{title},#{content},#{imageFileName})
+	</insert>
+
 </mapper>

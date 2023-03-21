@@ -20,9 +20,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class FileController {
 
-	@GetMapping("/imgDisplay")
-	public ResponseEntity<byte[]> imgDisplay(String imageFileName) throws IOException {
-		File file = new File("c:/mou_fileRepo", imageFileName);
+	@GetMapping("/boardImgDisplay")
+	public ResponseEntity<byte[]> boardImgDisplay(String imageFileName) throws IOException {
+		File file = new File("c:/mou_fileRepo/board", imageFileName);
 		if (!file.exists()) {
 			return new ResponseEntity<byte[]>(HttpStatus.NOT_FOUND);
 		}
@@ -33,5 +33,19 @@ public class FileController {
 
 		return new ResponseEntity<byte[]>(FileCopyUtils.copyToByteArray(file), headers, HttpStatus.OK);
 	}
-
+	
+	@GetMapping("/albumImgDisplay")
+	public ResponseEntity<byte[]> albumImgDisplay(String imageFileName) throws IOException {
+		File file = new File("c:/mou_fileRepo/album", imageFileName);
+		if (!file.exists()) {
+			return new ResponseEntity<byte[]>(HttpStatus.NOT_FOUND);
+		}
+		
+		HttpHeaders headers = new HttpHeaders();
+		FileNameMap fileNameMap = URLConnection.getFileNameMap();
+		headers.add("Content-Type", fileNameMap.getContentTypeFor(imageFileName));
+		
+		return new ResponseEntity<byte[]>(FileCopyUtils.copyToByteArray(file), headers, HttpStatus.OK);
+	}
+	
 }

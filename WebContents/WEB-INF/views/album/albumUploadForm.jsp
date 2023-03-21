@@ -17,10 +17,10 @@
 
 	<form action="${contextPath}/album/upload" method="post"
 		enctype="multipart/form-data">
-		<input type="hidden" name="writer" value="${auth.id}">
+		<input type="hidden" name="id" value="${auth.id}">
 		<div class="form-group">
 			<b>File Upload</b><br> <input type="file" class="form-control"
-				name="imageFileName">
+				name="attachFile">
 		</div>
 		<div class="preview"></div>
 		<div class="form-group">
