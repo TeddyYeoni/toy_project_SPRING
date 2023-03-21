@@ -44,7 +44,7 @@ body {
 					<div class="bg-white rounded shadow-sm">
 						<div class="text-center">
 							<img
-								src="${contextPath}/fileDownload?no=${album.ano}&imageFileName=${album.imageFileName}&path=album"
+								src="${contextPath}/albumImgDisplay?imageFileName=${album.ano}/${album.imageFileName}"
 								alt="" class="img-fluid card-img-top">
 						</div>
 						<div class="p-4">
