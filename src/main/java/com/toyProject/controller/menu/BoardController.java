@@ -60,7 +60,7 @@ public class BoardController {
 		boardService.write(boardVO); // 데이터베이스에 저장
 
 		// 업로드
-		File uploadPath = new File("c:/mou_fileRepo/board" + boardVO.getBno());
+		File uploadPath = new File("c:/mou_fileRepo/board/" + boardVO.getBno());
 		if (!uploadPath.exists()) { // 업로드 패스 생성
 			uploadPath.mkdirs();
 		}
