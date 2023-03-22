@@ -49,7 +49,7 @@ public class AlbumController {
 		albumService.upload(albumVO); // 데이터베이스에 저장
 
 		// 업로드
-		File uploadPath = new File("c:/mou_fileRepo/album" + albumVO.getAno());
+		File uploadPath = new File("c:/mou_fileRepo/album/" + albumVO.getAno());
 		if (!uploadPath.exists()) { // 업로드 패스 생성
 			uploadPath.mkdirs();
 		}
