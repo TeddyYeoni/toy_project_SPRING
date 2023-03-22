@@ -73,5 +73,12 @@ public class AlbumController {
 		}
 		return "redirect:/album";
 	}
+	
+	@GetMapping("/detail")
+	public String select(Model model, Long ano) {
+		model.addAttribute("album",albumService.findByAno(ano));
+		return "album/albumDetail";
+	}
+	
 
 }

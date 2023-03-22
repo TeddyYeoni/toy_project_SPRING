@@ -18,5 +18,9 @@
 		into mou_album(ano,id,title,content,imageFileName)
 		values(#{ano},#{id},#{title},#{content},#{imageFileName})
 	</insert>
+	
+	<select id="findByAno" resultType="albumVO">
+		select * from mou_album where ano=#{ano}
+	</select>
 
 </mapper>

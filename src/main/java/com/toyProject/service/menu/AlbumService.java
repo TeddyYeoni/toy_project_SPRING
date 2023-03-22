@@ -38,5 +38,9 @@ public class AlbumService {
 		albumVO.setAno((long) photoNO);
 		return albumDAO.addPhoto(albumVO);
 	}
+	
+	public AlbumVO findByAno(Long ano) {
+		return albumDAO.findByAno(ano);
+	}
 
 }
