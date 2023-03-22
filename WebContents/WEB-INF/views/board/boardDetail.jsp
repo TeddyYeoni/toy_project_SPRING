@@ -59,30 +59,27 @@
 				<td colspan="4" class="text-right">
 					<button type="button" class="btn btn-outline-dark toList">
 						<b>Back</b>
-					</button> <c:if test="${auth.id eq board.writer}">
-						<button type="button" class="btn btn-outline-success toModForm">
-							<b>Edit</b>
-						</button>
-					</c:if> <c:if
-						test="${auth.id eq board.writer or auth.grade eq 'ASTRONAUT'}">
-						<button type="button" class="btn btn-outline-danger remove">
-							<b>Delete</b>
-						</button>
-					</c:if>
+					</button>
+					<button type="button" class="btn btn-outline-success toModForm">
+						<b>Edit</b>
+					</button>
+
+					<button type="button" class="btn btn-outline-danger remove">
+						<b>Delete</b>
+					</button>
+
 				</td>
 			</tr>
 
 			<tr class="viewMode">
-				<c:if test="${auth.id eq board.writer or auth.grade eq 'ASTRONAUT'}">
-					<td colspan="4" class="text-right">
-						<button type="button" class="btn btn-outline-primary modify">
-							<b>EDIT</b>
-						</button>
-						<button type="button" class="btn btn-outline-primary backViewMode">
-							<b>BACK</b>
-						</button>
-					</td>
-				</c:if>
+				<td colspan="4" class="text-right">
+					<button type="button" class="btn btn-outline-primary modify">
+						<b>EDIT</b>
+					</button>
+					<button type="button" class="btn btn-outline-primary backViewMode">
+						<b>BACK</b>
+					</button>
+				</td>
 			</tr>
 		</table>
 	</form>

@@ -54,5 +54,10 @@ public class BoardService {
 		return boardDao.addContent(boardVO);
 	}
 	
+	// 게시물 수정
+	public void modifyContent(BoardVO boardVO) {
+		boardDao.modifyContent(boardVO);
+	}
+	
 	
 }

@@ -3,6 +3,7 @@ package com.toyProject.controller.menu;
 import java.io.File;
 import java.io.IOException;
 
+import org.apache.tomcat.util.log.UserDataHelper.Mode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -43,7 +44,7 @@ public class BoardController {
 	@GetMapping("/detail")
 	public String select(Model model, Long bno) {
 		model.addAttribute("board", boardService.findByBno(bno));
-		return "board/boardDeatil";
+		return "board/boardDetail";
 	}
 
 	// 게시믈 작성 폼
@@ -52,14 +53,14 @@ public class BoardController {
 		return "board/boardWriteForm";
 	}
 
-	private void fileUpload(BoardVO boardVO, RedirectAttributes rttr,
-			@RequestParam("attachFile") MultipartFile multipartFile) {
+	private void fileUpload(BoardVO boardVO, @RequestParam("attachFile") MultipartFile multipartFile,
+			RedirectAttributes rttr) {
 		String imageFileName = multipartFile.getOriginalFilename();
 		boardVO.setImageFileName(imageFileName);
 		boardService.write(boardVO); // 데이터베이스에 저장
 
 		// 업로드
-		File uploadPath = new File("c:/mou_fileRepo/board/" + boardVO.getBno());
+		File uploadPath = new File("c:/mou_fileRepo/board" + boardVO.getBno());
 		if (!uploadPath.exists()) { // 업로드 패스 생성
 			uploadPath.mkdirs();
 		}
@@ -73,14 +74,26 @@ public class BoardController {
 	}
 
 	@PostMapping("/write")
-	public String insert(RedirectAttributes rttr, BoardVO boardVO,
-			@RequestParam("attachFile") MultipartFile multipartFile) {
+	public String insert(BoardVO boardVO, @RequestParam("attachFile") MultipartFile multipartFile,
+			RedirectAttributes rttr) {
 		if (!multipartFile.isEmpty()) {
-			fileUpload(boardVO, rttr, multipartFile);
+			fileUpload(boardVO, multipartFile, rttr);
 		} else {
 			boardService.write(boardVO);
 		}
 		return "redirect:/board";
 	}
 
+	@GetMapping("/modify")
+	public void modifyForm(Long bno, Model model) {
+		BoardVO vo = boardService.findByBno(bno);
+		model.addAttribute("mod_board",vo);
+	}
+	
+	@PostMapping("/modify")
+	public String update(BoardVO boardVO, @RequestParam("attachFile") MultipartFile multipartFile,
+			RedirectAttributes rttr) {
+		return "redirect:/board";
+	}
+	
 }
