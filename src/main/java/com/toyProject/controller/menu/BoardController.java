@@ -87,13 +87,51 @@ public class BoardController {
 	@GetMapping("/modify")
 	public void modifyForm(Long bno, Model model) {
 		BoardVO vo = boardService.findByBno(bno);
-		model.addAttribute("mod_board",vo);
+		model.addAttribute("mod_board", vo);
 	}
-	
+
 	@PostMapping("/modify")
 	public String update(BoardVO boardVO, @RequestParam("attachFile") MultipartFile multipartFile,
-			RedirectAttributes rttr) {
+			RedirectAttributes rttr, @RequestParam(defaultValue = "false") Boolean delCheck) {
+		if (delCheck) {
+			// 파일 삭제 및 내용 변경
+			// 파일 삭제
+			BoardVO detail = boardService.findByBno(boardVO.getBno());
+			File file = new File("c:/mou_fileRepo/board/" + detail.getBno() + "/" + detail.getImageFileName());
+			File folder = new File("c:/mou_fileRepo/board/" + detail.getBno());
+			boolean delete = file.delete();
+			System.out.println(delete);
+			folder.delete();
+			// modify 호출
+			boardService.modifyContent(boardVO);
+		} else {
+			if (!multipartFile.isEmpty()) { // 이미지 및 내용 변경
+				// 원본파일 삭제 새로운 파일 업로드
+				BoardVO detail = boardService.findByBno(boardVO.getBno());
+				File file = new File("c:/mou_fileRepo/board/" + detail.getBno() + "/" + detail.getImageFileName());
+				file.delete();
+
+				// 새로운 파일 업로드
+				String fileName = multipartFile.getOriginalFilename();
+				boardVO.setImageFileName(fileName);
+				File uploadPath = new File("c:/mou_fileRepo/board/" + boardVO.getBno());
+				if (!uploadPath.exists()) { // 업로드 패스 생성
+					uploadPath.mkdirs();
+				}
+				// 업로드 파일 경로 지정
+				File uploadFile = new File(uploadPath, fileName);
+				try {
+					multipartFile.transferTo(uploadFile); // 파일 업로드
+				} catch (IllegalStateException | IOException e) {
+					e.printStackTrace();
+				}
+				boardService.modifyContent(boardVO);
+			} else {
+				boardService.modifyOnlyContent(boardVO);
+			}
+		}
+
 		return "redirect:/board";
 	}
-	
+
 }

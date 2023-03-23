@@ -58,6 +58,10 @@ public class BoardService {
 	public void modifyContent(BoardVO boardVO) {
 		boardDao.modifyContent(boardVO);
 	}
+
+	public void modifyOnlyContent(BoardVO boardVO) {
+		boardDao.modifyOnlyContent(boardVO);
+	}
 	
 	
 }

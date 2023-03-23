@@ -31,5 +31,8 @@ public interface BoardDAO {
 	// 최근 게시물 목록
 	List<BoardVO> recentBoardList();
 
+	// 게시글 수정(첨부파일 제외)
+	void modifyOnlyContent(BoardVO boardVO);
+
 	
 }

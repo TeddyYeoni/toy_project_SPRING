@@ -2,7 +2,7 @@
 	<!-- Copyright -->
 	<div class="text-center p-3"
 		style="background-color: rgba(0, 0, 0, 0.9);">
-		<a class="text-light">2022 Copyright: ppponnnyo</a>
+		<a class="text-light">2023 Copyright: pponyo</a>
 	</div>
 </footer>
 

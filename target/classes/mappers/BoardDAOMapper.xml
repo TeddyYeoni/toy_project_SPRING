@@ -26,7 +26,8 @@
 	</insert>
 
 	<select id="totalCount" resultType="int">
-		select count(bno) as count from mou_board
+		select count(bno) as count
+		from mou_board
 	</select>
 
 	<select id="recentBoardList" resultType="boardVO">
@@ -43,11 +44,24 @@
 	</select>
 
 	<select id="findByBno" resultType="boardVO">
-		select * from mou_board where bno = #{bno}
+		select * from mou_board where
+		bno = #{bno}
 	</select>
 
 	<select id="getLastBno" resultType="int">
-		select max(bno) as boardNO from mou_board
+		select max(bno) as boardNO
+		from mou_board
 	</select>
+
+	<update id="modifyContent">
+		update mou_board set
+		title=#{title},content=#{content},imageFileName=#{imageFileName} where
+		bno=#{bno}
+	</update>
+
+	<update id="modifyOnlyContent">
+		update mou_board set
+		title=#{title},content=#{content} where bno=#{bno}
+	</update>
 
 </mapper>
