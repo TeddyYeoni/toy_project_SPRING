@@ -41,4 +41,8 @@
 		delete from mou_diary where dno= #{dno}
 	</delete>
 
+	<update id="modifyDiary">
+		update mou_diary set content=#{content}, praise=#{praise}, thanks=#{thanks} where dno=#{dno}
+	</update>
+
 </mapper>

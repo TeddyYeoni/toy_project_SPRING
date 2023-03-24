@@ -27,7 +27,6 @@ public class DiaryController {
 
 		criteria.setPagingAmount(9);
 		
-		
 		model.addAttribute("page", new Pagination(criteria, diaryService.totalCount(criteria)));
 	    model.addAttribute("diary_list", diaryService.diaryList(criteria));
 		
@@ -59,6 +58,16 @@ public class DiaryController {
 		return "redirect:/diary";
 	}
 	
+	@GetMapping("/modify")
+	public void modifyForm(Long dno, Model model) {
+		DiaryVO diaryVO = diaryService.findByDno(dno);
+		model.addAttribute("mod_board", diaryVO);
+	}
 	
+	@PostMapping("/modify")
+	public String modify(DiaryVO diaryVO, RedirectAttributes rttr) {
+		diaryService.modifyDiary(diaryVO);
+		return "redirect:/diary";
+	}
 
 }
