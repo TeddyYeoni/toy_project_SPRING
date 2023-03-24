@@ -14,7 +14,7 @@ public interface BoardDAO {
 	BoardVO findByBno(Long bno);
 	
 	// 마지막 게시물 번호 조회
-	int getLastBno();
+	String getLastBno();
 	
 	// 게시글 추가
 	int addContent(BoardVO boardVO);

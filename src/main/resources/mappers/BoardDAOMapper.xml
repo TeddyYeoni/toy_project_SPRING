@@ -48,7 +48,7 @@
 		bno = #{bno}
 	</select>
 
-	<select id="getLastBno" resultType="int">
+	<select id="getLastBno" resultType="String">
 		select max(bno) as boardNO
 		from mou_board
 	</select>

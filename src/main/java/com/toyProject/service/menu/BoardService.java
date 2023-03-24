@@ -39,11 +39,15 @@ public class BoardService {
 	// 새로운 bno 생성
 	public int getNewBno() {
 		int boardNO = 0;
-		int lastBoardNO = boardDao.getLastBno();
+		int lastBoardNO;
+		
+		if(boardDao.getLastBno() == null) {
+			lastBoardNO = 0;
+			return 1;
+		}
+		
+		lastBoardNO = Integer.parseInt(boardDao.getLastBno());
 		boardNO = lastBoardNO + 1;
-		if(boardNO == 0) {
-			boardNO = 1;
-		} 
 		return boardNO;
 	}
 
