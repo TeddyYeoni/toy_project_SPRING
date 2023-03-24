@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -18,6 +19,7 @@ import com.toyProject.domain.login.MemberVO.MemberGrade;
 import com.toyProject.service.MemberService;
 
 import lombok.extern.log4j.Log4j;
+import oracle.jdbc.proxy.annotation.Post;
 
 @Controller
 @RequestMapping("/member")
@@ -69,6 +71,16 @@ public class MemberController {
 			return "member/loginForm";
 		}
 
+	}
+
+	@GetMapping("/logout")
+	public String logout(HttpServletRequest request, RedirectAttributes rttr) {
+		HttpSession session = request.getSession(false);
+		if (session != null) {
+			session.removeAttribute("auth");
+			session.invalidate();
+		}
+		return "redirect:/main";
 	}
 
 }
