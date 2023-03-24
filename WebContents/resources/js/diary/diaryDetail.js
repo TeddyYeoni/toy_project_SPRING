@@ -27,7 +27,7 @@ $(function() {
 	// Delete 버튼
 	$('.remove').on('click', function() {
 		viewForm.attr({
-			"action": `${contextPath}/diary/delete`,
+			"action": `${contextPath}/diary/remove`,
 			"method": "post"
 		}).submit();
 

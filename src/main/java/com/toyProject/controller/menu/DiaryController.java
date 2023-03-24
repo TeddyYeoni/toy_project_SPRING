@@ -50,13 +50,15 @@ public class DiaryController {
 	@PostMapping("/write")
 	public String insert(RedirectAttributes rttr, DiaryVO diaryVO) {
 		diaryService.addDiary(diaryVO);
-		return "redirect:diary/diaryList";
+		return "redirect:/diary";
 	}
 
-	@GetMapping("/remove")
+	@PostMapping("/remove")
 	public String delete(Long dno, RedirectAttributes rttr) {
 		diaryService.removeDiary(dno);
-		return "redirect:diary/diaryList";
+		return "redirect:/diary";
 	}
+	
+	
 
 }
