@@ -5,10 +5,11 @@
 
 <style>
 .holder {
-  min-height: 80vh;
+	min-height: 80vh;
 }
 </style>
-
+<link href="${pageContext.request.contextPath}/resources/css/style.css"
+	rel="stylesheet">
 <div class="holder container">
 
 	<div class="my-5 loginuser_image">
@@ -29,7 +30,8 @@
 			</div>
 			<div class="text-center my-3">
 				<a href="${contextPath}/main" class="btn btn-outline-dark mx-2">Main</a>
-				<a href="${contextPath}/member/joinForm" class="btn btn-outline-info mx-2">Join</a>
+				<a href="${contextPath}/member/join"
+					class="btn btn-outline-info mx-2">Join</a>
 				<button class="btn btn-outline-success mx-2">Login</button>
 			</div>
 		</form>

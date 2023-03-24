@@ -1,7 +1,11 @@
 package com.toyProject.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,8 +17,11 @@ import com.toyProject.domain.login.MemberVO;
 import com.toyProject.domain.login.MemberVO.MemberGrade;
 import com.toyProject.service.MemberService;
 
+import lombok.extern.log4j.Log4j;
+
 @Controller
 @RequestMapping("/member")
+@Log4j
 public class MemberController {
 
 	@Autowired
@@ -37,12 +44,31 @@ public class MemberController {
 	}
 
 	@PostMapping("/login")
-	public String login(RedirectAttributes rttr, @RequestParam("id") String id, @RequestParam("pwd") String pwd) {
+	public String login(Model model, @RequestParam String id, @RequestParam String pwd, MemberVO memberVO,
+			HttpServletRequest request, RedirectAttributes rttr) {
 		boolean loginResult = memberService.loginConfirm(id, pwd);
-		if (!loginResult) {
+		memberVO.setId(id);
+		memberVO.setPwd(pwd);
+
+		if (loginResult) {
+			HttpSession session = request.getSession();
+			MemberGrade grade = memberService.findMemberGradeById(memberVO.getId());
+			AuthVO authVO = new AuthVO();
+			authVO.setId(memberVO.getId());
+			authVO.setGrade(grade);
+			session.setAttribute("auth", authVO);
+
+			String userUri = (String) session.getAttribute("userUri");
+			if (userUri != null) {
+				session.removeAttribute(userUri);
+				return "redirect:" + userUri;
+			}
+			return "redirect:/main";
+		} else {
+			System.out.println("아이디 비ㅣㅁㄹ번호를 잘못 입력했슈");
 			return "member/loginForm";
 		}
-		return "redirect:/main";
+
 	}
 
 }

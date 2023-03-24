@@ -18,8 +18,9 @@
 		universe_mem where id=#{id}
 	</select>
 
-	<select id="loginConfirm" resultType="boolean">
-		select decode(count(*),1,'true','false') as loginResult from universe_mem
+	<select id="loginConfirm" resultType="String">
+		select
+		decode(count(*),1,'true','false') as loginResult from universe_mem
 		where id=#{id} and pwd=#{pwd}
 	</select>
 

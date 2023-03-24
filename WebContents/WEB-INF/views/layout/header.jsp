@@ -18,9 +18,12 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 	const contextPath = "${contextPath}";
+	let auth = {
+		id : "${auth.id}",
+		grade : "${auth.grade}"
+	};
 </script>
 
-<link rel="stylesheet" href="${contextPath}/resources/css/style.css">
 </head>
 <style>
 .navbar {
@@ -70,10 +73,10 @@ body {
 				<c:if test="${empty auth}">
 					<li class="nav-item "><a
 						class="nav-link font-weight-bold text-light mx-1"
-						href="${contextPath}/member/joinForm"><h5>Join</h5></a></li>
+						href="${contextPath}/member/join"><h5>Join</h5></a></li>
 					<li class="nav-item "><a
 						class="nav-link font-weight-bold text-light mx-1"
-						href="${contextPath}/member/"><h5>Login</h5></a></li>
+						href="${contextPath}/member/login"><h5>Login</h5></a></li>
 				</c:if>
 				<c:if test="${not empty auth}">
 					<li class="nav-item "><a

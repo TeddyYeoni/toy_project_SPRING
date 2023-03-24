@@ -22,10 +22,19 @@ public class MemberDAOTest extends AppTest {
 	}
 	
 	@Test
+	@Ignore
 	public void findGradeTest() {
-		String id = "testId";
+		String id = "pponyo";
 		MemberGrade gradeById = memberService.findMemberGradeById(id);
 		System.out.println(gradeById);
+	}
+	
+	@Test
+	public void loginConfirmTest() {
+		String id = "pponyo";
+		String pwd = "1234";
+		boolean loginResult = memberService.loginConfirm(id, pwd);
+		System.out.println(loginResult);
 	}
 
 }
