@@ -38,12 +38,12 @@
 				<td colspan="4" class="text-right">
 					<button type="button" class="btn btn-outline-dark toList">
 						<b>Back</b>
-					</button> <c:if test="${auth.id eq diary.writer}">
+					</button> <c:if test="${auth.id eq diary.id}">
 						<button type="button" class="btn btn-outline-success toModForm">
 							<b>Edit</b>
 						</button>
 					</c:if> <c:if
-						test="${auth.id eq diary.writer or auth.grade eq 'ASTRONAUT'}">
+						test="${auth.id eq diary.id or auth.grade eq 'ASTRONAUT'}">
 						<button type="button" class="btn btn-outline-danger remove">
 							<b>Delete</b>
 						</button>
@@ -52,7 +52,7 @@
 			</tr>
 
 			<tr class="viewMode">
-				<c:if test="${auth.id eq diary.writer}">
+				<c:if test="${auth.id eq diary.id}">
 					<td colspan="4" class="text-right">
 						<button type="button" class="btn btn-outline-primary modify">
 							<b>EDIT</b>

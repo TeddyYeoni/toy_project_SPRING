@@ -39,10 +39,15 @@ public class DiaryService {
 	public void removeDiary(Long dno) {
 		diaryDao.removeDiary(dno);
 	}
-	
+
 	// 다이어리 수정
 	public void modifyDiary(DiaryVO diaryVO) {
 		diaryDao.modifyDiary(diaryVO);
+	}
+
+	// 최근 목록 불러오기
+	List<DiaryVO> recentDiaryList() {
+		return diaryDao.recentDiaryList();
 	}
 
 }

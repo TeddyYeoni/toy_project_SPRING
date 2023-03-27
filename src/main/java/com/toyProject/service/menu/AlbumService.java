@@ -22,12 +22,12 @@ public class AlbumService {
 	public int getNewAno() {
 		int photoNO = 0;
 		int lastPhotoNO;
-		
+
 		if (albumDAO.getLastAno() == null) {
 			lastPhotoNO = 0;
 			return 1;
 		}
-		
+
 		lastPhotoNO = Integer.parseInt(albumDAO.getLastAno());
 		photoNO = lastPhotoNO + 1;
 		return photoNO;
@@ -38,9 +38,14 @@ public class AlbumService {
 		albumVO.setAno((long) photoNO);
 		return albumDAO.addPhoto(albumVO);
 	}
-	
+
 	public AlbumVO findByAno(Long ano) {
 		return albumDAO.findByAno(ano);
+	}
+
+	// 최근 목록 불러오기
+	List<AlbumVO> recentAlbumList() {
+		return albumDAO.recentAlbumList();
 	}
 
 }

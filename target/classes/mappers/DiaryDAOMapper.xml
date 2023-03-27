@@ -9,11 +9,11 @@
 	<select id="diaryList" resultType="diaryVO">
 		<![CDATA[
 		select
-			rownum, dno, writer, weather, emotion, praise, thanks, writedate
+			rownum, dno, id, weather, emotion, praise, thanks, writedate
 		from 
 			(select
 				/*+index_desc(mou_diary pk_diary)*/
-				rownum as rn, dno, writer, weather, emotion, praise, thanks, writedate
+				rownum as rn, dno, id, weather, emotion, praise, thanks, writedate
 			from mou_diary where rownum <= #{maxRow})
 		where rn > #{minRow}
 		]]>
@@ -32,8 +32,8 @@
 	<insert id="addDiary" parameterType="diaryVO">
 		insert into
 		mou_diary(dno,
-		writer, content, weather, emotion, praise, thanks)
-		values(mou_diary_seq.nextval, #{writer}, #{content}, #{weather},
+		id, content, weather, emotion, praise, thanks)
+		values(mou_diary_seq.nextval, #{id}, #{content}, #{weather},
 		#{emotion}, #{praise}, #{thanks})
 	</insert>
 
@@ -42,7 +42,21 @@
 	</delete>
 
 	<update id="modifyDiary">
-		update mou_diary set content=#{content}, praise=#{praise}, thanks=#{thanks} where dno=#{dno}
+		update mou_diary set content=#{content},
+		praise=#{praise}, thanks=#{thanks} where dno=#{dno}
 	</update>
+
+	<select id="" resultType="diaryVO">
+	<![CDATA[
+		select
+			rownum, dno, id, weather, emotion, praise, thanks, writedate
+		from 
+			(select
+				/*+index_desc(mou_diary pk_diary)*/
+				rownum as rn, dno, id, weather, emotion, praise, thanks, writedate
+			from mou_diary where rownum <= 5)
+		where rn > 0
+		]]>
+	</select>
 
 </mapper>

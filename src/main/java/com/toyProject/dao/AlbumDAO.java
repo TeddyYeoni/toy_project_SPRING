@@ -16,9 +16,11 @@ public interface AlbumDAO {
 
 	// 사진 추가
 	int addPhoto(AlbumVO albumVO);
-	
+
 	// 사진 상세 보기
 	AlbumVO findByAno(Long ano);
-	
-	
+
+	// 최근 목록 불러오기
+	List<AlbumVO> recentAlbumList();
+
 }

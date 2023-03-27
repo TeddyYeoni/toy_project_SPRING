@@ -10,7 +10,8 @@
 	</select>
 
 	<select id="getLastAno" resultType="String">
-		select max(ano) as photoNO from mou_album
+		select max(ano) as photoNO
+		from mou_album
 	</select>
 
 	<insert id="addPhoto" useGeneratedKeys="true" keyColumn="ano">
@@ -18,9 +19,23 @@
 		into mou_album(ano,id,title,content,imageFileName)
 		values(#{ano},#{id},#{title},#{content},#{imageFileName})
 	</insert>
-	
+
 	<select id="findByAno" resultType="albumVO">
-		select * from mou_album where ano=#{ano}
+		select * from mou_album where
+		ano=#{ano}
+	</select>
+
+	<select id="recentAlbumList" resultType="albumVO">
+	<![CDATA[
+		select
+			rownum, ano, title, imageFileName, writedate
+		from 
+			(select
+				/*+index_desc(mou_album pk_album)*/
+				rownum as rn, ano, title, imageFileName, writedate
+			from mou_album where rownum <= 5)
+		where rn > 0
+		]]>
 	</select>
 
 </mapper>

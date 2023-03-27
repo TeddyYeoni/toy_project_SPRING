@@ -3,11 +3,24 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
-  <mapper namespace="com.toyProject.dao.ToDoListDAO">
-  
-  	<select id="toDoList" resultType="toDoListVO">
-  		select * from mou_todo
-  	</select>
-  
-  </mapper>
+
+<mapper namespace="com.toyProject.dao.ToDoListDAO">
+
+	<select id="toDoList" resultType="toDoListVO">
+		select * from mou_todo
+	</select>
+
+	<select id="recentToDoList" resultType="toDoListVO">
+  	<![CDATA[
+		select
+			rownum, tno, id, title, writedate
+		from 
+			(select
+				/*+index_desc(mou_todo pk_todo)*/
+				rownum as rn, tno, id, title, writedate
+			from mou_todo where rownum <= 5)
+		where rn > 0
+		]]>
+	</select>
+
+</mapper>

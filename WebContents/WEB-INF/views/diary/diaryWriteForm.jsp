@@ -9,8 +9,7 @@
 	</div>
 
 	<form action="${contextPath}/diary/write" method="post">
-		<input type="hidden" name="writer" value="${auth.id}">
-		${auth.id}
+		<input type="hidden" name="id" value="${auth.id}">
 		<div class="form-group">
 			<b>Date</b>&nbsp;&nbsp;&nbsp;<b>${todayDate}</b>
 		</div>

@@ -11,13 +11,17 @@ import com.toyProject.domain.paging.Criteria;
 
 @Service
 public class ToDoListService {
-	
+
 	@Autowired
 	private ToDoListDAO toDoListDAO;
-	
-	
-	public List<ToDoListVO> toDoList(Criteria criteria){
+
+	public List<ToDoListVO> toDoList(Criteria criteria) {
 		return toDoListDAO.toDoList(criteria);
+	}
+
+	// 최근 목록 불러오기
+	List<ToDoListVO> recentToDoList() {
+		return toDoListDAO.recentToDoList();
 	}
 
 }
