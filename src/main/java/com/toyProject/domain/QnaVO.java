@@ -21,7 +21,6 @@ public class QnaVO {
 	private String title;
 	private String content;
 	private String writer;
-	private String imageFileName;
 	private Date writeDate;
 
 }

@@ -11,15 +11,9 @@
 	<div class="jumbotron">
 		<h1>Q&A</h1>
 	</div>
-	<form id="viewForm" enctype="multipart/form-data">
+	<form id="viewForm">
 		<table class="table">
-			<tr>
-				<th><b>No</b></th>
-				<td>${qna.qno}<input type="hidden" name="qno"
-					value="${qna.qno}"></td>
-				<th><b>Views</b></th>
-				<td>000</td>
-			</tr>
+			<input type="hidden" name="qno" value="${qna.qno}">
 			<tr>
 				<th><b>Name</b></th>
 				<td>${qna.writer}</td>
@@ -35,26 +29,6 @@
 				<th><b>Contents</b></th>
 				<td colspan="3"><textarea rows="5" cols="50" name="content"
 						class="form-control" readonly="readonly">${qna.content}</textarea></td>
-			</tr>
-			<tr>
-				<th><b>Images</b></th>
-				<td colspan="3"><input type="file" name="imageFileName"
-					class="form-control viewMode">
-					<div class="my-3">
-						<input type="hidden" name="originFileName" class="originFileName"
-							value="${qna.imageFileName}">
-						<c:if test="${not empty qna.imageFileName}">
-							<div class="preview">
-								<img class="originImg"
-									src="${contextPath}/fileDownload?no=${qna.qno}&imageFileName=${qna.imageFileName}&path=qna">
-							</div>
-						</c:if>
-						<c:if test="${empty qna.imageFileName}">
-							<div class="preview">
-								<p>✖ 첨부된 이미지가 없어요 ✖</p>
-							</div>
-						</c:if>
-					</div></td>
 			</tr>
 			<tr>
 				<td colspan="4" class="text-right">

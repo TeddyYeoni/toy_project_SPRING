@@ -30,5 +30,6 @@ public class QnaContoller {
 		model.addAttribute("qna", qnaService.findByQno(qno));
 		return "qna/qnaDetail";
 	}
+	
 
 }

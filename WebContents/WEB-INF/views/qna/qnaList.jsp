@@ -16,7 +16,7 @@
 		<p>궁금한 점은 질문으로 남겨주세요🎈</p>
 	</div>
 	<div class="text-right my-2">
-		<a href="${contextPath}/qna/writeForm"
+		<a href="${contextPath}/qna/write"
 			class="btn btn-outline-primary">New</a>
 	</div>
 	<form id="listForm">
