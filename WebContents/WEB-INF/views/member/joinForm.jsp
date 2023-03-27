@@ -5,7 +5,7 @@
 
 <style>
 .holder {
-  min-height: 80vh;
+	min-height: 80vh;
 }
 </style>
 
@@ -16,7 +16,7 @@
 
 	<div class="d-flex justify-content-center">
 		<form class="join_form" action="${contextPath}/member/join"
-			method="get" enctype="multipart/form-data">
+			method="post">
 			<div class="form-group">
 				<b>ID</b><input type="text" class="form-control" name="id">
 			</div>
