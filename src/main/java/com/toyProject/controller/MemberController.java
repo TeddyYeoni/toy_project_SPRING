@@ -80,7 +80,14 @@ public class MemberController {
 			session.removeAttribute("auth");
 			session.invalidate();
 		}
+		log.info("로그아웃 성공");
 		return "redirect:/main";
+	}
+	
+	@GetMapping("/mySpace")
+	public String mySpace() {
+		
+		return "member/mySpace";
 	}
 
 }

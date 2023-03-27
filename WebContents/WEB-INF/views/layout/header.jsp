@@ -80,7 +80,7 @@ body {
 				</c:if>
 				<c:if test="${not empty auth}">
 					<li class="nav-item "><a
-						class="nav-link font-weight-bold text-light mx-1" href="#"><h5>
+						class="nav-link font-weight-bold text-light mx-1" href="${contextPath}/member/mySpace"><h5>
 								My Space🐾</h5></a></li>
 					<li class="nav-item "><a
 						class="nav-link font-weight-bold text-light mx-1"
