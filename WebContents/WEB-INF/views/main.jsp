@@ -110,34 +110,57 @@ body {
 
 		<div class="imgContainer col-md-3 col-sm-6 mb-4 ">
 			<div class="mainImg">
-				<a href="${contextPath}/todo"> <img class="img-fluid"
+				<c:if test="${not empty auth.id}">
+					<a href="${contextPath}/todo">
+				</c:if>
+				<c:if test="${empty auth.id}">
+					<a href="${contextPath}/member/login">
+				</c:if>
+				<img class="img-fluid"
 					src="${contextPath}/resources/img/main/ToDoList.png" alt="">
 				</a>
 			</div>
-			<div class="my-3">
-				<a href="${contextPath}/todo/add" class="btn btn-outline-light">NEW</a>
-			</div>
+			<c:if test="${not empty auth.id}">
+				<div class="my-3">
+					<a href="${contextPath}/todo/add" class="btn btn-outline-light">NEW</a>
+				</div>
+			</c:if>
 		</div>
 
 		<div class="imgContainer col-md-3 col-sm-6 mb-4">
 			<div class="mainImg">
-				<a href="${contextPath}/album"> <img class="img-fluid"
+				<c:if test="${not empty auth.id}">
+					<a href="${contextPath}/album">
+				</c:if>
+				<c:if test="${empty auth.id}">
+					<a href="${contextPath}/member/login">
+				</c:if>
+				<img class="img-fluid"
 					src="${contextPath}/resources/img/main/album.png" alt=""></a>
 			</div>
-			<div class="my-3">
-				<a href="${contextPath}/album/upload" class="btn btn-outline-light">NEW</a>
-			</div>
+			<c:if test="${not empty auth.id}">
+				<div class="my-3">
+					<a href="${contextPath}/album/upload" class="btn btn-outline-light">NEW</a>
+				</div>
+			</c:if>
 		</div>
 
 		<div class="imgContainer col-md-3 col-sm-6 mb-4">
 			<div class="mainImg">
-				<a href="${contextPath}/diary"> <img class="img-fluid"
-					src="${contextPath}/resources/img/main/diary.png" alt="">
-				</a>
+				<c:if test="${not empty auth.id}">
+					<a href="${contextPath}/diary">
+				</c:if>
+				<c:if test="${empty auth.id}">
+					<a href="${contextPath}/member/login">
+				</c:if>
+				<img class="img-fluid"
+					src="${contextPath}/resources/img/main/diary.png" alt=""> </a>
 			</div>
-			<div class="my-3">
-				<a href="${contextPath}/diary/write" class="btn btn-outline-light">NEW</a>
-			</div>
+			<c:if test="${not empty auth.id}">
+				<div class="my-3">
+					<a href="${contextPath}/diary/write" class="btn btn-outline-light">NEW</a>
+				</div>
+			</c:if>
 		</div>
 
 	</div>
