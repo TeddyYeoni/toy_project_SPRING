@@ -20,7 +20,7 @@ public class ToDoListService {
 	}
 
 	// 최근 목록 불러오기
-	List<ToDoListVO> recentToDoList() {
+	public List<ToDoListVO> recentToDoList() {
 		return toDoListDAO.recentToDoList();
 	}
 

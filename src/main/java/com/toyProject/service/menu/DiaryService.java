@@ -46,7 +46,7 @@ public class DiaryService {
 	}
 
 	// 최근 목록 불러오기
-	List<DiaryVO> recentDiaryList() {
+	public List<DiaryVO> recentDiaryList() {
 		return diaryDao.recentDiaryList();
 	}
 

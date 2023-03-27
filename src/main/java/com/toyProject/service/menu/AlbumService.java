@@ -44,7 +44,7 @@ public class AlbumService {
 	}
 
 	// 최근 목록 불러오기
-	List<AlbumVO> recentAlbumList() {
+	public List<AlbumVO> recentAlbumList() {
 		return albumDAO.recentAlbumList();
 	}
 

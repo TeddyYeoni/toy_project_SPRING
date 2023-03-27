@@ -40,6 +40,9 @@ public class MainController {
 
 	@GetMapping("/mySpace")
 	public String mySpace(Model model) {
+		model.addAttribute("recentTodo", toDoListService.recentToDoList());
+		model.addAttribute("recentAlbum", albumService.recentAlbumList());
+		model.addAttribute("recentDiary", diaryService.recentDiaryList());
 		return "mySpace";
 	}
 }

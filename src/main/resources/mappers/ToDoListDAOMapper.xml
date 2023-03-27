@@ -13,11 +13,11 @@
 	<select id="recentToDoList" resultType="toDoListVO">
   	<![CDATA[
 		select
-			rownum, tno, id, title, writedate
+			rownum, tno, id, todayDate
 		from 
 			(select
 				/*+index_desc(mou_todo pk_todo)*/
-				rownum as rn, tno, id, title, writedate
+				rownum as rn, tno, id, todayDate
 			from mou_todo where rownum <= 5)
 		where rn > 0
 		]]>

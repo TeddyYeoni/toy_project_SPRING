@@ -29,7 +29,7 @@ public class DiaryDAOTest extends AppTest {
 	@Test
 	@Ignore
 	public void insertTest() {
-		DiaryVO diaryVO = DiaryVO.builder().writer("관리자").content("test").praise("없음").thanks("모두").emotion("happy").weather("sunny").build();
+		DiaryVO diaryVO = DiaryVO.builder().id("관리자").content("test").praise("없음").thanks("모두").emotion("happy").weather("sunny").build();
 		diaryDao.addDiary(diaryVO);
 	}
 	

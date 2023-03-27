@@ -28,11 +28,11 @@
 	<select id="recentAlbumList" resultType="albumVO">
 	<![CDATA[
 		select
-			rownum, ano, title, imageFileName, writedate
+			rownum, ano, title, imageFileName, uploadDate
 		from 
 			(select
 				/*+index_desc(mou_album pk_album)*/
-				rownum as rn, ano, title, imageFileName, writedate
+				rownum as rn, ano, title, imageFileName, uploadDate
 			from mou_album where rownum <= 5)
 		where rn > 0
 		]]>

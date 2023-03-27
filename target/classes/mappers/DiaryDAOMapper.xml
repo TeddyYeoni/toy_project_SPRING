@@ -46,7 +46,7 @@
 		praise=#{praise}, thanks=#{thanks} where dno=#{dno}
 	</update>
 
-	<select id="" resultType="diaryVO">
+	<select id="recentDiaryList" resultType="diaryVO">
 	<![CDATA[
 		select
 			rownum, dno, id, weather, emotion, praise, thanks, writedate
