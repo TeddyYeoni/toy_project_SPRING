@@ -16,7 +16,7 @@
 		<p>궁금한 점은 질문으로 남겨주세요🎈</p>
 	</div>
 	<div class="text-right my-2">
-		<a href="${contextPath}/qna/write"
+		<a href="${contextPath}/qna/add"
 			class="btn btn-outline-primary">New</a>
 	</div>
 	<form id="listForm">
@@ -30,12 +30,12 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${qna_list}" var="q">
+				<c:forEach items="${qna_list}" var="qna">
 					<tr>
-						<td>${q.qno}</td>
-						<td><a href="${q.qno}" class="title">${q.title}</a></td>
-						<td>${q.writer}</td>
-						<td>${q.writeDate}</td>
+						<td>${qna.qno}</td>
+						<td><a href="${qna.qno}" class="title">${qna.title}</a></td>
+						<td>${qna.writer}</td>
+						<td>${qna.writeDate}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
