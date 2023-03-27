@@ -84,10 +84,5 @@ public class MemberController {
 		return "redirect:/main";
 	}
 	
-	@GetMapping("/mySpace")
-	public String mySpace() {
-		
-		return "member/mySpace";
-	}
 
 }
