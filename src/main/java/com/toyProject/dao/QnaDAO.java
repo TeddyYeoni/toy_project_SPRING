@@ -20,7 +20,7 @@ public interface QnaDAO {
 	void modifyQuestion();
 	
 	// 질문 삭제 
-	void removeQuestion();
+	void removeQuestion(Long qno);
 
 	// 총 게시물 수
 	int totalCount(Criteria criteria);

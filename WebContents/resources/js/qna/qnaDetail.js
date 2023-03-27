@@ -23,7 +23,7 @@ $(function() {
 	// Delete 버튼
 	$('.remove').on('click', function() {
 		viewForm.attr({
-			"action": `${contextPath}/qna/delete`,
+			"action": `${contextPath}/qna/remove`,
 			"method": "post"
 		}).submit();
 

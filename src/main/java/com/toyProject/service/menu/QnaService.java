@@ -40,4 +40,9 @@ public class QnaService {
 		return qnaDao.findByQno(qno);
 	}
 
+	// 질문 삭제
+	public void removeQuestion(Long qno) {
+		qnaDao.removeQuestion(qno);
+	}
+
 }

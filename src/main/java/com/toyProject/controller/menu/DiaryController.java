@@ -52,6 +52,7 @@ public class DiaryController {
 		return "redirect:/diary";
 	}
 
+	// 다이어리 삭제
 	@PostMapping("/remove")
 	public String delete(Long dno, RedirectAttributes rttr) {
 		diaryService.removeDiary(dno);

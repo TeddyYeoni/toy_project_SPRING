@@ -47,5 +47,11 @@ public class QnaContoller {
 		model.addAttribute("qna", qnaService.findByQno(qno));
 		return "qna/qnaDetail";
 	}
+	
+	@PostMapping("/remove")
+	public String delete(Long qno, RedirectAttributes rttr) {
+		qnaService.removeQuestion(qno);
+		return "redirect:/qna";
+	}
 
 }

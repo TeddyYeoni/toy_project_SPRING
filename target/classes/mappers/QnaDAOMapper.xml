@@ -20,8 +20,7 @@
 	</select>
 
 	<select id="totalCount" resultType="int">
-		select count(qno) as count
-		from mou_qna
+		select count(qno) as count from mou_qna
 	</select>
 
 	<insert id="addQuestion" parameterType="qnaVO">
@@ -43,8 +42,11 @@
 	</select>
 
 	<select id="findByQno" resultType="qnaVO">
-		select * from mou_qna where
-		qno = #{qno}
+		select * from mou_qna where qno = #{qno}
 	</select>
+	
+	<delete id="removeQuestion">
+		delete from mou_qna where qno = #{qno}
+	</delete>
 
 </mapper>
