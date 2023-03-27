@@ -16,9 +16,6 @@ public interface QnaDAO {
 	// 질문 조회
 	QnaVO findByQno(Long qno);
 	
-	// 질문 수정
-	void modifyQuestion();
-	
 	// 질문 삭제 
 	void removeQuestion(Long qno);
 

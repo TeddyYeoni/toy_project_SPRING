@@ -44,5 +44,5 @@ public class QnaService {
 	public void removeQuestion(Long qno) {
 		qnaDao.removeQuestion(qno);
 	}
-
+	
 }

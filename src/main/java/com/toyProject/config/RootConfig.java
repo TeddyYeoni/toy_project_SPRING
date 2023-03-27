@@ -18,6 +18,7 @@ import com.toyProject.domain.AlbumVO;
 import com.toyProject.domain.BoardReplyVO;
 import com.toyProject.domain.BoardVO;
 import com.toyProject.domain.DiaryVO;
+import com.toyProject.domain.QnaReplyVO;
 import com.toyProject.domain.QnaVO;
 import com.toyProject.domain.ToDoListVO;
 import com.toyProject.domain.login.MemberVO;
@@ -37,7 +38,8 @@ public class RootConfig {
 		sqlSessionFactoryBean.setDataSource(dataSource);
 		sqlSessionFactoryBean.setMapperLocations(
 				new PathMatchingResourcePatternResolver().getResources("classpath:mappers/**/*Mapper.xml"));
-		sqlSessionFactoryBean.setTypeAliases(BoardVO.class, QnaVO.class, DiaryVO.class, MemberVO.class, MemberGrade.class, ToDoListVO.class, AlbumVO.class, BoardReplyVO.class);
+		sqlSessionFactoryBean.setTypeAliases(BoardVO.class, QnaVO.class, DiaryVO.class, MemberVO.class,
+				MemberGrade.class, ToDoListVO.class, AlbumVO.class, BoardReplyVO.class, QnaReplyVO.class);
 		return sqlSessionFactoryBean;
 	}
 
