@@ -49,4 +49,8 @@
 		delete from mou_qna where qno=#{qno}
 	</delete>
 	
+	<select id="qnaReplyCount" resultType="int">
+		select replyCount from mou_qna where qno=#{qno}
+	</select>
+	
 </mapper>

@@ -22,5 +22,5 @@ public class QnaVO {
 	private String content;
 	private String writer;
 	private Date writeDate;
-
+	private Long replyCount;
 }

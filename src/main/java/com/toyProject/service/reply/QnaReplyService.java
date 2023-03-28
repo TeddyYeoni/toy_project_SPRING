@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.toyProject.dao.BoardReplyDAO;
 import com.toyProject.dao.QnaReplyDAO;
@@ -20,12 +21,11 @@ public class QnaReplyService {
 		return qnaReplyDAO.qnaReplyList(qno);
 	}
 	
+	@Transactional
 	public void addQnaReply(QnaReplyVO qnaReplyVO) {
 		qnaReplyDAO.addQnaReply(qnaReplyVO);
+		qnaReplyDAO.updateCount(qnaReplyVO.getQno());
 	}
 	
-	public int updateCount(Long qno) {
-		return qnaReplyDAO.updateCount(qno);
-	}
 	
 }

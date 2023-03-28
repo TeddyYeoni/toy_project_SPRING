@@ -45,4 +45,9 @@ public class QnaService {
 		qnaDao.removeQuestion(qno);
 	}
 	
+	// 댓글 수 조회
+	public int qnaReplyCount(Long qno) {
+		return qnaDao.qnaReplyCount(qno);
+	}
+	
 }

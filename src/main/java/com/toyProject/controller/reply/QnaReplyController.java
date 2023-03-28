@@ -36,9 +36,7 @@ public class QnaReplyController {
 	@PostMapping("/add")
 	@ResponseBody
 	public String insert(@RequestBody QnaReplyVO qnaReplyVO) {
-		log.info(qnaReplyVO);
 		qnaReplyService.addQnaReply(qnaReplyVO);
-		qnaReplyService.updateCount(qnaReplyVO.getQno());
 		return "댓글 등록 성공 :)";
 	}
 
