@@ -8,5 +8,9 @@ import com.toyProject.domain.QnaReplyVO;
 public interface QnaReplyDAO {
 	
 	List<QnaReplyVO> qnaReplyList(Long qno);
+	
+	void addQnaReply(QnaReplyVO qnaReplyVO);
+	
+	int updateCount(Long qno);
 
 }

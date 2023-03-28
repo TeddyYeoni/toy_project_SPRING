@@ -20,4 +20,12 @@ public class QnaReplyService {
 		return qnaReplyDAO.qnaReplyList(qno);
 	}
 	
+	public void addQnaReply(QnaReplyVO qnaReplyVO) {
+		qnaReplyDAO.addQnaReply(qnaReplyVO);
+	}
+	
+	public int updateCount(Long qno) {
+		return qnaReplyDAO.updateCount(qno);
+	}
+	
 }

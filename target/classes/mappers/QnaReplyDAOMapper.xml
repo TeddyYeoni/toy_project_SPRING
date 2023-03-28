@@ -7,7 +7,20 @@
 <mapper namespace="com.toyProject.dao.QnaReplyDAO">
 
 	<select id="qnaReplyList" resultType="qnaReplyVO">
-		select * from qna_reply where qno=#{qno}
+		select * from qna_reply
+		where qno=#{qno}
 	</select>
+
+	<insert id="addQnaReply">
+		insert into qna_reply(q_rno, qno,
+		reply, writer)
+		values(qna_reply_seq.nextval,#{qno},#{reply},#{writer})
+	</insert>
+
+	<update id="updateCount">
+		update mou_qna set replycount=replycount+1 where
+		qno=#{qno}
+	</update>
+
 
 </mapper>

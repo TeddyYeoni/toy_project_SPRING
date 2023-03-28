@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -29,6 +31,15 @@ public class QnaReplyController {
 	public List<QnaReplyVO> qnaReplyList(@RequestParam("qno") Long qno) {
 		List<QnaReplyVO> replyList = qnaReplyService.qnaReplyList(qno);
 		return replyList;
+	}
+
+	@PostMapping("/add")
+	@ResponseBody
+	public String insert(@RequestBody QnaReplyVO qnaReplyVO) {
+		log.info(qnaReplyVO);
+		qnaReplyService.addQnaReply(qnaReplyVO);
+		qnaReplyService.updateCount(qnaReplyVO.getQno());
+		return "댓글 등록 성공 :)";
 	}
 
 }

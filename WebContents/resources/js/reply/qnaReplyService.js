@@ -17,8 +17,9 @@ let qnaReplyService = {
 	write: function(qnaReplyVO) {
 		$.ajax({
 			type: 'post',
-			url: `${contextPath}/qnaReply/write`,
-			data: qnaReplyVO,
+			url: `${contextPath}/qnaReply/add`,
+			contentType: 'application/json',
+			data:  JSON.stringify(qnaReplyVO),
 			success: function(update) {
 				$('.reply_content').val('');
 				$('#feedback').find('.modal-body').html(update);
