@@ -1,4 +1,4 @@
-let qna_ReplyService = {
+let qnaReplyService = {
 
 	list: function(qno) {
 		$.ajax({
@@ -6,7 +6,9 @@ let qna_ReplyService = {
 			url: `${contextPath}/qnaReply/list`,
 			data: { qno: qno },
 			success: function(replyList) {
-				replyListRender(replyList);
+				var qnaReplyList = JSON.parse(replyList);
+				console.log(qnaReplyList);
+            	replyListRender(qnaReplyList);
 			},
 			error: function() {
 				alert('댓글 목록 조회 불가');
@@ -24,7 +26,7 @@ let qna_ReplyService = {
 				$('#feedback').find('.modal-body').html(update);
 				$('#feedback').modal('show');
 
-				qna_ReplyService.list(qnaReplyVO.qno);
+				qnaReplyService.list(qnaReplyVO.qno);
 			},
 			error: function() {
 				alert('댓글 등록 실패')

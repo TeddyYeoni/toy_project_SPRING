@@ -17,8 +17,8 @@ import lombok.ToString;
 @Builder
 public class QnaReplyVO {
 
-	private int q_rno;
-	private int qno;
+	private Long q_rno;
+	private Long qno;
 	private String reply;
 	private String writer;
 	private Date replyDate;

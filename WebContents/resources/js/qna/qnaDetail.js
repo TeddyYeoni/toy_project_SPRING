@@ -50,7 +50,7 @@ $(function() {
 $(function() {
 	let qno = $('input[name="qno"]').val();
 
-	qna_ReplyService.list(qno);
+	qnaReplyService.list(qno);
 
 	// 댓글 등록 기능
 	$('.reply_write').on('click', function() {
@@ -63,13 +63,13 @@ $(function() {
 			writer: writer
 		}
 
-		qna_ReplyService.write(qnaReplyVO);
+		qnaReplyService.write(qnaReplyVO);
 	});
 
 	// 댓글 삭제 기능
 	$('.replyList').on('click', '.reply_delBtn', function() {
 		let q_rno = $(this).closest('div').data('q_rno');
-		qna_ReplyService.remove(q_rno, qno);
+		qnaReplyService.remove(q_rno, qno);
 	});
 
 

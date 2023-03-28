@@ -9,9 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.google.gson.Gson;
-import com.toyProject.domain.BoardReplyVO;
 import com.toyProject.domain.QnaReplyVO;
-import com.toyProject.service.reply.BoardReplyService;
 import com.toyProject.service.reply.QnaReplyService;
 
 import lombok.extern.log4j.Log4j;
@@ -26,11 +24,7 @@ public class QnaReplyController {
 
 	@GetMapping("/list")
 	public String qnaReplyList(Model model, Long qno) {
-		System.out.println("질문 번호 가져오기 :  " + qno);
-		List<QnaReplyVO> qnaReplyList = qnaReplyService.qnaReplyList(qno);
-		System.out.println(qnaReplyList);
-		Gson gson = new Gson();
-		String replyList = gson.toJson(qnaReplyList);
+		List<QnaReplyVO> replyList = qnaReplyService.qnaReplyList(qno);
 		model.addAttribute("replyList", replyList);
 		return "list";
 	}
