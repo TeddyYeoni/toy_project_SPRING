@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 import com.toyProject.domain.BoardReplyVO;
@@ -14,18 +16,16 @@ import com.toyProject.service.reply.BoardReplyService;
 
 @Controller
 @RequestMapping("/boardReply")
-public class BaordReplyController {
+public class BoardReplyController {
 
 	@Autowired
 	private BoardReplyService boardReplyService;
 
 	@GetMapping("/list")
-	public String boardReplyList(Model model, Long bno) {
+	@ResponseBody
+	public List<BoardReplyVO> boardReplyList(@RequestParam("bno") Long bno) {
 		List<BoardReplyVO> boardReplyList = boardReplyService.boardReplyList(bno);
-		Gson gson = new Gson();
-		String replyList = gson.toJson(boardReplyList);
-		model.addAttribute("replyList", replyList);
-		return "list";
+		return boardReplyList;
 	}
 
 }

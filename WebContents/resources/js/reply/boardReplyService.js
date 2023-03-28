@@ -1,4 +1,4 @@
-let board_ReplyService = {
+let boardReplyService = {
 
 	list: function(bno) {
 		$.ajax({
@@ -24,7 +24,7 @@ let board_ReplyService = {
 				$('#feedback').find('.modal-body').html(update);
 				$('#feedback').modal('show');
 
-				board_ReplyService.list(boardReplyVO.bno);
+				boardReplyService.list(boardReplyVO.bno);
 			},
 			error: function() {
 				alert('댓글 등록 실패')
@@ -43,7 +43,7 @@ let board_ReplyService = {
 			success: function(remove_result) {
 				$('#remove_feedback').find('.modal-body').html(remove_result);
 				$('#remove_feedback').modal('show');
-				board_ReplyService.list(bno);
+				boardReplyService.list(bno);
 			},
 			error: function() {
 				alert('댓글 삭제 실패!')

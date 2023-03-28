@@ -66,7 +66,7 @@ $(function() {
 $(function() {
 	let bno = $('input[name="bno"]').val();
 
-	board_ReplyService.list(bno);
+	boardReplyService.list(bno);
 
 	// 댓글 등록 기능
 	$('.reply_write').on('click', function() {
@@ -79,13 +79,13 @@ $(function() {
 			writer: writer
 		}
 
-		board_ReplyService.write(boardReplyVO);
+		boardReplyService.write(boardReplyVO);
 	});
 
 	// 댓글 삭제 기능
 	$('.replyList').on('click', '.reply_delBtn', function() {
 		let b_rno = $(this).closest('div').data('b_rno');
-		board_ReplyService.remove(b_rno, bno);
+		boardReplyService.remove(b_rno, bno);
 	});
 
 
