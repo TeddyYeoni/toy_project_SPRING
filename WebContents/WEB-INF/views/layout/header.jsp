@@ -38,6 +38,9 @@
 .navbar-nav {
 	align-items: center;
 	display: flex;
+	margin: 0 auto;
+    flex-direction: row;
+    justify-content: center;
 }
 
 body {
@@ -53,25 +56,25 @@ body {
 				<h1>MY ONLY UNIVERSE🚀</h1>
 			</a>
 			<!-- Links -->
-			<ul class="navbar-nav mx-5 my-2">
+			<ul class="navbar-nav justify-content-center my-2">
 				<li class="nav-item"><a
-					class="nav-link font-weight-bold text-light mx-3"
+					class="nav-link font-weight-bold text-light mx-4"
 					href="${contextPath}/todo"><h3>To Do List</h3></a></li>
 				<li class="nav-item"><a
-					class="nav-link font-weight-bold text-light mx-3"
+					class="nav-link font-weight-bold text-light mx-4"
 					href="${contextPath}/album"><h3>Album</h3></a></li>
 				<li class="nav-item"><a
-					class="nav-link font-weight-bold text-light mx-3"
+					class="nav-link font-weight-bold text-light mx-4"
 					href="${contextPath}/diary"><h3>Diary</h3></a></li>
 				<li class="nav-item"><a
-					class="nav-link font-weight-bold text-light mx-3"
+					class="nav-link font-weight-bold text-light mx-4"
 					href="${contextPath}/board"><h3>Board</h3></a></li>
 				<li class="nav-item"><a
-					class="nav-link font-weight-bold text-light mx-3"
+					class="nav-link font-weight-bold text-light mx-4"
 					href="${contextPath}/qna"><h3>Q&A</h3></a></li>
 			</ul>
 
-			<ul class="navbar-nav my-3">
+			<ul class="navbar-nav my-3 ml-auto">
 				<c:if test="${empty auth}">
 					<li class="nav-item "><a
 						class="nav-link font-weight-bold text-light mx-1"

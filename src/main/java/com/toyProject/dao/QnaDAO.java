@@ -25,7 +25,4 @@ public interface QnaDAO {
 	// 최근 질문 목록
 	List<QnaVO> recentQnaList();
 	
-	// 댓글 수 조회
-	int qnaReplyCount(Long qno);
-	
 }
