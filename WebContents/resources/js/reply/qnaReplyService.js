@@ -6,9 +6,7 @@ let qnaReplyService = {
 			url: `${contextPath}/qnaReply/list`,
 			data: { qno: qno },
 			success: function(replyList) {
-				var qnaReplyList = JSON.parse(replyList);
-				console.log(qnaReplyList);
-            	replyListRender(qnaReplyList);
+        	    replyListRender(replyList);
 			},
 			error: function() {
 				alert('댓글 목록 조회 불가');
@@ -26,7 +24,7 @@ let qnaReplyService = {
 				$('#feedback').find('.modal-body').html(update);
 				$('#feedback').modal('show');
 
-				qnaReplyService.list(qnaReplyVO.qno);
+				qna_ReplyService.list(qnaReplyVO.qno);
 			},
 			error: function() {
 				alert('댓글 등록 실패')
@@ -109,7 +107,7 @@ function replyListRender(replyList) {
 		}
 
 		// 관리자
-		if (auth.grade == 'ASTRONAUT' && reply.writer != auth.id) {
+		if (auth.grade == 'ASTRONAUT' && r.writer != auth.id) {
 			output += `<div class="align-self-content" data-rno="${r.q_rno}">
 							<button class="btn btn-sm btn-outline-danger reply_delBtn">Delete</button>
 						</div>`;

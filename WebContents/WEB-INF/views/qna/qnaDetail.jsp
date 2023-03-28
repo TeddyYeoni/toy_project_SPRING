@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 
 <%@ include file="../layout/header.jsp"%>
+
 <script src="${contextPath}/resources/js/reply/qnaReplyService.js"></script>
 <script src="${contextPath}/resources/js/qna/qnaDetail.js"></script>
 

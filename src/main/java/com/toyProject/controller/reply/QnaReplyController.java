@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 import com.toyProject.domain.QnaReplyVO;
@@ -23,10 +25,10 @@ public class QnaReplyController {
 	private QnaReplyService qnaReplyService;
 
 	@GetMapping("/list")
-	public String qnaReplyList(Model model, Long qno) {
+	@ResponseBody
+	public List<QnaReplyVO> qnaReplyList(@RequestParam("qno") Long qno) {
 		List<QnaReplyVO> replyList = qnaReplyService.qnaReplyList(qno);
-		model.addAttribute("replyList", replyList);
-		return "list";
+		return replyList;
 	}
 
 }
