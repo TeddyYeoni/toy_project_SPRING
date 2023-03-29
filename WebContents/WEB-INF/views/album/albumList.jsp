@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 
 <%@ include file="../layout/header.jsp"%>
-<script src="${contextPath}/resources/js/album/list.js"></script>
+<script src="${contextPath}/resources/js/album/albumList.js"></script>
 <style>
 .holder {
 	min-height: 100vh;

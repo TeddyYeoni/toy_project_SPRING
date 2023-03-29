@@ -1,4 +1,5 @@
 $(function() {
+	console.log('스크립트 실행');
 	$('.viewMode').hide();
 
 	let viewForm = $('#viewForm');
@@ -15,7 +16,7 @@ $(function() {
 	// Delete 버튼
 	$('.remove').on('click', function() {
 		viewForm.attr({
-			"action": `${contextPath}/album/delete`,
+			"action": `${contextPath}/album/remove`,
 			"method": "post"
 		}).submit();
 

@@ -20,6 +20,7 @@ import com.toyProject.domain.paging.Criteria;
 import com.toyProject.service.menu.AlbumService;
 
 import lombok.extern.log4j.Log4j;
+import oracle.jdbc.proxy.annotation.Post;
 
 @Controller
 @RequestMapping("/album")
@@ -73,12 +74,19 @@ public class AlbumController {
 		}
 		return "redirect:/album";
 	}
-	
+
+	// 앨범 상세 조회
 	@GetMapping("/detail")
 	public String select(Model model, Long ano) {
-		model.addAttribute("album",albumService.findByAno(ano));
+		model.addAttribute("album", albumService.findByAno(ano));
 		return "album/albumDetail";
 	}
-	
+
+	// 앨범 사진 삭제
+	@PostMapping("/remove")
+	public String delete(Long ano, RedirectAttributes rttr) {
+		albumService.removePhoto(ano);
+		return "redirect:/album";
+	}
 
 }

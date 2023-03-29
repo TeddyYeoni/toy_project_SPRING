@@ -37,5 +37,9 @@
 		where rn > 0
 		]]>
 	</select>
+	
+	<delete id="removePhoto">
+		delete from mou_album where ano=#{ano}
+	</delete>
 
 </mapper>
