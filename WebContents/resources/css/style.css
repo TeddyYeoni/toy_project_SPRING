@@ -7,3 +7,21 @@
      font-weight: normal;
      font-style: normal;
 }
+
+/* loginForm.jsp 로그인 폼 */
+.loginuser_image img {
+	width: 200px;
+}
+
+.login_form {
+	width: 300px;
+}
+
+/* joinFomr.jsp 회원가입 폼 */
+.join_form {
+	width: 500px;
+}
+
+.join_image img {
+	width: 200px;
+}

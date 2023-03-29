@@ -7,11 +7,15 @@
 .holder {
 	min-height: 80vh;
 }
+
+
 </style>
 
 <div class="holder container">
-	<div class="text-center my-5">
-		<h1>Join 🧑🏻👧🏻</h1>
+	<div class="my-5 join_image">
+		<center>
+			<img src="${contextPath}/resources/img/icon/join_icon.png">
+		</center>
 	</div>
 
 	<div class="d-flex justify-content-center">

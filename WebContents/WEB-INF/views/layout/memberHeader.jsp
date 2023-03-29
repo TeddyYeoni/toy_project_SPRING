@@ -43,7 +43,7 @@ body {
 			<!-- Brand/logo -->
 			<a class="navbar-brand font-weight-bold text-light mx-5 "
 				href="${contextPath}/main">
-				<h1>MY ONLY UNIVERSE🚀</h1>
+				<h1>MY ONLY UNIVERSE</h1>
 			</a>
 		</nav>
 	</div>
