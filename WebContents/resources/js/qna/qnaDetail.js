@@ -60,9 +60,8 @@ $(function() {
 
 	// 댓글 삭제 기능
 	$('.replyList').on('click', '.reply_delBtn', function() {
-		let q_rno = $(this).closest('div').data('q_rno');
+		let q_rno = $(this).closest('div').data('rno');
 		qnaReplyService.remove(q_rno, qno);
 	});
-
 
 });

@@ -37,7 +37,14 @@ public class QnaReplyController {
 	@ResponseBody
 	public String insert(@RequestBody QnaReplyVO qnaReplyVO) {
 		qnaReplyService.addQnaReply(qnaReplyVO);
-		return "댓글 등록 성공 :)";
+		return "success";
+	}
+
+	@PostMapping("/remove")
+	@ResponseBody
+	public String delete(@RequestParam("q_rno") Long q_rno, @RequestParam("qno") Long qno) {
+		qnaReplyService.removeQnaReply(q_rno, qno);
+		return "success";
 	}
 
 }

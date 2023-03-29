@@ -20,12 +20,11 @@ let qnaReplyService = {
 			url: `${contextPath}/qnaReply/add`,
 			contentType: 'application/json',
 			data:  JSON.stringify(qnaReplyVO),
-			success: function(update) {
+			success: function(update_result) {
 				$('.reply_content').val('');
-				$('#feedback').find('.modal-body').html(update);
+				$('#feedback').find('.modal-body').html(update_result);
 				$('#feedback').modal('show');
-
-				qna_ReplyService.list(qnaReplyVO.qno);
+				qnaReplyService.list(qno);
 			},
 			error: function() {
 				alert('댓글 등록 실패')
@@ -44,7 +43,7 @@ let qnaReplyService = {
 			success: function(remove_result) {
 				$('#remove_feedback').find('.modal-body').html(remove_result);
 				$('#remove_feedback').modal('show');
-				qna_ReplyService.list(qno);
+				qnaReplyService.list(qno);
 			},
 			error: function() {
 				alert('댓글 삭제 실패!')

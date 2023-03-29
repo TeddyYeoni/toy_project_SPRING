@@ -17,14 +17,23 @@ public class QnaReplyService {
 	@Autowired
 	private QnaReplyDAO qnaReplyDAO;
 	
+	// 댓글 목록
 	public List<QnaReplyVO> qnaReplyList(Long qno){
 		return qnaReplyDAO.qnaReplyList(qno);
 	}
 	
+	// 댓글 추가
 	@Transactional
 	public void addQnaReply(QnaReplyVO qnaReplyVO) {
 		qnaReplyDAO.addQnaReply(qnaReplyVO);
-		qnaReplyDAO.updateCount(qnaReplyVO.getQno());
+		qnaReplyDAO.updateCountPlus(qnaReplyVO.getQno());
+	}
+	
+	// 댓글 삭제
+	@Transactional
+	public void removeQnaReply(Long q_rno, Long qno) {
+		qnaReplyDAO.removeQnaReply(q_rno, qno);
+		qnaReplyDAO.updateCountMinus(qno);
 	}
 	
 	
