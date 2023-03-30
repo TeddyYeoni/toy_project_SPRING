@@ -5,7 +5,7 @@
 
 <script src="${contextPath}/resources/css/todoStyle.css"></script>
 <script src="${contextPath}/resources/js/toDoList/toDoAddForm.js"></script>
- 
+
 <div class="container my-5">
 	<div class="text-center my-5">
 		<h1>Today's To Do List✏</h1>
@@ -30,7 +30,7 @@
 										<li>
 											<div class="form-check">
 												<label class="form-check-label my-2"> <input
-													class="text" readonly="readonly" value="해야 할 일 목록"><i
+													class="text" readonly="readonly" value="${checkList}"><i
 													class="input-helper"></i></label>
 											</div> <i class="remove mdi mdi-close-circle-outline"></i>
 										</li>
@@ -45,7 +45,7 @@
 	</form>
 	<div class="text-center my-5">
 		<a href="${contextPath}/todo" class="btn btn-outline-dark">Back</a>
-		<button class="btn btn-outline-primary">Update</button>
+		<button class="btn btn-outline-primary addBtn">Update</button>
 	</div>
 
 </div>
