@@ -30,7 +30,7 @@
 					<td colspan="4"><input type="file" name="imageFileName"
 						class="form-control viewMode">
 						<div class="imageLayout my-3">
-							<input type="hidden" name="originFileName" class="originFileName"
+							<input type="hidden" name="attachFile" class="attachFile"
 								value="${album.imageFileName}">
 							<div class="preview">
 								<img class="originImg"

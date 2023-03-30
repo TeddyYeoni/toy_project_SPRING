@@ -6,7 +6,7 @@
 
 <mapper namespace="com.toyProject.dao.AlbumDAO">
 	<select id="albumList" resultType="albumVO">
-		select * from mou_album
+		select * from mou_album order by ano desc
 	</select>
 
 	<select id="getLastAno" resultType="String">

@@ -7,7 +7,7 @@
 <mapper namespace="com.toyProject.dao.QnaReplyDAO">
 
 	<select id="qnaReplyList" resultType="qnaReplyVO">
-		select * from qna_reply where qno=#{qno} 
+		select * from qna_reply where qno=#{qno} order by q_rno asc
 	</select>
 
 	<insert id="addQnaReply">

@@ -13,11 +13,12 @@ $(function() {
 			.submit();
 	});
 
+
 	// Delete 버튼
 	$('.remove').on('click', function() {
 		viewForm.attr({
 			"action": `${contextPath}/album/remove`,
-			"method": "post"
+			"method": "post",
 		}).submit();
 
 	});
