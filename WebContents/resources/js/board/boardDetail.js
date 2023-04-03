@@ -22,6 +22,10 @@ $(function() {
 
 	// Edit 버튼
 	$('.toModForm').on('click', function() {
+		viewForm.attr({
+				"action": `${contextPath}/board/modify`,
+				"method": "post"
+			}).submit();
 		$('input[name="title"],textarea[name="content"]').attr("readonly", false);
 		$('.viewMode').show();
 		$(this).closest('tr').hide();

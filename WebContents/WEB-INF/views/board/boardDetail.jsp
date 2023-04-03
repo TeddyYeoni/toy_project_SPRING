@@ -40,7 +40,7 @@
 				<td colspan="3"><input type="file" name="imageFileName"
 					class="form-control viewMode">
 					<div class="my-3">
-						<input type="hidden" name="originFileName" class="originFileName"
+						<input type="hidden" name="attachFile" class="originFileName"
 							value="${board.imageFileName}">
 						<c:if test="${not empty board.imageFileName}">
 							<div class="preview">

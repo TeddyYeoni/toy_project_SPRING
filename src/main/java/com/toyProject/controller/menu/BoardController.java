@@ -92,6 +92,7 @@ public class BoardController {
 	@PostMapping("/modify")
 	public String update(BoardVO boardVO, @RequestParam("attachFile") MultipartFile multipartFile,
 			RedirectAttributes rttr, @RequestParam(defaultValue = "false") Boolean delCheck) {
+		String imageFileName = boardVO.getImageFileName();
 		if (delCheck) {
 			// 파일 삭제 및 내용 변경
 			// 파일 삭제
