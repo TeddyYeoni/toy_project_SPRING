@@ -10,7 +10,6 @@
 	<div class="text-center my-5">
 		<h1>Today's To Do List✏</h1>
 	</div>
-	<form action="${contextPath}/todo/add" method="post">
 		<b>Date</b>&nbsp;&nbsp;&nbsp;<b>${todayDate}</b>
 		<h4>Check List✔</h4>
 		<div class="page-content page-container my-3" id="page-content">
@@ -19,7 +18,7 @@
 					<div class="col-md-12">
 						<div class="card px-3">
 							<div class="card-body">
-								<div class="add-items d-flex">
+								<div class="add-items d-flex my-3">
 									<input type="text" class="form-control todo-list-input"
 										placeholder="What do you need to do today?">
 									<button
@@ -29,8 +28,7 @@
 									<ul class="d-flex flex-column-reverse todo-list">
 										<li>
 											<div class="form-check">
-												<label class="form-check-label my-2"> <input
-													class="text" readonly="readonly" value="${checkList}"><i
+												<label class="form-check-label my-2">체크리스트<i
 													class="input-helper"></i></label>
 											</div> <i class="remove mdi mdi-close-circle-outline"></i>
 										</li>
@@ -42,11 +40,10 @@
 				</div>
 			</div>
 		</div>
-	</form>
-	<div class="text-center my-5">
-		<a href="${contextPath}/todo" class="btn btn-outline-dark">Back</a>
-		<button class="btn btn-outline-primary addBtn">Update</button>
-	</div>
+		<div class="text-center my-5">
+			<a href="${contextPath}/todo" class="btn btn-outline-dark">Back</a>
+			<button class="btn btn-outline-primary addBtn">Update</button>
+		</div>
 
 </div>
 
