@@ -17,8 +17,9 @@ let boardReplyService = {
 	write: function(boardReplyVO) {
 		$.ajax({
 			type: 'post',
-			url: `${contextPath}/boardReply/write`,
-			data: boardReplyVO,
+			url: `${contextPath}/boardReply/add`,
+			contentType: 'application/json',
+			data:  JSON.stringify(boardReplyVO),
 			success: function(update) {
 				$('.reply_content').val('');
 				$('#feedback').find('.modal-body').html(update);
@@ -107,7 +108,7 @@ function replyListRender(replyList) {
 		}
 
 		// 관리자
-		if (auth.grade == 'ASTRONAUT' && reply.writer != auth.id) {
+		if (auth.grade == 'ASTRONAUT' && r.writer != auth.id) {
 			output += `<div class="align-self-content" data-rno="${r.b_rno}">
 							<button class="btn btn-sm btn-outline-danger reply_delBtn">Delete</button>
 						</div>`;
