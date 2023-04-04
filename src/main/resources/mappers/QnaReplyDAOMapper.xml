@@ -4,7 +4,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.toyProject.dao.QnaReplyDAO">
+<mapper namespace="com.toyProject.dao.reply.QnaReplyDAO">
 
 	<select id="qnaReplyList" resultType="qnaReplyVO">
 		select * from qna_reply where qno=#{qno} order by q_rno asc

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../layout/header.jsp"%>
+<script src="${contextPath}/resources/css/todoStyle.css"></script>
 
 <style>
 .holder {
@@ -58,9 +59,14 @@ a {
 							checked> <label class="form-check-label" for="flexCheck1"><span
 							class="fst-italic pl-1">Buy a new sweatshirt</span></label>
 					</div>
+					<h7 class="progress-title">CSS3 - 90%</h7>
+					<div class="progress">
+						<div
+							class="progress-bar progress-bar-info progress-bar-striped active"
+							style="width: 90%;"></div>
+					</div>
 				</div>
 			</div>
-
 		</div>
 	</div>
 </div>

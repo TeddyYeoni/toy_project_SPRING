@@ -1,4 +1,4 @@
-package com.toyProject.dao;
+package com.toyProject.dao.reply;
 
 import java.util.List;
 

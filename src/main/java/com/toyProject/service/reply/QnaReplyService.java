@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.toyProject.dao.BoardReplyDAO;
-import com.toyProject.dao.QnaReplyDAO;
+import com.toyProject.dao.reply.BoardReplyDAO;
+import com.toyProject.dao.reply.QnaReplyDAO;
 import com.toyProject.domain.BoardReplyVO;
 import com.toyProject.domain.QnaReplyVO;
 
