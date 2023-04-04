@@ -9,5 +9,22 @@
 	<select id="boardReplyList" resultType="boardReplyVO">
 		select * from board_reply where bno=#{bno}
 	</select>
+	
+	<insert id="addBoardReply">
+		insert into board_reply(b_rno, bno, reply, writer) 
+		values(seq_board_reply.nextval,#{bno},#{reply},#{writer})
+	</insert>
+	
+	<update id="updateCountPlus">
+		update mou_board set replycount=replycount+1 where bno=#{bno}
+	</update>
+	
+	<delete id="removeBoardReply">
+		delete from board_reply where b_rno=#{b_rno}
+	</delete>
+	
+	<update id="updateCountMinus">
+		update mou_board set replycount=replycount-1 where bno=#{bno}
+	</update>
 
 </mapper>
