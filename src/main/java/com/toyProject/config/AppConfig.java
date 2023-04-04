@@ -1,6 +1,5 @@
 package com.toyProject.config;
 
-import java.nio.charset.Charset;
 import java.util.List;
 
 import org.springframework.context.annotation.Configuration;

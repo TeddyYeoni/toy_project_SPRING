@@ -84,7 +84,7 @@ $(function() {
 
 	// 댓글 삭제 기능
 	$('.replyList').on('click', '.reply_delBtn', function() {
-		let b_rno = $(this).closest('div').data('b_rno');
+		let b_rno = $(this).closest('div').data('rno');
 		boardReplyService.remove(b_rno, bno);
 	});
 
