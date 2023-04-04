@@ -34,14 +34,14 @@ public class BoardReplyController {
 	@ResponseBody
 	public String insert(@RequestBody BoardReplyVO boardReplyVO) {
 		boardReplyService.addBoardReply(boardReplyVO);
-		return "success";
+		return "댓글이 등록되었습니다 :)";
 	}
 	
 	@PostMapping("/remove")
 	@ResponseBody
 	public String delete(@RequestParam("b_rno") Long b_rno,@RequestParam("bno") Long bno) {
 		boardReplyService.removeBoardReply(b_rno, bno);
-		return "success";
+		return "댓글이 삭제되었습니다 :)";
 	}
 
 }

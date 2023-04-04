@@ -24,7 +24,7 @@ let qnaReplyService = {
 				$('.reply_content').val('');
 				$('#feedback').find('.modal-body').html(update_result);
 				$('#feedback').modal('show');
-				qnaReplyService.list(qno);
+				qnaReplyService.list(qnaReplyVO.qno);
 			},
 			error: function() {
 				alert('댓글 등록 실패')
