@@ -84,9 +84,10 @@ public class AlbumController {
 
 	// 앨범 사진 삭제
 	@PostMapping("/remove")
-	public String delete(Long ano, @RequestParam("attachFile") String imageFileName, RedirectAttributes rttr)
+	public String delete(Long ano,RedirectAttributes rttr)
 			throws IOException {
-		if (!StringUtils.isEmpty(imageFileName)) {
+		AlbumVO albumVO = albumService.findByAno(ano);
+		if (albumVO != null) {
 			File file = new File("c:/mou_fileRepo/album/" + ano);
 			if (file.exists()) {
 				FileUtils.deleteDirectory(file);
