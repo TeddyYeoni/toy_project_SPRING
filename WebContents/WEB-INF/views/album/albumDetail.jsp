@@ -24,13 +24,14 @@
 		<h1>Album</h1>
 	</div>
 	<form id="viewForm" enctype="multipart/form-data">
+
 		<table class="table">
 			<tr>
 				<div>
-					<td colspan="4"><input type="file" name="imageFileName"
+					<td colspan="4"><input type="file"
 						class="form-control viewMode">
 						<div class="imageLayout my-3">
-							<input type="hidden" name="attachFile" class="attachFile"
+							<input type="hidden" name="attachFile"
 								value="${album.imageFileName}">
 							<div class="preview">
 								<img class="originImg"

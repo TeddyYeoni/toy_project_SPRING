@@ -10,7 +10,7 @@ $(function() {
 					$('.preview').html(imgTag)
 				} else {
 					alert('이미지 파일을 등록해주세요 :)');
-					$('input[name="imageFileName"]').val('');
+					$('input[name="attachFile"]').val('');
 					$('.preview').html('');
 				}
 			}

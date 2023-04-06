@@ -10,7 +10,7 @@
     </appender>
     
     <!-- Application Loggers -->
-    <logger name="com.jafa" >
+    <logger name="com.toyProject" >
         <level value="info" />
     </logger>
     
