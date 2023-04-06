@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.toyProject.controller.FileController;
 import com.toyProject.domain.AlbumVO;
 import com.toyProject.domain.paging.Criteria;
 import com.toyProject.service.menu.AlbumService;
@@ -28,6 +29,8 @@ public class AlbumController {
 
 	@Autowired
 	private AlbumService albumService;
+	
+	private String albumFilePath = FileController.ALBUM_FILE_PATH;
 
 	@GetMapping(value = { "", "/", "/list" })
 	public String albumList(Model model, Criteria criteria) {
@@ -87,7 +90,7 @@ public class AlbumController {
 			throws IOException {
 		AlbumVO albumVO = albumService.findByAno(ano);
 		if (albumVO.getImageFileName() != null) {
-			File file = new File("c:/mou_fileRepo/album/" + ano);
+			File file = new File(albumFilePath + ano);
 			if (file.exists()) {
 				FileUtils.deleteDirectory(file);
 			}

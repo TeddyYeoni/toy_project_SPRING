@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.toyProject.controller.FileController;
 import com.toyProject.domain.BoardVO;
 import com.toyProject.domain.paging.Criteria;
 import com.toyProject.domain.paging.Pagination;
@@ -29,7 +30,9 @@ public class BoardController {
 
 	@Autowired
 	private BoardService boardService;
-
+	
+	private String boardFilePath = FileController.BOARD_FILE_PATH;
+	
 	// 게시물 목록
 	@GetMapping(value = { "", "/", "/list" })
 	public String list(Model model, @ModelAttribute("cri") Criteria criteria) {
@@ -39,7 +42,7 @@ public class BoardController {
 
 		return "board/boardList";
 	}
-
+	
 	// 게시물 조회
 	@GetMapping("/detail")
 	public String select(Model model, Long bno) {
@@ -60,7 +63,7 @@ public class BoardController {
 		boardService.write(boardVO); // 데이터베이스에 저장
 
 		// 업로드
-		File uploadPath = new File("c:/mou_fileRepo/board/" + boardVO.getBno());
+		File uploadPath = new File(boardFilePath + boardVO.getBno());
 		if (!uploadPath.exists()) { // 업로드 패스 생성
 			uploadPath.mkdirs();
 		}
@@ -98,8 +101,8 @@ public class BoardController {
 		if (delCheck) {
 			// 파일 삭제 및 내용 변경
 			// 파일 삭제
-			File file = new File("c:/mou_fileRepo/board/" + boardDetail.getBno() + "/" + boardDetail.getImageFileName());
-			File folder = new File("c:/mou_fileRepo/board/" + boardDetail.getBno());
+			File file = new File(boardFilePath + boardDetail.getBno() + "/" + boardDetail.getImageFileName());
+			File folder = new File(boardFilePath + boardDetail.getBno());
 			file.delete();
 			folder.delete();
 			boardDetail.setImageFileName("");
@@ -114,7 +117,7 @@ public class BoardController {
 				// 새로운 파일 업로드
 				String imageFileName = multipartFile.getOriginalFilename();
 				boardDetail.setImageFileName(imageFileName);
-				File uploadPath = new File("c:/mou_fileRepo/board/" + boardDetail.getBno());
+				File uploadPath = new File(boardFilePath + boardDetail.getBno());
 				if (!uploadPath.exists()) { // 업로드 패스 생성
 					uploadPath.mkdirs();
 				}
