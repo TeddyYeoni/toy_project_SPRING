@@ -61,7 +61,6 @@ public class BoardController {
 		String imageFileName = multipartFile.getOriginalFilename();
 		boardVO.setImageFileName(imageFileName);
 		boardService.write(boardVO); // 데이터베이스에 저장
-
 		// 업로드
 		File uploadPath = new File(boardFilePath + boardVO.getBno());
 		if (!uploadPath.exists()) { // 업로드 패스 생성
@@ -95,23 +94,20 @@ public class BoardController {
 
 	@PostMapping("/modify")
 	public String update(BoardVO boardVO, @RequestParam("attachFile") MultipartFile multipartFile, Model model,
-			RedirectAttributes rttr, @RequestParam(defaultValue = "false") Boolean delCheck) {
+			RedirectAttributes rttr, @RequestParam(defaultValue = "false") Boolean delCheck) throws IOException {
 		BoardVO boardDetail = boardService.findByBno(boardVO.getBno());
 		model.addAttribute("board",boardDetail);
 		if (delCheck) {
-			// 파일 삭제 및 내용 변경
 			// 파일 삭제
-			File file = new File(boardFilePath + boardDetail.getBno() + "/" + boardDetail.getImageFileName());
-			File folder = new File(boardFilePath + boardDetail.getBno());
-			file.delete();
-			folder.delete();
+			File file = new File(boardFilePath + boardDetail.getBno());
+			FileUtils.deleteDirectory(file);
 			boardDetail.setImageFileName("");
 			// modify 호출
 			boardService.modifyContent(boardDetail);
 		} else {
 			if (boardDetail.getImageFileName() != null) { // 이미지 및 내용 변경
 				// 원본파일 삭제 새로운 파일 업로드
-				File file = new File("c:/mou_fileRepo/board/" + boardDetail.getBno() + "/" + boardDetail.getImageFileName());
+				File file = new File(boardFilePath + boardDetail.getBno() + "/" + boardDetail.getImageFileName());
 				file.delete();
 
 				// 새로운 파일 업로드
@@ -142,7 +138,7 @@ public class BoardController {
 	public String delete(Long bno, RedirectAttributes rttr) throws IOException {
 		BoardVO boardVO = boardService.findByBno(bno);
 		if (boardVO.getImageFileName() != null) {
-			File file = new File("c:/mou_fileRepo/board/" + bno);
+			File file = new File(boardFilePath + bno);
 			if (file.exists()) {
 				FileUtils.deleteDirectory(file);
 			}
