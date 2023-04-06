@@ -67,5 +67,9 @@ public class BoardService {
 		boardDao.modifyOnlyContent(boardVO);
 	}
 	
+	// 게시물 삭제
+	public void removeContent(Long bno) {
+		boardDao.removeContent(bno);
+	}
 	
 }

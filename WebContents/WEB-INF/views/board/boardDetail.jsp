@@ -35,13 +35,10 @@
 				<td colspan="3"><textarea rows="5" cols="50" name="content"
 						class="form-control" readonly="readonly">${board.content}</textarea></td>
 			</tr>
-			<tr>
+			<tr class="detailView">
 				<th><b>Images</b></th>
-				<td colspan="3"><input type="file" name="imageFileName"
-					class="form-control viewMode">
+				<td colspan="3">
 					<div class="my-3">
-						<input type="hidden" name="attachFile" class="originFileName"
-							value="${board.imageFileName}">
 						<c:if test="${not empty board.imageFileName}">
 							<div class="preview">
 								<img class="originImg"
@@ -53,8 +50,31 @@
 								<p>✖ 첨부된 이미지가 없어요 ✖</p>
 							</div>
 						</c:if>
-					</div></td>
+					</div>
+
+				</td>
 			</tr>
+			<tr class="modForm">
+				<th><b>Images</b></th>
+				<td colspan="3">
+					<div class="my-3">
+						<c:if test="${empty board.imageFileName}">
+							<b>첨부된 파일이 없습니다</b>
+							<input type="file" name="attachFile" class="form-control">
+						</c:if>
+						<c:if test="${not empty board.imageFileName}">
+							<div>
+								<span> 파일 삭제 : <input type="checkbox" name="delCheck"
+									class="delCheck"></span> <input type="file" name="attachFile"
+									class="form-control attachFile">
+							</div>
+							<img
+								src="${contextPath}/boardImgDisplay?imageFileName=${board.bno}/${board.imageFileName}">
+						</c:if>
+					</div>
+				</td>
+			</tr>
+
 			<tr>
 				<td colspan="4" class="text-right">
 					<button type="button" class="btn btn-outline-dark toList">

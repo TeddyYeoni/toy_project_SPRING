@@ -23,7 +23,7 @@ public interface BoardDAO {
 	void modifyContent(BoardVO boardVO);
 	
 	// 게시글 삭제
-	void deleteContent(Long bno);
+	void removeContent(Long bno);
 	
 	// 총 게시물 수
 	int totalCount(Criteria criteria);

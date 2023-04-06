@@ -8,7 +8,6 @@ import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -87,7 +86,7 @@ public class AlbumController {
 	public String delete(Long ano,RedirectAttributes rttr)
 			throws IOException {
 		AlbumVO albumVO = albumService.findByAno(ano);
-		if (albumVO != null) {
+		if (albumVO.getImageFileName() != null) {
 			File file = new File("c:/mou_fileRepo/album/" + ano);
 			if (file.exists()) {
 				FileUtils.deleteDirectory(file);

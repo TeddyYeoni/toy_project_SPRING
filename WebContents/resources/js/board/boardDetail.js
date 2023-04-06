@@ -1,4 +1,5 @@
 $(function() {
+	$('.modForm').hide();
 	$('.viewMode').hide();
 
 	let viewForm = $('#viewForm');
@@ -6,6 +7,7 @@ $(function() {
 	let contentObj = $('textarea[name="content"]');
 	let imageFile = $('.originFileName').val();
 	let pTag = $('.preview p').html();
+	let viewMode = $('.viewMode').val();
 
 	let originImg = $('.originImg').clone();
 	let titleVal = titleObj.val();
@@ -20,17 +22,38 @@ $(function() {
 			.submit();
 	});
 
+
 	// Edit 버튼
 	$('.toModForm').on('click', function() {
+		$('.detailView').hide();
+		$('.modForm').show();
 		$('input[name="title"],textarea[name="content"]').attr("readonly", false);
 		$('.viewMode').show();
 		$(this).closest('tr').hide();
+		
+		$('.delCheck').change(function() {
+			if ($(this).prop('checked')) {
+				$('.attachFile').hide();
+			} else {
+				$('.attachFile').show();
+			}
+		});
+		
+		$('.attachFile').change(function() {
+			let fileFormVal = $(this).val();
+			if (fileFormVal != '') {
+				$('.delCheck').hide();
+			} else {
+				$('.delCheck').show();
+			}
+		});
+		
 	});
 
 	// Delete 버튼
 	$('.remove').on('click', function() {
 		viewForm.attr({
-			"action": `${contextPath}/board/delete`,
+			"action": `${contextPath}/board/remove`,
 			"method": "post"
 		}).submit();
 
