@@ -6,7 +6,8 @@
 
 <mapper namespace="com.toyProject.dao.AlbumDAO">
 	<select id="albumList" resultType="albumVO">
-		select * from mou_album order by ano desc
+		select * from mou_album order
+		by ano desc
 	</select>
 
 	<select id="getLastAno" resultType="String">
@@ -37,9 +38,15 @@
 		where rn > 0
 		]]>
 	</select>
-	
+
 	<delete id="removePhoto">
 		delete from mou_album where ano=#{ano}
 	</delete>
+
+	<update id="modifyAlbum">
+		update mou_album set
+		title=#{title},content=#{content},imageFileName=#{imageFileName} where
+		ano=#{ano}
+	</update>
 
 </mapper>

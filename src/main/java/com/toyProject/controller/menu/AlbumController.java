@@ -29,7 +29,7 @@ public class AlbumController {
 
 	@Autowired
 	private AlbumService albumService;
-	
+
 	private String albumFilePath = FileController.ALBUM_FILE_PATH;
 
 	@GetMapping(value = { "", "/", "/list" })
@@ -86,8 +86,7 @@ public class AlbumController {
 
 	// 앨범 사진 삭제
 	@PostMapping("/remove")
-	public String delete(Long ano,RedirectAttributes rttr)
-			throws IOException {
+	public String delete(Long ano, RedirectAttributes rttr) throws IOException {
 		AlbumVO albumVO = albumService.findByAno(ano);
 		if (albumVO.getImageFileName() != null) {
 			File file = new File(albumFilePath + ano);
@@ -96,6 +95,40 @@ public class AlbumController {
 			}
 		}
 		albumService.removePhoto(ano);
+		return "redirect:/album";
+	}
+
+	// 앨범 수정
+	@GetMapping("/modify")
+	public void modifyForm(Long ano, Model model) {
+		AlbumVO albumVO = albumService.findByAno(ano);
+		model.addAttribute("mou_album", albumVO);
+	}
+
+	@PostMapping("/modify")
+	public String update(AlbumVO albumVO, @RequestParam("attachFile") MultipartFile multipartFile, Model model,
+			RedirectAttributes rttr) {
+		AlbumVO albumDetail = albumService.findByAno(albumVO.getAno());
+		model.addAttribute("album", albumDetail);
+
+		File file = new File(albumFilePath + albumDetail.getAno() + "" + albumDetail.getImageFileName());
+		file.delete();
+		
+		String originalFilename = multipartFile.getOriginalFilename();
+		albumDetail.setImageFileName(originalFilename);
+		File uploadPath = new File(albumFilePath + albumDetail.getAno());
+		if (!uploadPath.exists()) { // 업로드 패스 생성
+			uploadPath.mkdirs();
+		}
+		// 업로드 파일 경로 지정
+		File uploadFile = new File(uploadPath, originalFilename);
+		try {
+			multipartFile.transferTo(uploadFile); // 파일 업로드
+		} catch (IllegalStateException | IOException e) {
+			e.printStackTrace();
+		}
+		albumService.modify(albumDetail);
+		
 		return "redirect:/album";
 	}
 

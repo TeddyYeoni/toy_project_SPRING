@@ -88,8 +88,8 @@ public class BoardController {
 
 	@GetMapping("/modify")
 	public void modifyForm(Long bno, Model model) {
-		BoardVO vo = boardService.findByBno(bno);
-		model.addAttribute("mod_board", vo);
+		BoardVO boardVO = boardService.findByBno(bno);
+		model.addAttribute("mod_board", boardVO);
 	}
 
 	@PostMapping("/modify")

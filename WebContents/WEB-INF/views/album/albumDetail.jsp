@@ -29,10 +29,8 @@
 			<tr>
 				<div>
 					<td colspan="4"><input type="file"
-						class="form-control viewMode">
+						class="form-control viewMode" name="attachFile">
 						<div class="imageLayout my-3">
-							<input type="hidden" name="attachFile"
-								value="${album.imageFileName}">
 							<div class="preview">
 								<img class="originImg"
 									src="${contextPath}/albumImgDisplay?imageFileName=${album.ano}/${album.imageFileName}">
@@ -62,11 +60,30 @@
 				<td colspan="4" class="text-right">
 					<button type="button" class="btn btn-outline-dark toList">
 						<b>Back</b>
-					</button>
-					<button type="button" class="btn btn-outline-danger remove">
-						<b>Delete</b>
-					</button>
+					</button> <c:if test="${auth.id eq board.writer}">
+						<button type="button" class="btn btn-outline-success toModForm">
+							<b>Edit</b>
+						</button>
+					</c:if> <c:if
+						test="${auth.id eq board.writer or auth.grade eq 'ASTRONAUT'}">
+						<button type="button" class="btn btn-outline-danger remove">
+							<b>Delete</b>
+						</button>
+					</c:if>
 				</td>
+			</tr>
+
+			<tr class="viewMode">
+				<c:if test="${auth.id eq board.writer or auth.grade eq 'ASTRONAUT'}">
+					<td colspan="4" class="text-right">
+						<button type="button" class="btn btn-outline-primary modify">
+							<b>EDIT</b>
+						</button>
+						<button type="button" class="btn btn-outline-primary backViewMode">
+							<b>BACK</b>
+						</button>
+					</td>
+				</c:if>
 			</tr>
 		</table>
 	</form>

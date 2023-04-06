@@ -22,8 +22,11 @@ public interface AlbumDAO {
 
 	// 최근 목록 불러오기
 	List<AlbumVO> recentAlbumList();
-	
+
 	// 사진 삭제
 	void removePhoto(Long ano);
+
+	// 앨범 수정
+	void modifyAlbum(AlbumVO albumVO);
 
 }

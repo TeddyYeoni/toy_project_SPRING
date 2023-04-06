@@ -56,5 +56,10 @@ public class AlbumService {
 	public void removePhoto(Long ano) {
 		albumDAO.removePhoto(ano);
 	}
+	
+	// 앨범 수정
+	public void modify(AlbumVO albumVO) {
+		albumDAO.modifyAlbum(albumVO);
+	}
 
 }
