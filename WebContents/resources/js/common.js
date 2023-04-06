@@ -18,5 +18,10 @@ $(function() {
 		}
 
 	});
+	
+	$('.emptyId a').on('click', function(event){
+		event.preventDefault(); // 기본 동작 막기
+		$('#myModal').modal('show'); // 모달 창 띄움
+	});
 
 });

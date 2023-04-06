@@ -27,6 +27,7 @@
 <script src="${contextPath}/resources/js/common.js"></script>
 <link rel="stylesheet" href="${contextPath}/resources/css/style.css">
 </head>
+
 <style>
 .navbar {
 	width: auto;
@@ -39,14 +40,15 @@
 	align-items: center;
 	display: flex;
 	margin: 0 auto;
-    flex-direction: row;
-    justify-content: center;
+	flex-direction: row;
+	justify-content: center;
 }
 
 body {
 	font-family: 'DungGeunMo';
 }
 </style>
+
 <body>
 	<div class="topBar">
 		<nav class="navbar navbar-expand-sm">
@@ -57,15 +59,50 @@ body {
 			</a>
 			<!-- Links -->
 			<ul class="navbar-nav justify-content-center my-2">
-				<li class="nav-item"><a
-					class="nav-link font-weight-bold text-light mx-4"
-					href="${contextPath}/todo"><h3>To Do List</h3></a></li>
-				<li class="nav-item"><a
-					class="nav-link font-weight-bold text-light mx-4"
-					href="${contextPath}/album"><h3>Album</h3></a></li>
-				<li class="nav-item"><a
-					class="nav-link font-weight-bold text-light mx-4"
-					href="${contextPath}/diary"><h3>Diary</h3></a></li>
+				<c:if test="${not empty auth.id}">
+					<li class="nav-item"><a
+						class="nav-link font-weight-bold text-light mx-4"
+						href="${contextPath}/todo"><h3>To Do List</h3></a></li>
+					<li class="nav-item"><a
+						class="nav-link font-weight-bold text-light mx-4"
+						href="${contextPath}/album"><h3>Album</h3></a></li>
+					<li class="nav-item"><a
+						class="nav-link font-weight-bold text-light mx-4"
+						href="${contextPath}/diary"><h3>Diary</h3></a></li>
+				</c:if>
+				<c:if test="${empty auth.id}">
+					<li class="nav-item emptyId"><a
+						class="nav-link font-weight-bold text-light mx-4" href="#"><h3>To
+								Do List</h3></a></li>
+					<li class="nav-item emptyId"><a
+						class="nav-link font-weight-bold text-light mx-4" href="#"><h3>Album</h3></a></li>
+					<li class="nav-item emptyId"><a
+						class="nav-link font-weight-bold text-light mx-4" href="#"><h3>Diary</h3></a></li>
+					<!-- The Modal -->
+					<div class="modal fade" id="myModal">
+						<div class="modal-dialog">
+							<div class="modal-content" style="color: black;">
+
+								<!-- Modal Header -->
+								<div class="modal-header">
+									<h4 class="modal-title">My Only Universe🚀</h4>
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+								</div>
+
+								<!-- Modal body -->
+								<div class="modal-body">로그인 후 이용해 주세요😝</div>
+
+								<!-- Modal footer -->
+								<div class="modal-footer">
+									<a href="${contextPath}/member/login"
+										class="btn btn-info" style="color: white;">Login</a>
+									<button type="button" class="btn btn-outline-danger"
+										data-dismiss="modal">Close</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</c:if>
 				<li class="nav-item"><a
 					class="nav-link font-weight-bold text-light mx-4"
 					href="${contextPath}/board"><h3>Board</h3></a></li>
@@ -85,8 +122,8 @@ body {
 				</c:if>
 				<c:if test="${not empty auth}">
 					<li class="nav-item "><a
-						class="nav-link font-weight-bold text-light mx-1" href="${contextPath}/mySpace"><h5>
-								My Space🐾</h5></a></li>
+						class="nav-link font-weight-bold text-light mx-1"
+						href="${contextPath}/mySpace"><h5>My Space🐾</h5></a></li>
 					<li class="nav-item "><a
 						class="nav-link font-weight-bold text-light mx-1"
 						href="${contextPath}/member/logout"><h5>Logout</h5></a></li>

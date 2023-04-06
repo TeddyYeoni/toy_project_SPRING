@@ -26,6 +26,7 @@ $(function() {
 	// Edit 버튼
 	$('.toModForm').on('click', function() {
 		$('.detailView').hide();
+		$('.replyForm').hide();
 		$('.modForm').show();
 		$('input[name="title"],textarea[name="content"]').attr("readonly", false);
 		$('.viewMode').show();
