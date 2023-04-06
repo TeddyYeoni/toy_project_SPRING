@@ -34,6 +34,7 @@ public class BoardReplyController {
 	@ResponseBody
 	public String insert(@RequestBody BoardReplyVO boardReplyVO) {
 		boardReplyService.addBoardReply(boardReplyVO);
+		System.out.println(boardReplyVO.getReplyDate());
 		return "댓글이 등록되었습니다 :)";
 	}
 	
