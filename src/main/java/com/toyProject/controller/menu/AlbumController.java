@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
+import javax.crypto.spec.IvParameterSpec;
+
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -110,25 +112,27 @@ public class AlbumController {
 			RedirectAttributes rttr) {
 		AlbumVO albumDetail = albumService.findByAno(albumVO.getAno());
 		model.addAttribute("album", albumDetail);
+		if (albumDetail.getImageFileName() != null) {
+			File file = new File(albumFilePath + albumDetail.getAno() + "" + albumDetail.getImageFileName());
+			file.delete();
 
-		File file = new File(albumFilePath + albumDetail.getAno() + "" + albumDetail.getImageFileName());
-		file.delete();
-		
-		String originalFilename = multipartFile.getOriginalFilename();
-		albumDetail.setImageFileName(originalFilename);
-		File uploadPath = new File(albumFilePath + albumDetail.getAno());
-		if (!uploadPath.exists()) { // 업로드 패스 생성
-			uploadPath.mkdirs();
+			String originalFilename = multipartFile.getOriginalFilename();
+			albumDetail.setImageFileName(originalFilename);
+			File uploadPath = new File(albumFilePath + albumDetail.getAno());
+			if (!uploadPath.exists()) { // 업로드 패스 생성
+				uploadPath.mkdirs();
+			}
+			// 업로드 파일 경로 지정
+			File uploadFile = new File(uploadPath, originalFilename);
+			try {
+				multipartFile.transferTo(uploadFile); // 파일 업로드
+			} catch (IllegalStateException | IOException e) {
+				e.printStackTrace();
+			}
+			albumService.changePhoto(albumDetail);
+		} else {
+			albumService.modifyAlbumContent(albumDetail);
 		}
-		// 업로드 파일 경로 지정
-		File uploadFile = new File(uploadPath, originalFilename);
-		try {
-			multipartFile.transferTo(uploadFile); // 파일 업로드
-		} catch (IllegalStateException | IOException e) {
-			e.printStackTrace();
-		}
-		albumService.modify(albumDetail);
-		
 		return "redirect:/album";
 	}
 

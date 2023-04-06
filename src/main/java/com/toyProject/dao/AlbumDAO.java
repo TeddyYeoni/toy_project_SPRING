@@ -27,6 +27,9 @@ public interface AlbumDAO {
 	void removePhoto(Long ano);
 
 	// 앨범 수정
-	void modifyAlbum(AlbumVO albumVO);
+	void changePhoto(AlbumVO albumVO);
+	
+	// 글만 수정
+	void modifyAlbumContent(AlbumVO albumVO);
 
 }

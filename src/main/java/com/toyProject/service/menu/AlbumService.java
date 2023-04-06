@@ -58,8 +58,13 @@ public class AlbumService {
 	}
 	
 	// 앨범 수정
-	public void modify(AlbumVO albumVO) {
-		albumDAO.modifyAlbum(albumVO);
+	public void changePhoto(AlbumVO albumVO) {
+		albumDAO.changePhoto(albumVO);
+	}
+	
+	// 글만 수정
+	public void modifyAlbumContent(AlbumVO albumVO) {
+		albumDAO.modifyAlbumContent(albumVO);
 	}
 
 }

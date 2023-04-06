@@ -43,10 +43,15 @@
 		delete from mou_album where ano=#{ano}
 	</delete>
 
-	<update id="modifyAlbum">
+	<update id="changePhoto">
 		update mou_album set
 		title=#{title},content=#{content},imageFileName=#{imageFileName} where
 		ano=#{ano}
+	</update>
+
+	<update id="modifyAlbumContent">
+		update mou_album set
+		title=#{title},content=#{content} where ano=#{ano}
 	</update>
 
 </mapper>
