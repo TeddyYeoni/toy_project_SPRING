@@ -63,7 +63,7 @@
 		update mou_board set
 		title=#{title},content=#{content} where bno=#{bno}
 	</update>
-	
+
 	<delete id="removeContent">
 		delete from mou_board where bno=#{bno}
 	</delete>

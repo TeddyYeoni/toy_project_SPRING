@@ -38,28 +38,30 @@ body {
 
 		<div class="row">
 			<c:forEach items="${album_list}" var="album">
-				<input type="hidden" name="ano" value="${album.ano}">
-				<!-- Gallery item -->
-				<div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-					<div class="bg-white rounded shadow-sm">
-						<div class="text-center">
-							<img
-								src="${contextPath}/albumImgDisplay?imageFileName=${album.ano}/${album.imageFileName}"
-								alt="" class="img-fluid card-img-top">
-						</div>
-						<div class="p-4">
-							<div
-								class="badge badge-dark px-3 rounded-pill font-weight-normal"
-								style="float: right;">${album.uploadDate}</div>
-							<h6>
-								<a href="${contextPath}/album/detail?ano=${album.ano}"
-									class="text-dark">${album.title}</a>
-							</h6>
-							<p class="small text-muted mb-0">${album.content}</p>
+				<c:if test="${auth.id eq album.id}">
+					<input type="hidden" name="ano" value="${album.ano}">
+					<!-- Gallery item -->
+					<div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+						<div class="bg-white rounded shadow-sm">
+							<div class="text-center">
+								<img
+									src="${contextPath}/albumImgDisplay?imageFileName=${album.ano}/${album.imageFileName}"
+									alt="" class="img-fluid card-img-top">
+							</div>
+							<div class="p-4">
+								<div
+									class="badge badge-dark px-3 rounded-pill font-weight-normal"
+									style="float: right;">${album.uploadDate}</div>
+								<h6>
+									<a href="${contextPath}/album/detail?ano=${album.ano}"
+										class="text-dark">${album.title}</a>
+								</h6>
+								<p class="small text-muted mb-0">${album.content}</p>
+							</div>
 						</div>
 					</div>
-				</div>
-				<!-- End -->
+					<!-- End -->
+				</c:if>
 			</c:forEach>
 
 		</div>

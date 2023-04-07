@@ -14,8 +14,8 @@
 			<b>Title</b> <input type="text" class="form-control" name="title">
 		</div>
 		<div class="form-group">
-			<b>Writer</b><input type="text" class="form-control" name="writer">
-			<!-- value="${auth.id}" readonly="readonly" -->
+			<b>Writer</b><input type="text" class="form-control" name="writer"
+				value="${auth.id}" readonly="readonly">
 		</div>
 		<div class="form-group">
 			<b>Text</b><br>
