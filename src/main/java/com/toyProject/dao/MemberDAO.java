@@ -1,11 +1,17 @@
 package com.toyProject.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 import com.toyProject.domain.login.MemberVO;
 import com.toyProject.domain.login.MemberVO.MemberGrade;
+import com.toyProject.domain.paging.Criteria;
 
 public interface MemberDAO {
+	
+	// 회원 목록
+	List<MemberVO> memberList(Criteria criteria);
 
 	// 회원 추가
 	void joinMember(MemberVO memberVO);

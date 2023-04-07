@@ -1,5 +1,7 @@
 package com.toyProject.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -16,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.toyProject.domain.login.AuthVO;
 import com.toyProject.domain.login.MemberVO;
 import com.toyProject.domain.login.MemberVO.MemberGrade;
+import com.toyProject.domain.paging.Criteria;
 import com.toyProject.service.MemberService;
 
 import lombok.extern.log4j.Log4j;
@@ -29,6 +32,14 @@ public class MemberController {
 	@Autowired
 	MemberService memberService;
 
+	@GetMapping("/list")
+	public String select(Model model, Criteria criteria) {
+		List<MemberVO> memberList = memberService.memberList(criteria);
+		model.addAttribute("member", memberList);
+		return "member/memberList";
+	}
+	
+	
 	@GetMapping(value = { "", "/", "/login" })
 	public String loginForm() {
 		return "member/loginForm";

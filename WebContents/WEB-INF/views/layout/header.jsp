@@ -94,8 +94,8 @@ body {
 
 								<!-- Modal footer -->
 								<div class="modal-footer">
-									<a href="${contextPath}/member/login"
-										class="btn btn-info" style="color: white;">Login</a>
+									<a href="${contextPath}/member/login" class="btn btn-info"
+										style="color: white;">Login</a>
 									<button type="button" class="btn btn-outline-danger"
 										data-dismiss="modal">Close</button>
 								</div>
@@ -121,9 +121,16 @@ body {
 						href="${contextPath}/member/login"><h5>Login</h5></a></li>
 				</c:if>
 				<c:if test="${not empty auth}">
-					<li class="nav-item "><a
-						class="nav-link font-weight-bold text-light mx-1"
-						href="${contextPath}/mySpace"><h5>My Space🐾</h5></a></li>
+					<c:if test="${auth.grade eq 'ASTRONAUT' }">
+						<li class="nav-item "><a
+							class="nav-link font-weight-bold text-light mx-1"
+							href="${contextPath}/member/list"><h5>Member</h5></a></li>
+					</c:if>
+					<c:if test="${auth.grade eq 'TRAVELER'}">
+						<li class="nav-item "><a
+							class="nav-link font-weight-bold text-light mx-1"
+							href="${contextPath}/mySpace"><h5>My Space🐾</h5></a></li>
+					</c:if>
 					<li class="nav-item "><a
 						class="nav-link font-weight-bold text-light mx-1"
 						href="${contextPath}/member/logout"><h5>Logout</h5></a></li>
