@@ -28,11 +28,11 @@
 				<b>PASSWORD</b><input type="password" class="form-control"
 					name="pwd">
 			</div>
-			<div class="text-center my-3">
-				<a href="${contextPath}/main" class="btn btn-outline-dark mx-2">Main</a>
+			<div class="text-center my-2">
+				<button class="btn btn-success mx-2 my-4">Login</button><br><br><br><br><br><br><br>
+				<a href="${contextPath}/main" class="btn btn-dark mx-1">Main</a>
 				<a href="${contextPath}/member/join"
-					class="btn btn-outline-info mx-2">Join</a>
-				<button class="btn btn-outline-success mx-2">Login</button>
+					class="btn btn-light mx-1">Join</a>
 			</div>
 		</form>
 	</div>
