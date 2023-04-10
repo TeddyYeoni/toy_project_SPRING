@@ -124,7 +124,7 @@
 				</tr>
 
 				<tr>
-					<td><textarea rows="3" class="form-control reply_content"></textarea></td>
+					<td><textarea rows="5" class="form-control reply_content"></textarea></td>
 				</tr>
 				<tr class="text-right">
 					<td colspan="2"><button
@@ -190,6 +190,39 @@
 		</div>
 	</div>
 
+	<!-- 댓글 수정 모달 -->
+	<div class="modal fade" id="reply_modify">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">댓글 수정</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body">
+					<div>
+						작성자 : <input type="text" class="reply_writer" value="${auth.id}"
+							readonly="readonly"><br>
+					</div>
+					<div>
+						<b>내용</b><br>
+						<textarea rows="3" class="reply_modForm"></textarea>
+					</div>
+				</div>
+
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-success reply_modBtn"
+						data-dismiss="modal">수정</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">닫기</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
 
 </div>
 

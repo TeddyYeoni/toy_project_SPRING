@@ -105,6 +105,26 @@ $(function() {
 
 		boardReplyService.write(boardReplyVO);
 	});
+	
+		// 댓글 수정 창
+	$('.replyList').on('click', '.reply_modBtn', function() {
+		let rno = $(this).closest('div').data('rno');
+		boardReplyService.detail(rno);
+	}); // on end
+	
+	// 댓글 수정 모달 - 수정 버튼
+	$('.reply_modBtn').on('click', function(){
+		let rno = $(this).data('rno');
+		let reply = $('.reply_modForm').val();
+		
+		let replyVO = {
+			b_rno : rno,
+			reply : reply
+		}
+		
+		boardReplyService.modify(replyVO);
+		boardReplyService.list(bno);
+	});
 
 	// 댓글 삭제 기능
 	$('.replyList').on('click', '.reply_delBtn', function() {

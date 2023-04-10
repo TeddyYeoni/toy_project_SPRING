@@ -57,7 +57,8 @@ let boardReplyService = {
 		$.ajax({
 			type: 'post',
 			url: `${contextPath}/boardReply/modify`,
-			data: boardReplyVO,
+			contentType: 'application/json',
+			data:  JSON.stringify(boardReplyVO),
 			success: function(result) {
 				alert('댓글이 수정되었습니다☺')
 			},
@@ -73,8 +74,11 @@ let boardReplyService = {
 			type: 'post',
 			url: `${contextPath}/boardReply/detail`,
 			data: { b_rno: b_rno },
-			sucess: function(reply_detail) {
-				$('.replyList').find('p').html('<input type="text">');
+			success: function(result) {
+				$('#reply_modify').find('.reply_modForm').html(result.reply);
+				$('#reply_modify').find('.reply_writer').val(result.writer);
+				$('.reply_modBtn').attr('data-rno', b_rno);
+				$('#reply_modify').modal('show');
 			},
 			error: function() {
 				alert('댓글 조회 실패')

@@ -34,5 +34,16 @@ public class BoardReplyService {
 		boardReplyDAO.updateCountMinus(bno);
 	}
 	
+	// 댓글 수정
+	@Transactional
+	public void modifyBoardReply(BoardReplyVO boardReplyVO) {
+		boardReplyDAO.modifyBoardReply(boardReplyVO);
+	}
+	
+	// 댓글 상세
+	@Transactional
+	public BoardReplyVO boardReplyDetail(Long b_rno) {
+		return boardReplyDAO.boardReplyDetail(b_rno);
+	}
 	
 }

@@ -23,4 +23,10 @@ public interface BoardReplyDAO {
 	// 댓글 개수-
 	void updateCountMinus(Long bno);
 	
+	// 댓글 수정
+	void modifyBoardReply(BoardReplyVO boardReplyVO);
+	
+	// 댓글 상세
+	BoardReplyVO boardReplyDetail(Long b_rno);
+	
 }

@@ -26,5 +26,13 @@
 	<update id="updateCountMinus">
 		update mou_board set replycount=replycount-1 where bno=#{bno}
 	</update>
+	
+	<update id="modifyBoardReply">
+		update board_reply set reply=#{reply}, modifyDate=sysdate where b_rno=#{b_rno}
+	</update>
+	
+	<select id="boardReplyDetail" resultType="boardReplyVO">
+		select * from board_reply where b_rno=#{b_rno}
+	</select>
 
 </mapper>

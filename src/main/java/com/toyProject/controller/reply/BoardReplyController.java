@@ -34,7 +34,6 @@ public class BoardReplyController {
 	@ResponseBody
 	public String insert(@RequestBody BoardReplyVO boardReplyVO) {
 		boardReplyService.addBoardReply(boardReplyVO);
-		System.out.println(boardReplyVO.getReplyDate());
 		return "댓글이 등록되었습니다 :)";
 	}
 	
@@ -43,6 +42,20 @@ public class BoardReplyController {
 	public String delete(@RequestParam("b_rno") Long b_rno,@RequestParam("bno") Long bno) {
 		boardReplyService.removeBoardReply(b_rno, bno);
 		return "댓글이 삭제되었습니다 :)";
+	}
+	
+	@PostMapping("/modify")
+	@ResponseBody
+	public String update(@RequestBody BoardReplyVO boardReplyVO) {
+		boardReplyService.modifyBoardReply(boardReplyVO);
+		return "댓글이 수정되었습니다 :)";
+	}
+	
+	@PostMapping("/detail")
+	@ResponseBody
+	public BoardReplyVO select(@RequestParam("b_rno") Long b_rno) {
+		BoardReplyVO boardReplyDetail = boardReplyService.boardReplyDetail(b_rno);
+		return boardReplyDetail;
 	}
 
 }
