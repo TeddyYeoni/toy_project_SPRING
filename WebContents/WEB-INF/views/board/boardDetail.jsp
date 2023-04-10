@@ -6,6 +6,17 @@
 <script src="${contextPath}/resources/js/reply/boardReplyService.js"></script>
 <script src="${contextPath}/resources/js/board/boardDetail.js"></script>
 
+<style>
+.modal-body textarea {
+	width: 100%;
+	height: 100px;
+}
+
+.modal-body input {
+	border: none;
+}
+</style>
+
 <div class="container">
 	<div class="jumbotron">
 		<h1>Board</h1>
@@ -203,12 +214,12 @@
 
 				<!-- Modal body -->
 				<div class="modal-body">
-					<div>
-						작성자 : <input type="text" class="reply_writer" value="${auth.id}"
-							readonly="readonly"><br>
+					<div class="text-right">
+						<input type="hidden" class="reply_writer" value="${auth.id}"
+							readonly="readonly">
 					</div>
 					<div>
-						<b>내용</b><br>
+						<b>Comment</b><br>
 						<textarea rows="3" class="reply_modForm"></textarea>
 					</div>
 				</div>
