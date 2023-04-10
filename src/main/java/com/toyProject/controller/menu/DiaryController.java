@@ -24,7 +24,6 @@ public class DiaryController {
 	// 다이어리 목록
 	@GetMapping(value = { "", "/", "/list" })
 	public String list(Model model, @ModelAttribute("cri") Criteria criteria) {
-
 		criteria.setPagingAmount(9);
 		
 		model.addAttribute("page", new Pagination(criteria, diaryService.totalCount(criteria)));

@@ -110,10 +110,9 @@ public class AlbumController {
 	@PostMapping("/modify")
 	public String update(AlbumVO albumVO, @RequestParam("attachFile") MultipartFile multipartFile, Model model,
 			RedirectAttributes rttr) {
-		AlbumVO albumDetail = albumService.findByAno(albumVO.getAno());
-		model.addAttribute("album", albumDetail);
-		if (albumDetail.getImageFileName() != null) {
-			File file = new File(albumFilePath + albumDetail.getAno() + "" + albumDetail.getImageFileName());
+		if (!multipartFile.isEmpty()) {
+			AlbumVO albumDetail = albumService.findByAno(albumVO.getAno());
+			File file = new File(albumFilePath + albumDetail.getAno() + "/" + albumDetail.getImageFileName());
 			file.delete();
 
 			String originalFilename = multipartFile.getOriginalFilename();
@@ -129,9 +128,9 @@ public class AlbumController {
 			} catch (IllegalStateException | IOException e) {
 				e.printStackTrace();
 			}
-			albumService.changePhoto(albumDetail);
+			albumService.changePhoto(albumVO);
 		} else {
-			albumService.modifyAlbumContent(albumDetail);
+			albumService.modifyAlbumContent(albumVO);
 		}
 		return "redirect:/album";
 	}

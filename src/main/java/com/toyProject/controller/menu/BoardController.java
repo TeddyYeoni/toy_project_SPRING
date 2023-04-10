@@ -30,9 +30,9 @@ public class BoardController {
 
 	@Autowired
 	private BoardService boardService;
-	
+
 	private String boardFilePath = FileController.BOARD_FILE_PATH;
-	
+
 	// 게시물 목록
 	@GetMapping(value = { "", "/", "/list" })
 	public String list(Model model, @ModelAttribute("cri") Criteria criteria) {
@@ -42,7 +42,7 @@ public class BoardController {
 
 		return "board/boardList";
 	}
-	
+
 	// 게시물 조회
 	@GetMapping("/detail")
 	public String select(Model model, Long bno) {
@@ -95,17 +95,17 @@ public class BoardController {
 	@PostMapping("/modify")
 	public String update(BoardVO boardVO, @RequestParam("attachFile") MultipartFile multipartFile, Model model,
 			RedirectAttributes rttr, @RequestParam(defaultValue = "false") Boolean delCheck) throws IOException {
-		BoardVO boardDetail = boardService.findByBno(boardVO.getBno());
-		model.addAttribute("board",boardDetail);
 		if (delCheck) {
 			// 파일 삭제
+			BoardVO boardDetail = boardService.findByBno(boardVO.getBno());
 			File file = new File(boardFilePath + boardDetail.getBno());
 			FileUtils.deleteDirectory(file);
 			boardDetail.setImageFileName("");
 			// modify 호출
 			boardService.modifyContent(boardDetail);
 		} else {
-			if (boardDetail.getImageFileName() != null) { // 이미지 및 내용 변경
+			if (!multipartFile.isEmpty()) { // 이미지 및 내용 변경
+				BoardVO boardDetail = boardService.findByBno(boardVO.getBno());
 				// 원본파일 삭제 새로운 파일 업로드
 				File file = new File(boardFilePath + boardDetail.getBno() + "/" + boardDetail.getImageFileName());
 				file.delete();
@@ -124,15 +124,15 @@ public class BoardController {
 				} catch (IllegalStateException | IOException e) {
 					e.printStackTrace();
 				}
-				boardService.modifyContent(boardDetail);
+				boardService.modifyContent(boardVO);
 			} else {
-				boardService.modifyOnlyContent(boardDetail);
+				boardService.modifyOnlyContent(boardVO);
 			}
 		}
 
 		return "redirect:/board";
 	}
-	
+
 	// 게시글 삭제
 	@PostMapping("/remove")
 	public String delete(Long bno, RedirectAttributes rttr) throws IOException {

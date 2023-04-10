@@ -30,5 +30,5 @@ public class Criteria {
 	public int getMinRow() {
 		return (this.nowPageNum - 1) * this.pagingAmount;
 	}
-
+	
 }

@@ -1,5 +1,4 @@
 $(function() {
-	console.log('스크립트 실행');
 	$('.viewMode').hide();
 
 	let viewForm = $('#viewForm');

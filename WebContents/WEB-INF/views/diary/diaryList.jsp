@@ -23,7 +23,7 @@
 	<form id="listForm">
 		<div class="container bootstrap snippets bootdeys">
 			<div class="row">
-				<c:forEach items="${diary_list}" var="d">
+				<c:forEach items="${diary_list}" var="diary">
 					<c:if test="${auth.id eq d.id}">
 						<div class="col-md-4 col-sm-6 content-card my-3">
 							<div class="card-big-shadow">
@@ -31,19 +31,19 @@
 									data-color="gray" data-radius="none">
 									<div class="content">
 										<h6 class="category">
-											<b>Weather</b>&nbsp;&nbsp;${d.weather}
+											<b>Weather</b>&nbsp;&nbsp;${diary.weather}
 										</h6>
 										<h6 class="category">
-											<b>Emotion</b>&nbsp;&nbsp;${d.emotion}
+											<b>Emotion</b>&nbsp;&nbsp;${diary.emotion}
 										</h6>
 										<br>
 										<h4 class="title">
-											<a href="${d.dno}" class="d_title">${d.writeDate}</a>
+											<a href="${diary.dno}" class="d_title">${diary.writeDate}</a>
 										</h4>
 										<br> <b class="category">Praise</b><br>
-										<p class="description">${d.praise}</p>
+										<p class="description">${diary.praise}</p>
 										<b class="category">Thanks</b><br>
-										<p class="description">${d.thanks}</p>
+										<p class="description">${diary.thanks}</p>
 									</div>
 								</div>
 								<!-- end card -->
@@ -62,7 +62,6 @@
 				<li class="page-item"><a class="page-link"
 					href="?nowPageNum=${page.startPage-1}">Previous</a></li>
 			</c:if>
-
 			<c:forEach begin="${page.startPage}" end="${page.endPage}"
 				var="pageValue">
 				<li class="page-item"><a class="page-link"
