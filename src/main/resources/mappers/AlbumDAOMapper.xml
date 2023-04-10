@@ -45,7 +45,7 @@
 
 	<update id="changePhoto">
 		update mou_album set
-		title=#{title},content=#{content},imageFileName=#{imageFileName} where
+		title=#{title},content=#{content},imageFileName=#{imageFileName, jdbcType=VARCHAR} where
 		ano=#{ano}
 	</update>
 

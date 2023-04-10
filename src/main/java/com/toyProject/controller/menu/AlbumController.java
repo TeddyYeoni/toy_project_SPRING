@@ -115,14 +115,14 @@ public class AlbumController {
 			File file = new File(albumFilePath + albumDetail.getAno() + "/" + albumDetail.getImageFileName());
 			file.delete();
 
-			String originalFilename = multipartFile.getOriginalFilename();
-			albumDetail.setImageFileName(originalFilename);
-			File uploadPath = new File(albumFilePath + albumDetail.getAno());
+			String imageFileName = multipartFile.getOriginalFilename();
+			albumVO.setImageFileName(imageFileName);
+			File uploadPath = new File(albumFilePath + albumVO.getAno());
 			if (!uploadPath.exists()) { // 업로드 패스 생성
 				uploadPath.mkdirs();
 			}
 			// 업로드 파일 경로 지정
-			File uploadFile = new File(uploadPath, originalFilename);
+			File uploadFile = new File(uploadPath, imageFileName);
 			try {
 				multipartFile.transferTo(uploadFile); // 파일 업로드
 			} catch (IllegalStateException | IOException e) {

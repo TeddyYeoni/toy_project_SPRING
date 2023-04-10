@@ -112,8 +112,8 @@ public class BoardController {
 
 				// 새로운 파일 업로드
 				String imageFileName = multipartFile.getOriginalFilename();
-				boardDetail.setImageFileName(imageFileName);
-				File uploadPath = new File(boardFilePath + boardDetail.getBno());
+				boardVO.setImageFileName(imageFileName);
+				File uploadPath = new File(boardFilePath + boardVO.getBno());
 				if (!uploadPath.exists()) { // 업로드 패스 생성
 					uploadPath.mkdirs();
 				}
