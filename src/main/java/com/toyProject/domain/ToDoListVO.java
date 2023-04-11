@@ -20,8 +20,8 @@ public class ToDoListVO {
 	
 	private Long tno;
 	private String id;
-	private Long checkNumber;
 	private String checkList;
 	private Date todayDate;
 	
+	private Long checkNumber;
 }
