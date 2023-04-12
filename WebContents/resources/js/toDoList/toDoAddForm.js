@@ -10,7 +10,9 @@ $(function checkListCount() {
       var item = $(this).prevAll('.todo-list-input').val();
 
       if (item) {
-        todoListItem.append("<li><div class='form-check'><label class='form-check-label my-2'>" + item + "<i class='input-helper'></i></label></div><i class='remove mdi mdi-close-circle-outline'></i></li>");
+        todoListItem.append("<li><div class='form-check'><label class='form-check-label my-2'>"
+        					+ item + "<i class='input-helper'></i></label></div>"
+        					+ "<i class='remove mdi mdi-close-circle-outline'></i></li>");
         todoListInput.val("");
       }
       
