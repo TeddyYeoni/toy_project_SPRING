@@ -2,7 +2,7 @@ package com.toyProject.dao.qna;
 
 import java.util.List;
 
-import com.toyProject.domain.paging.Criteria;
+import com.toyProject.domain.Criteria;
 import com.toyProject.domain.qna.QnaVO;
 
 public interface QnaDAO {

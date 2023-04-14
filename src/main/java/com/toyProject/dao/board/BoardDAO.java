@@ -2,8 +2,8 @@ package com.toyProject.dao.board;
 
 import java.util.List;
 
+import com.toyProject.domain.Criteria;
 import com.toyProject.domain.board.BoardVO;
-import com.toyProject.domain.paging.Criteria;
 
 public interface BoardDAO {
 

@@ -1,6 +1,6 @@
-package com.toyProject.domain.login;
+package com.toyProject.domain;
 
-import java.sql.Date;
+import com.toyProject.domain.MemberVO.MemberGrade;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,17 +15,9 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Builder
-public class MemberVO {
+public class AuthVO {
 
-	private int mno;
 	private String id;
-	private String pwd;
-	private String name;
-	private String email;
-	private Date joinDate;
 	private MemberGrade grade;
-
-	public enum MemberGrade {
-		ASTRONAUT, TRAVELER
-	}
+	
 }

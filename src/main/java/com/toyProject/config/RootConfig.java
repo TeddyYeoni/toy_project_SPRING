@@ -14,12 +14,12 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
+import com.toyProject.domain.MemberVO;
+import com.toyProject.domain.MemberVO.MemberGrade;
 import com.toyProject.domain.album.AlbumVO;
 import com.toyProject.domain.board.BoardReplyVO;
 import com.toyProject.domain.board.BoardVO;
 import com.toyProject.domain.diary.DiaryVO;
-import com.toyProject.domain.login.MemberVO;
-import com.toyProject.domain.login.MemberVO.MemberGrade;
 import com.toyProject.domain.qna.QnaReplyVO;
 import com.toyProject.domain.qna.QnaVO;
 import com.toyProject.domain.todo.CheckListVO;

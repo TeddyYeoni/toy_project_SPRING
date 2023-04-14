@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.toyProject.dao.MemberDAO;
-import com.toyProject.domain.login.MemberVO;
-import com.toyProject.domain.login.MemberVO.MemberGrade;
-import com.toyProject.domain.paging.Criteria;
+import com.toyProject.domain.Criteria;
+import com.toyProject.domain.MemberVO;
+import com.toyProject.domain.MemberVO.MemberGrade;
 
 import lombok.extern.log4j.Log4j;
 

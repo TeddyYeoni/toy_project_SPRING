@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.toyProject.dao.qna.QnaDAO;
-import com.toyProject.domain.paging.Criteria;
+import com.toyProject.domain.Criteria;
 import com.toyProject.domain.qna.QnaVO;
 
 @Service

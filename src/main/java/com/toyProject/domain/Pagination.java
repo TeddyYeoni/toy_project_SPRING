@@ -1,4 +1,4 @@
-package com.toyProject.domain.paging;
+package com.toyProject.domain;
 
 import lombok.Getter;
 import lombok.Setter;

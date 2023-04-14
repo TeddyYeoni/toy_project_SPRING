@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.toyProject.dao.album.AlbumDAO;
+import com.toyProject.domain.Criteria;
 import com.toyProject.domain.album.AlbumVO;
-import com.toyProject.domain.paging.Criteria;
 
 @Service
 public class AlbumService {

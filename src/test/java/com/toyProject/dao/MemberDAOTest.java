@@ -5,8 +5,8 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.toyProject.AppTest;
-import com.toyProject.domain.login.MemberVO;
-import com.toyProject.domain.login.MemberVO.MemberGrade;
+import com.toyProject.domain.MemberVO;
+import com.toyProject.domain.MemberVO.MemberGrade;
 import com.toyProject.service.MemberService;
 
 public class MemberDAOTest extends AppTest {

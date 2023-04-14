@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.toyProject.domain.login.AuthVO;
-import com.toyProject.domain.login.MemberVO;
-import com.toyProject.domain.login.MemberVO.MemberGrade;
-import com.toyProject.domain.paging.Criteria;
+import com.toyProject.domain.AuthVO;
+import com.toyProject.domain.Criteria;
+import com.toyProject.domain.MemberVO;
+import com.toyProject.domain.MemberVO.MemberGrade;
 import com.toyProject.service.MemberService;
 
 import lombok.extern.log4j.Log4j;

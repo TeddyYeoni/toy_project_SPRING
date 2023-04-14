@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import com.toyProject.dao.board.BoardDAO;
+import com.toyProject.domain.Criteria;
 import com.toyProject.domain.board.BoardVO;
-import com.toyProject.domain.paging.Criteria;
 
 @Service
 public class BoardService {

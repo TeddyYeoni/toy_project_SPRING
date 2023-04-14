@@ -2,9 +2,9 @@ package com.toyProject.dao.diary;
 
 import java.util.List;
 
+import com.toyProject.domain.Criteria;
 import com.toyProject.domain.board.BoardVO;
 import com.toyProject.domain.diary.DiaryVO;
-import com.toyProject.domain.paging.Criteria;
 
 public interface DiaryDAO {
 

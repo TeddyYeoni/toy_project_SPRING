@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.toyProject.domain.paging.Criteria;
-import com.toyProject.domain.paging.Pagination;
+import com.toyProject.domain.Criteria;
+import com.toyProject.domain.Pagination;
 import com.toyProject.domain.qna.QnaVO;
 import com.toyProject.service.qna.QnaService;
 

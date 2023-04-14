@@ -17,9 +17,9 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.toyProject.controller.FileController;
+import com.toyProject.domain.Criteria;
+import com.toyProject.domain.Pagination;
 import com.toyProject.domain.board.BoardVO;
-import com.toyProject.domain.paging.Criteria;
-import com.toyProject.domain.paging.Pagination;
 import com.toyProject.service.board.BoardService;
 
 import lombok.extern.log4j.Log4j;

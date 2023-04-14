@@ -2,7 +2,7 @@ package com.toyProject.dao.todo;
 
 import java.util.List;
 
-import com.toyProject.domain.paging.Criteria;
+import com.toyProject.domain.Criteria;
 import com.toyProject.domain.todo.ToDoListVO;
 
 public interface ToDoListDAO {

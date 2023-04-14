@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.toyProject.domain.paging.Criteria;
+import com.toyProject.domain.Criteria;
 import com.toyProject.domain.todo.ToDoListVO;
 import com.toyProject.service.todo.ToDoListService;
 

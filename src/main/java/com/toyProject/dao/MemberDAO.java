@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
-import com.toyProject.domain.login.MemberVO;
-import com.toyProject.domain.login.MemberVO.MemberGrade;
-import com.toyProject.domain.paging.Criteria;
+import com.toyProject.domain.Criteria;
+import com.toyProject.domain.MemberVO;
+import com.toyProject.domain.MemberVO.MemberGrade;
 
 public interface MemberDAO {
 	

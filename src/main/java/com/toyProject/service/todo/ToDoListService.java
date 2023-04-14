@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.toyProject.dao.todo.ToDoListDAO;
-import com.toyProject.domain.paging.Criteria;
+import com.toyProject.domain.Criteria;
 import com.toyProject.domain.todo.ToDoListVO;
 
 @Service

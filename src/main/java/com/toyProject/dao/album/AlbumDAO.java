@@ -2,9 +2,9 @@ package com.toyProject.dao.album;
 
 import java.util.List;
 
+import com.toyProject.domain.Criteria;
 import com.toyProject.domain.album.AlbumVO;
 import com.toyProject.domain.board.BoardVO;
-import com.toyProject.domain.paging.Criteria;
 
 public interface AlbumDAO {
 

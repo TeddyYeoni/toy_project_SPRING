@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.toyProject.dao.diary.DiaryDAO;
+import com.toyProject.domain.Criteria;
 import com.toyProject.domain.diary.DiaryVO;
-import com.toyProject.domain.paging.Criteria;
 
 @Service
 public class DiaryService {
