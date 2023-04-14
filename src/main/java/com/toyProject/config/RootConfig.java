@@ -17,6 +17,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import com.toyProject.domain.AlbumVO;
 import com.toyProject.domain.BoardReplyVO;
 import com.toyProject.domain.BoardVO;
+import com.toyProject.domain.CheckListVO;
 import com.toyProject.domain.DiaryVO;
 import com.toyProject.domain.QnaReplyVO;
 import com.toyProject.domain.QnaVO;
@@ -39,7 +40,7 @@ public class RootConfig {
 		sqlSessionFactoryBean.setMapperLocations(
 				new PathMatchingResourcePatternResolver().getResources("classpath:mappers/**/*Mapper.xml"));
 		sqlSessionFactoryBean.setTypeAliases(BoardVO.class, QnaVO.class, DiaryVO.class, MemberVO.class,
-				MemberGrade.class, ToDoListVO.class, AlbumVO.class, BoardReplyVO.class, QnaReplyVO.class);
+				MemberGrade.class, ToDoListVO.class, AlbumVO.class, BoardReplyVO.class, QnaReplyVO.class, CheckListVO.class);
 		return sqlSessionFactoryBean;
 	}
 

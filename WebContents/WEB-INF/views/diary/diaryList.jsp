@@ -24,7 +24,7 @@
 		<div class="container bootstrap snippets bootdeys">
 			<div class="row">
 				<c:forEach items="${diary_list}" var="diary">
-					<c:if test="${auth.id eq d.id}">
+					<c:if test="${auth.id eq diary.id}">
 						<div class="col-md-4 col-sm-6 content-card my-3">
 							<div class="card-big-shadow">
 								<div class="card card-just-text" data-background="color"

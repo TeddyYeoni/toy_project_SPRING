@@ -6,6 +6,10 @@
 
 <mapper namespace="com.toyProject.dao.CheckListDAO">
 
+	<insert id="addCheckList">
+		insert into todo_checkList(cno, tno, checkList) 
+		values(todo_checkList.nextval,#{tno},#{checkList})
+	</insert>
 
 
 </mapper>

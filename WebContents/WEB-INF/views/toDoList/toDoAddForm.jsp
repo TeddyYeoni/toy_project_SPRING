@@ -26,14 +26,13 @@
 							<h4>Check List✔</h4>
 							<h4 class="card-title">해야할 일을 추가해보세요!</h4>
 							<div class="add-items d-flex">
-								<input type="text" class="form-control todo-list-input"
-									placeholder="What do you need to do today?">
-								<button
-									class="add btn btn-primary font-weight-bold todo-list-add-btn">Add</button>
+								<input type="text" class="checkList form-control todo-list-input"
+									placeholder="What do you need to do today?"> <a
+									href="${contextPath}/checkList/add"
+									class="add btn btn-primary font-weight-bold todo-list-add-btn">Add</a>
 							</div>
 							<div class="list-wrapper">
 								<ul class="d-flex flex-column-reverse todo-list">
-
 								</ul>
 							</div>
 						</div>
