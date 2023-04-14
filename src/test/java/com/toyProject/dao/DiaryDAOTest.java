@@ -7,7 +7,8 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.toyProject.AppTest;
-import com.toyProject.domain.DiaryVO;
+import com.toyProject.dao.diary.DiaryDAO;
+import com.toyProject.domain.diary.DiaryVO;
 import com.toyProject.domain.paging.Criteria;
 
 import lombok.extern.log4j.Log4j;

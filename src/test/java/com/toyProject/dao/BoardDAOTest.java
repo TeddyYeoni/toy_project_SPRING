@@ -6,7 +6,8 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.toyProject.AppTest;
-import com.toyProject.domain.BoardVO;
+import com.toyProject.dao.board.BoardDAO;
+import com.toyProject.domain.board.BoardVO;
 import com.toyProject.domain.paging.Criteria;
 
 import lombok.extern.log4j.Log4j;

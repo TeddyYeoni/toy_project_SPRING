@@ -4,7 +4,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.toyProject.dao.ToDoListDAO">
+<mapper namespace="com.toyProject.dao.todo.ToDoListDAO">
 
 	<select id="toDoList" resultType="toDoListVO">
 		select * from mou_todo

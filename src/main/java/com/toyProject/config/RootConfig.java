@@ -14,16 +14,16 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
-import com.toyProject.domain.AlbumVO;
-import com.toyProject.domain.BoardReplyVO;
-import com.toyProject.domain.BoardVO;
-import com.toyProject.domain.CheckListVO;
-import com.toyProject.domain.DiaryVO;
-import com.toyProject.domain.QnaReplyVO;
-import com.toyProject.domain.QnaVO;
-import com.toyProject.domain.ToDoListVO;
+import com.toyProject.domain.album.AlbumVO;
+import com.toyProject.domain.board.BoardReplyVO;
+import com.toyProject.domain.board.BoardVO;
+import com.toyProject.domain.diary.DiaryVO;
 import com.toyProject.domain.login.MemberVO;
 import com.toyProject.domain.login.MemberVO.MemberGrade;
+import com.toyProject.domain.qna.QnaReplyVO;
+import com.toyProject.domain.qna.QnaVO;
+import com.toyProject.domain.todo.CheckListVO;
+import com.toyProject.domain.todo.ToDoListVO;
 
 @Configuration
 @Import({ DbConfig.class })

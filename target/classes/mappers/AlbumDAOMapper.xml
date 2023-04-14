@@ -4,7 +4,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.toyProject.dao.AlbumDAO">
+<mapper namespace="com.toyProject.dao.album.AlbumDAO">
 	<select id="albumList" resultType="albumVO">
 		select * from mou_album order
 		by ano desc

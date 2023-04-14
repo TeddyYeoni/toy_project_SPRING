@@ -8,8 +8,8 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.toyProject.AppTest;
-import com.toyProject.domain.QnaReplyVO;
-import com.toyProject.service.reply.QnaReplyService;
+import com.toyProject.domain.qna.QnaReplyVO;
+import com.toyProject.service.qna.QnaReplyService;
 
 import lombok.extern.log4j.Log4j;
 

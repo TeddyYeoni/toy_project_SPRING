@@ -6,11 +6,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.toyProject.service.menu.AlbumService;
-import com.toyProject.service.menu.BoardService;
-import com.toyProject.service.menu.DiaryService;
-import com.toyProject.service.menu.QnaService;
-import com.toyProject.service.menu.ToDoListService;
+import com.toyProject.service.album.AlbumService;
+import com.toyProject.service.board.BoardService;
+import com.toyProject.service.diary.DiaryService;
+import com.toyProject.service.qna.QnaService;
+import com.toyProject.service.todo.ToDoListService;
 
 @Controller
 @RequestMapping(value = { "/main", "" })
